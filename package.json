@@ -1,0 +1,20 @@
+{
+  "name": "webidl-updater",
+  "version": "1.0.0",
+  "description": "Update IDLs to match the latest Web IDL syntax",
+  "main": "src/rewrite.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "crawl-raw-source": "node src/crawl-raw-source.js",
+    "rewrite": "node src/rewrite.js"
+  },
+  "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "jsdom": "^15.1.1",
+    "node-fetch": "^2.6.0",
+    "reffy": "github:saschanaz/reffy#each-autofix",
+    "webidl2": "^23.5.1"
+  }
+}
