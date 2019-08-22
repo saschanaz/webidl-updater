@@ -2,6 +2,7 @@ const fs = require("fs").promises;
 const webidl2 = require("webidl2");
 const { JSDOM } = require("jsdom");
 const { fetchText } = require("./utils.js");
+const { similarReplace } = require("./similar-replace.js");
 
 const { extract } = require("reffy/src/cli/extract-webidl.js");
 
@@ -19,10 +20,11 @@ async function extractOneByOne(specSourceList) {
     let { window } = new JSDOM(text);
     // eval is used for generater check, just skip it
     window.eval = () => {};
-    if (shortName) {
-      window.document.title = shortName;
-    }
-    results.push(await extract(window));
+    results.push({
+      ...await extract(window),
+      text,
+      shortName
+    });
   }
   return results;
 }
@@ -33,6 +35,30 @@ function mapToArray(object) {
     result.push(value);
   }
   return result;
+}
+
+/**
+ * @param {string} str
+ */
+function getFirstLineIndentation(str) {
+  const lines = str.split("\n");
+  for (const line of lines) {
+    if (line.trim()) {
+      const match = line.match(/^\s*/);
+      return match[0].length;
+    }
+  }
+  return 0;
+}
+
+/**
+ * @param {string} str
+ * @param {number} by
+ */
+function indent(str, by) {
+  const prefix = " ".repeat(by);
+  const lines = str.split("\n");
+  return lines.map(line => prefix + line).join("\n");
 }
 
 (async () => {
@@ -60,20 +86,28 @@ function mapToArray(object) {
   }
   const rewrittenSpecs = [];
   for (const [specIndex, spec] of Object.entries(astArray)) {
-    let diff = false;
+    let diffs = [];
     const targetSpecItem = results[specIndex];
     for (const [blockIndex, block] of Object.entries(spec)) {
       const originalIdl = targetSpecItem.idl[blockIndex];
       const rewritten = webidl2.write(block);
       if (originalIdl !== rewritten) {
-        targetSpecItem.blocks[blockIndex].textContent = `\n${rewritten}\n`;
-        diff = true;
+        const { innerHTML } = targetSpecItem.blocks[blockIndex];
+        const reformed = indent(
+          rewritten.replace(/>/g, "&gt;"),
+          getFirstLineIndentation(innerHTML)
+        );
+        diffs.push([innerHTML, `${reformed}\n`]);
       }
     }
-    if (diff) {
+    if (diffs.length) {
+      let { text } = targetSpecItem;
+      for (const diff of diffs) {
+        text = similarReplace(text, diff[0], diff[1]);
+      }
       rewrittenSpecs.push({
-        title: targetSpecItem.doc.title,
-        html: targetSpecItem.doc.documentElement.outerHTML
+        title: targetSpecItem.shortName || targetSpecItem.doc.title,
+        html: text
       })
     }
   }

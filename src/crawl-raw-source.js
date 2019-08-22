@@ -191,6 +191,7 @@ async function guessForGeneralGitHubSpecs(url) {
   return {
     shortName,
     url: await checkIfExists(masterBranch + "index.bs") ||
+      await checkIfExists(masterBranch + "Overview.bs") ||
       await checkIfExists(masterBranch + "index.html") ||
       await checkIfExists(ghPagesBranch + "index.bs") ||
       await checkIfExists(ghPagesBranch + "index.html") ||
