@@ -61,12 +61,12 @@
   },
   "https://w3c.github.io/pointerevents/extension.html": {
     "url": "https://w3c.github.io/pointerevents/extension.html",
-    "rawUrl": "https://raw.githubusercontent.com/w3c/pointerevents/gh-pages/index.html",
-    "shortName": "pointerevents"
+    "rawUrl": "https://raw.githubusercontent.com/w3c/pointerevents/gh-pages/extension.html",
+    "shortName": "pointerevents-extension"
   },
   "https://w3c.github.io/reporting/": {
     "url": "https://w3c.github.io/reporting/",
-    "rawUrl": "https://raw.githubusercontent.com/w3c/reporting/gh-pages/index.html",
+    "rawUrl": "https://raw.githubusercontent.com/w3c/reporting/master/index.src.html",
     "shortName": "reporting"
   },
   "https://w3c.github.io/speech-api/": {
@@ -482,7 +482,7 @@
   "https://www.w3.org/TR/paint-timing/": {
     "shortName": "paint-timing",
     "url": "https://w3c.github.io/paint-timing/",
-    "rawUrl": "https://raw.githubusercontent.com/w3c/paint-timing/gh-pages/index.html"
+    "rawUrl": "https://raw.githubusercontent.com/w3c/paint-timing/master/painttiming.bs"
   },
   "https://www.w3.org/TR/payment-handler/": {
     "shortName": "payment-handler",

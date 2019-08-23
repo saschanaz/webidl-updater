@@ -179,19 +179,31 @@ async function guessForW3CTR(url) {
  * @param {string} url
  */
 async function guessForGeneralGitHubSpecs(url) {
-  const regex = /https?:\/\/([-\w]+)\.github\.io\/([^/]+)\//;
+  const regex = /https?:\/\/([-\w]+)\.github\.io\/([^/]+)\/(.*)/;
   const match = url.match(regex);
   if (!match) {
     return;
   }
-  const [, orgName, shortName] = match;
+  const [, orgName, shortName, path] = match;
   const repoUrl = `https://raw.githubusercontent.com/${orgName}/${shortName}`;
   const masterBranch = `${repoUrl}/master/`;
   const ghPagesBranch = `${repoUrl}/gh-pages/`;
+  if (path) {
+    return {
+      shortName: `${shortName}-${path.replace(".html", "")}`,
+      url: await checkIfExists(masterBranch + path) ||
+        await checkIfExists(ghPagesBranch + path)
+    };
+  }
+
+  // Used by paint-timing
+  const customName = shortName.toLowerCase().replace(/-/g, "") + ".bs";
   return {
     shortName,
     url: await checkIfExists(masterBranch + "index.bs") ||
       await checkIfExists(masterBranch + "Overview.bs") ||
+      await checkIfExists(masterBranch + customName) ||
+      await checkIfExists(masterBranch + "index.src.html") ||
       await checkIfExists(masterBranch + "index.html") ||
       await checkIfExists(ghPagesBranch + "index.bs") ||
       await checkIfExists(ghPagesBranch + "index.html") ||
@@ -237,7 +249,7 @@ async function tryReadSpecInfoList() {
     return require("../spec-info.json");
   } catch {
     const specinfo = await Promise.all(urls.map(getSpecInfo))
-    await fs.writeFile("spec-info.json", JSON.stringify(specinfo, null, 2));
+    await fs.writeFile("spec-info.json", JSON.stringify(specinfo, null, 2) + "\n");
     return specinfo;
   }
 }
@@ -247,7 +259,7 @@ async function tryReadSpecInfoList() {
 
   await addMissingSpecSources(specInfoList);
 
-  await fs.writeFile("spec-sources.json", JSON.stringify(specSources, null, 2));
+  await fs.writeFile("spec-sources.json", JSON.stringify(specSources, null, 2) + "\n");
 })().catch(e => {
   process.on("exit", () => {
     console.error(e);
