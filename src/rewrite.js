@@ -94,7 +94,7 @@ function indent(str, by) {
       if (originalIdl !== rewritten) {
         const { innerHTML } = targetSpecItem.blocks[blockIndex];
         const reformed = indent(
-          rewritten.replace(/>/g, "&gt;"),
+          rewritten.replace(/</g, "&lt;"),
           getFirstLineIndentation(innerHTML)
         );
         diffs.push([innerHTML, `${reformed}\n`]);
