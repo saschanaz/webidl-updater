@@ -13,8 +13,8 @@ const specRawSources = require("../spec-sources.json");
  */
 async function extractOneByOne(specSourceList) {
   const results = [];
-  for (const { rawUrl, url, shortName } of specSourceList) {
-    const text = await fetchText(rawUrl || url);
+  for (const { rawSource, url, shortName } of specSourceList) {
+    const text = await fetchText(rawSource || url);
     // Passing url or html to extract() will process everything,
     // so just skip it by passing jsdom object with script disabled.
     let { window } = new JSDOM(text);

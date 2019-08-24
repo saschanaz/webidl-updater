@@ -24,6 +24,9 @@ const urls = [
   ...specWhatwgIdl
 ];
 
+/**
+ * @param {string} url
+ */
 async function checkIfExists(url) {
   const res = await fetch(url, { method: "HEAD" });
   if (res.ok) {
@@ -37,9 +40,8 @@ async function guessIfEditLinkExists(url) {
   if (!sourceAnchor) {
     return;
   }
-  const rawgit = sourceAnchor.href.replace("github.com", "raw.githubusercontent.com");
   return {
-    url: await checkIfExists(rawgit.replace("/blob/", "/").replace("/commits/", "/"))
+    url: await checkIfExists(sourceAnchor.href)
   };
 }
 
@@ -54,10 +56,10 @@ async function guessForDraftsOrgSpecs(url) {
   }
 
   const [, subOrgName, shortName] = match;
-  const branchUrl = `https://raw.githubusercontent.com/w3c/${subOrgName}-drafts/master`;
-  const rawgitDir = `${branchUrl}/${shortName}/`;
-  const guessed = await checkIfExists(rawgitDir + "Overview.bs") ||
-    await checkIfExists(rawgitDir + "Overview.src.html");
+  const branchUrl = `https://github.com/w3c/${subOrgName}-drafts/blob/master`;
+  const gitDir = `${branchUrl}/${shortName}/`;
+  const guessed = await checkIfExists(gitDir + "Overview.bs") ||
+    await checkIfExists(gitDir + "Overview.src.html");
   if (guessed) {
     return {
       shortName,
@@ -67,21 +69,21 @@ async function guessForDraftsOrgSpecs(url) {
 
   const withoutHyphen = shortName.replace(/-1$/, "");
   if (shortName !== withoutHyphen) {
-    const rawgitDir = `${branchUrl}/${withoutHyphen}/`;
+    const gitDir = `${branchUrl}/${withoutHyphen}/`;
     return {
       shortName: withoutHyphen,
-      url: await checkIfExists(rawgitDir + "Overview.bs") ||
-        await checkIfExists(rawgitDir + "Overview.src.html")
+      url: await checkIfExists(gitDir + "Overview.bs") ||
+        await checkIfExists(gitDir + "Overview.src.html")
     };
   }
 
   if (!shortName.endsWith("-1")) {
     const withHyphen = shortName + "-1";
-    const rawgitDir = `${branchUrl}/${withHyphen}/`;
+    const gitDir = `${branchUrl}/${withHyphen}/`;
     return {
       shortName: withHyphen,
-      url: await checkIfExists(rawgitDir + "Overview.bs") ||
-        await checkIfExists(rawgitDir + "Overview.src.html")
+      url: await checkIfExists(gitDir + "Overview.bs") ||
+        await checkIfExists(gitDir + "Overview.src.html")
     };
   }
 }
@@ -97,13 +99,13 @@ async function guessForWHATWGSpecs(url) {
   }
 
   const [, shortName] = match;
-  const rawgitDir = `https://raw.githubusercontent.com/whatwg/${shortName}/master/`;
+  const gitDir = `https://github.com/whatwg/${shortName}/blob/master/`;
   return {
     shortName,
-    url: await checkIfExists(rawgitDir + "index.bs") ||
-      await checkIfExists(rawgitDir + `${shortName}.bs`) ||
-      await checkIfExists(rawgitDir + "source") ||
-      await checkIfExists(rawgitDir + `compatibility.bs`)
+    url: await checkIfExists(gitDir + "index.bs") ||
+      await checkIfExists(gitDir + `${shortName}.bs`) ||
+      await checkIfExists(gitDir + "source") ||
+      await checkIfExists(gitDir + `compatibility.bs`)
   };
 }
 
@@ -119,7 +121,7 @@ async function guessForKhronosSpecs(url) {
   }
 
   const [, shortName, path] = match;
-  const rawgit = `https://raw.githubusercontent.com/KhronosGroup/${shortName}/master/${path}/index.html`;
+  const rawgit = `https://github.com/KhronosGroup/${shortName}/blob/master/${path}/index.html`;
   return {
     shortName,
     url: await checkIfExists(rawgit)
@@ -145,12 +147,10 @@ async function guessForCDN(url) {
   if (!path) {
     return;
   }
-  const shortName = path.match(/^\w+\/(\w+)/)[1];
-  if (path.endsWith("/")) {
-    path += "index.html";
-  }
+  const [, orgName, shortName, subpath] = path.match(/^(\w+)\/([-\w]+)\/(.+)/);
+  const filePath = subpath.endsWith("/") ? (subpath + "index.html") : subpath;
 
-  const rawgit = `https://raw.githubusercontent.com/${path}`;
+  const rawgit = `https://github.com/${orgName}/${shortName}/blob/${filePath}`;
   return {
     shortName,
     url: await checkIfExists(rawgit)
@@ -168,7 +168,7 @@ async function guessForW3CTR(url) {
   }
 
   const [, shortName] = match;
-  const rawgit = `https://raw.githubusercontent.com/w3c/${shortName}/gh-pages/index.html`;
+  const rawgit = `https://github.com/w3c/${shortName}/blob/gh-pages/index.html`;
   return {
     shortName,
     url: await checkIfExists(rawgit)
@@ -185,14 +185,15 @@ async function guessForGeneralGitHubSpecs(url) {
     return;
   }
   const [, orgName, shortName, path] = match;
-  const repoUrl = `https://raw.githubusercontent.com/${orgName}/${shortName}`;
+  const repoUrl = `https://github.com/${orgName}/${shortName}/blob`;
   const masterBranch = `${repoUrl}/master/`;
   const ghPagesBranch = `${repoUrl}/gh-pages/`;
   if (path) {
+    const filePath = path.endsWith("/") ? path + "index.html" : path;
     return {
-      shortName: `${shortName}-${path.replace(".html", "")}`,
-      url: await checkIfExists(masterBranch + path) ||
-        await checkIfExists(ghPagesBranch + path)
+      shortName: `${shortName}-${filePath.replace(".html", "")}`,
+      url: await checkIfExists(masterBranch + filePath) ||
+        await checkIfExists(ghPagesBranch + filePath)
     };
   }
 
@@ -213,27 +214,39 @@ async function guessForGeneralGitHubSpecs(url) {
 }
 
 async function detectURLAndShortName(url) {
-  return await guessForDraftsOrgSpecs(url) ||
+  const guessed = await guessForDraftsOrgSpecs(url) ||
     await guessForWHATWGSpecs(url) ||
     await guessForKhronosSpecs(url) ||
     await guessForGeneralGitHubSpecs(url) ||
     await guessForCDN(url) ||
-    await guessForW3CTR(url) ||
-    await guessIfEditLinkExists(url);
+    await guessForW3CTR(url);
+  if (!guessed || !guessed.url) {
+    return await guessIfEditLinkExists(url);
+  }
+  return guessed;
+}
+
+function convertToRawgit(url) {
+  if (!url) {
+    return null;
+  }
+  const rawgit = url.replace("github.com", "raw.githubusercontent.com");
+  return rawgit.replace("/blob/", "/").replace("/commits/", "/");
 }
 
 async function addMissingSpecSources(specInfoList) {
-  for (const { edDraft, url, shortName } of specInfoList) {
+  for (const { edDraft, url, shortname } of specInfoList) {
     const item = specSources[url] || {};
-    if (!item || !item.rawUrl || !item.shortName) {
+    if (!item || !item.source || !item.shortName) {
       const latestPublishedUrl = edDraft || url;
       const detected = await detectURLAndShortName(latestPublishedUrl);
       item.shortName =
-        shortName ? shortName :
+        shortname ? shortname :
         detected ? detected.shortName :
         null;
       item.url = latestPublishedUrl;
-      item.rawUrl = detected ? detected.url : null;
+      item.source = detected ? detected.url : null;
+      item.rawSource = detected ? convertToRawgit(detected.url) : null;
       specSources[url] = item;
     }
   }
