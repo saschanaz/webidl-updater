@@ -54,11 +54,12 @@ function getFirstLineIndentation(str) {
 /**
  * @param {string} str
  * @param {number} by
+ * @param {string} chr character to be used as indentation. Typically " "
  */
-function indent(str, by) {
-  const prefix = " ".repeat(by);
+function indent(str, by, chr) {
+  const prefix = chr.repeat(by);
   const lines = str.split("\n");
-  return lines.map(line => prefix + line).join("\n");
+  return lines.map(line => line.trim() ? prefix + line : line).join("\n");
 }
 
 (async () => {
@@ -92,12 +93,20 @@ function indent(str, by) {
       const originalIdl = targetSpecItem.idl[blockIndex];
       const rewritten = webidl2.write(block);
       if (originalIdl !== rewritten) {
-        const { innerHTML } = targetSpecItem.blocks[blockIndex];
-        const reformed = indent(
-          rewritten.replace(/</g, "&lt;"),
-          getFirstLineIndentation(innerHTML)
-        );
-        diffs.push([innerHTML, `${reformed}\n`]);
+        const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
+        const indentSize = getFirstLineIndentation(innerHTML);
+        const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
+        const blockIndentation = (previousSibling && previousSibling.nodeType === 3) ?
+          previousSibling.textContent.match(/[ \t]*$/)[0]
+          : ""
+        const reformed =
+          indent(rewritten, indentSize, tabOrSpace)
+          + "\n" + blockIndentation;
+        if (localName === "pre") {
+          diffs.push([innerHTML, reformed]);
+        } else {
+          diffs.push([innerHTML, `\n${reformed}`]);
+        }
       }
     }
     if (diffs.length) {
