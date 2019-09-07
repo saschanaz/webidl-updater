@@ -1,4 +1,5 @@
 const similarDict = {
+  "\n": "\r\n",
   "&gt;": ">",
   "&lt;": "<",
   "=\"\"": "",
@@ -20,8 +21,8 @@ function similarSearch(input, target) {
       if (inputCh !== targetCh) {
         let matched = false;
         for (const [key, value] of Object.entries(similarDict)) {
-          if (targetCh === key[0] && target.slice(i, i + key.length) === key) {
-            if (!value || inputCh === value) {
+          if (targetCh === key[0] && target.slice(i).startsWith(key)) {
+            if (!value || input.slice(index).startsWith(value)) {
               i += key.length - 1;
               index += value.length - 1;
               matched = true;

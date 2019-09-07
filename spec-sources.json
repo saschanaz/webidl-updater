@@ -120,7 +120,7 @@
     "rawSource": "https://raw.githubusercontent.com/wicg/background-fetch/master/index.bs"
   },
   "https://wicg.github.io/BackgroundSync/spec/": {
-    "shortName": "BackgroundSync-spec/index",
+    "shortName": "BackgroundSync-spec-index",
     "url": "https://wicg.github.io/BackgroundSync/spec/",
     "source": "https://github.com/wicg/BackgroundSync/blob/master/spec/index.html",
     "rawSource": "https://raw.githubusercontent.com/wicg/BackgroundSync/master/spec/index.html"

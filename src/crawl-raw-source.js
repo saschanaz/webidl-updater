@@ -191,7 +191,7 @@ async function guessForGeneralGitHubSpecs(url) {
   if (path) {
     const filePath = path.endsWith("/") ? path + "index.html" : path;
     return {
-      shortName: `${shortName}-${filePath.replace(".html", "")}`,
+      shortName: `${shortName}-${filePath.replace(/\//g, "-",).replace(".html", "")}`,
       url: await checkIfExists(masterBranch + filePath) ||
         await checkIfExists(ghPagesBranch + filePath)
     };
