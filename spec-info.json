@@ -298,6 +298,7 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-appmanifest-20190903/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190821/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190820/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190807/",
@@ -397,13 +398,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20160414/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160406/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160405/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160404/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190821/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190903/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -1049,6 +1049,7 @@
     "url": "https://www.w3.org/TR/gamepad/",
     "shortname": "gamepad",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-gamepad-20190903/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190822/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190820/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190814/",
@@ -1086,7 +1087,7 @@
     ],
     "title": "Gamepad",
     "latest": "https://www.w3.org/TR/gamepad/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-gamepad-20190822/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-gamepad-20190903/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/gamepad/"
@@ -1127,6 +1128,7 @@
       "https://www.w3.org/TR/2010/CR-geolocation-API-20100907/",
       "https://www.w3.org/TR/2009/WD-geolocation-API-20090707/",
       "https://www.w3.org/TR/2008/WD-geolocation-API-20081222/",
+      "https://w3c.github.io/geolocation-api/",
       "https://www.w3.org/TR/geolocation-API/",
       "https://dev.w3.org/geo/api/spec-source.html"
     ],
@@ -1134,7 +1136,8 @@
     "latest": "https://www.w3.org/TR/geolocation-API/",
     "datedUrl": "https://www.w3.org/TR/2016/REC-geolocation-API-20161108/",
     "datedStatus": "Recommendation",
-    "informative": false
+    "informative": false,
+    "edDraft": "https://w3c.github.io/geolocation-api/"
   },
   {
     "url": "https://www.w3.org/TR/geometry-1/",
@@ -1315,9 +1318,9 @@
       "https://www.w3.org/TR/2016/WD-input-events-20160928/",
       "https://www.w3.org/TR/2016/WD-input-events-20160922/",
       "https://www.w3.org/TR/2016/WD-input-events-20160830/",
+      "https://w3c.github.io/input-events/",
       "https://cdn.staticaly.com/gh/w3c/input-events/v1/",
       "https://www.w3.org/TR/input-events-2/",
-      "https://cdn.staticaly.com/gh/w3c/input-events/v1/index.html",
       "https://www.w3.org/TR/input-events-1/"
     ],
     "title": "Input Events Level 2",
@@ -1325,7 +1328,7 @@
     "datedUrl": "https://www.w3.org/TR/2019/WD-input-events-2-20190530/",
     "datedStatus": "Working Draft",
     "informative": false,
-    "edDraft": "https://cdn.staticaly.com/gh/w3c/input-events/v1/index.html"
+    "edDraft": "https://w3c.github.io/input-events/"
   },
   {
     "url": "https://www.w3.org/TR/intersection-observer/",
@@ -1598,7 +1601,7 @@
       "https://www.w3.org/TR/2016/CR-orientation-event-20160818/",
       "https://www.w3.org/TR/2011/WD-orientation-event-20111201/",
       "https://www.w3.org/TR/2011/WD-orientation-event-20110628/",
-      "https://w3c.github.io/deviceorientation/spec-source-orientation.html",
+      "https://w3c.github.io/deviceorientation/",
       "https://www.w3.org/TR/orientation-event/"
     ],
     "title": "DeviceOrientation Event Specification",
@@ -1606,7 +1609,7 @@
     "datedUrl": "https://www.w3.org/TR/2019/WD-orientation-event-20190416/",
     "datedStatus": "Working Draft",
     "informative": false,
-    "edDraft": "https://w3c.github.io/deviceorientation/spec-source-orientation.html"
+    "edDraft": "https://w3c.github.io/deviceorientation/"
   },
   {
     "url": "https://www.w3.org/TR/orientation-sensor/",
@@ -1912,6 +1915,7 @@
     "url": "https://www.w3.org/TR/pointerlock-2/",
     "shortname": "pointerlock-2",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-pointerlock-2-20190828/",
       "https://www.w3.org/TR/2019/WD-pointerlock-2-20190606/",
       "https://www.w3.org/TR/2019/WD-pointerlock-2-20190530/",
       "https://www.w3.org/TR/2018/WD-pointerlock-2-20181106/",
@@ -1923,7 +1927,7 @@
     ],
     "title": "Pointer Lock 2.0",
     "latest": "https://www.w3.org/TR/pointerlock-2/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-pointerlock-2-20190606/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-pointerlock-2-20190828/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/pointerlock/"
@@ -2136,6 +2140,7 @@
     "url": "https://www.w3.org/TR/screen-orientation/",
     "shortname": "screen-orientation",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-screen-orientation-20190903/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190723/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190722/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190627/",
@@ -2192,7 +2197,7 @@
     ],
     "title": "The Screen Orientation API",
     "latest": "https://www.w3.org/TR/screen-orientation/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-orientation-20190723/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-orientation-20190903/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/screen-orientation/"

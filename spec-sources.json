@@ -451,9 +451,9 @@
   },
   "https://www.w3.org/TR/geolocation-API/": {
     "shortName": "geolocation-API",
-    "url": "https://www.w3.org/TR/geolocation-API/",
-    "source": "https://github.com/w3c/geolocation-API/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/geolocation-API/gh-pages/index.html"
+    "url": "https://w3c.github.io/geolocation-api/",
+    "source": "https://github.com/w3c/geolocation-api/blob/gh-pages/index.html",
+    "rawSource": "https://raw.githubusercontent.com/w3c/geolocation-api/gh-pages/index.html"
   },
   "https://www.w3.org/TR/geometry-1/": {
     "shortName": "geometry-1",
@@ -493,9 +493,9 @@
   },
   "https://www.w3.org/TR/input-events-2/": {
     "shortName": "input-events-2",
-    "url": "https://cdn.staticaly.com/gh/w3c/input-events/v1/index.html",
-    "source": "https://github.com/w3c/input-events/blob/v1/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/input-events/v1/index.html"
+    "url": "https://w3c.github.io/input-events/",
+    "source": "https://github.com/w3c/input-events/blob/gh-pages/index.html",
+    "rawSource": "https://raw.githubusercontent.com/w3c/input-events/gh-pages/index.html"
   },
   "https://www.w3.org/TR/intersection-observer/": {
     "shortName": "intersection-observer",
@@ -559,9 +559,9 @@
   },
   "https://www.w3.org/TR/orientation-event/": {
     "shortName": "orientation-event",
-    "url": "https://w3c.github.io/deviceorientation/spec-source-orientation.html",
-    "source": "https://github.com/w3c/deviceorientation/blob/gh-pages/spec-source-orientation.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/deviceorientation/gh-pages/spec-source-orientation.html"
+    "url": "https://w3c.github.io/deviceorientation/",
+    "source": "https://github.com/w3c/deviceorientation/blob/gh-pages/index.bs",
+    "rawSource": "https://raw.githubusercontent.com/w3c/deviceorientation/gh-pages/index.bs"
   },
   "https://www.w3.org/TR/orientation-sensor/": {
     "shortName": "orientation-sensor",
