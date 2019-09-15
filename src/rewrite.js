@@ -8,13 +8,21 @@ const { extract } = require("reffy/src/cli/extract-webidl.js");
 
 const specRawSources = require("../spec-sources.json");
 
+function getRawGit(githubInfo) {
+  if (!githubInfo) {
+    return null;
+  }
+  const { owner, repo, branch, path } = githubInfo;
+  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+}
+
 /**
  * Loading everything in once tends to break, thus do it one by one
  */
 async function extractOneByOne(specSourceList) {
   const results = [];
-  for (const { rawSource, url, shortName } of specSourceList) {
-    const text = await fetchText(rawSource || url);
+  for (const { github, url, shortName } of specSourceList) {
+    const text = await fetchText(getRawGit(github) || url);
     // Passing url or html to extract() will process everything,
     // so just skip it by passing jsdom object with script disabled.
     let { window } = new JSDOM(text);

@@ -226,12 +226,14 @@ async function detectURLAndShortName(url) {
   return guessed;
 }
 
-function convertToRawgit(url) {
-  if (!url) {
-    return null;
+function getGitHubInfo(url) {
+  const regex = /^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)/;
+  const match = url.match(regex);
+  if (!match) {
+    throw new Error("No way!!");
   }
-  const rawgit = url.replace("github.com", "raw.githubusercontent.com");
-  return rawgit.replace("/blob/", "/").replace("/commits/", "/");
+  const [, owner, repo, branch, path] = match;
+  return { owner, repo, branch, path };
 }
 
 async function addMissingSpecSources(specInfoList) {
@@ -246,7 +248,11 @@ async function addMissingSpecSources(specInfoList) {
         null;
       item.url = latestPublishedUrl;
       item.source = detected ? detected.url : null;
-      item.rawSource = detected ? convertToRawgit(detected.url) : null;
+      if (detected && detected.url.includes("github.com")) {
+        item.github = getGitHubInfo(detected.url);
+      } else {
+        item.github = null;
+      }
       specSources[url] = item;
     }
   }

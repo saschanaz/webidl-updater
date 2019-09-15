@@ -3,864 +3,1579 @@
     "shortName": "compat",
     "url": "https://compat.spec.whatwg.org/",
     "source": "https://github.com/whatwg/compat/blob/master/compatibility.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/compat/master/compatibility.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "compat",
+      "branch": "master",
+      "path": "compatibility.bs"
+    }
   },
   "https://console.spec.whatwg.org/": {
     "shortName": "console",
     "url": "https://console.spec.whatwg.org/",
     "source": "https://github.com/whatwg/console/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/console/master/index.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "console",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://drafts.css-houdini.org/box-tree-api/": {
     "shortName": "box-tree-api",
     "url": "https://drafts.css-houdini.org/box-tree-api/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/box-tree-api/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/box-tree-api/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "box-tree-api/Overview.bs"
+    }
   },
   "https://drafts.css-houdini.org/font-metrics-api/": {
     "shortName": "font-metrics-api",
     "url": "https://drafts.css-houdini.org/font-metrics-api/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/font-metrics-api/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/font-metrics-api/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "font-metrics-api/Overview.bs"
+    }
   },
   "https://fetch.spec.whatwg.org/": {
     "shortName": "fetch",
     "url": "https://fetch.spec.whatwg.org/",
     "source": "https://github.com/whatwg/fetch/blob/master/fetch.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/fetch/master/fetch.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "fetch",
+      "branch": "master",
+      "path": "fetch.bs"
+    }
   },
   "https://fullscreen.spec.whatwg.org/": {
     "shortName": "fullscreen",
     "url": "https://fullscreen.spec.whatwg.org/",
     "source": "https://github.com/whatwg/fullscreen/blob/master/fullscreen.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/fullscreen/master/fullscreen.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "fullscreen",
+      "branch": "master",
+      "path": "fullscreen.bs"
+    }
   },
   "https://storage.spec.whatwg.org/": {
     "shortName": "storage",
     "url": "https://storage.spec.whatwg.org/",
     "source": "https://github.com/whatwg/storage/blob/master/storage.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/storage/master/storage.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "storage",
+      "branch": "master",
+      "path": "storage.bs"
+    }
   },
   "https://url.spec.whatwg.org/": {
     "shortName": "url",
     "url": "https://url.spec.whatwg.org/",
     "source": "https://github.com/whatwg/url/blob/master/url.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/url/master/url.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "url",
+      "branch": "master",
+      "path": "url.bs"
+    }
   },
   "https://w3c.github.io/media-capabilities/": {
     "shortName": "media-capabilities",
     "url": "https://w3c.github.io/media-capabilities/",
     "source": "https://github.com/w3c/media-capabilities/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/media-capabilities/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "media-capabilities",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/media-playback-quality/": {
     "shortName": "media-playback-quality",
     "url": "https://w3c.github.io/media-playback-quality/",
     "source": "https://github.com/w3c/media-playback-quality/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/media-playback-quality/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "media-playback-quality",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://w3c.github.io/mediasession/": {
     "shortName": "mediasession",
     "url": "https://w3c.github.io/mediasession/",
     "source": "https://github.com/w3c/mediasession/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediasession/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediasession",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/picture-in-picture/": {
     "shortName": "picture-in-picture",
     "url": "https://w3c.github.io/picture-in-picture/",
     "source": "https://github.com/w3c/picture-in-picture/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/picture-in-picture/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "picture-in-picture",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/pointerevents/extension.html": {
     "shortName": "pointerevents-extension",
     "url": "https://w3c.github.io/pointerevents/extension.html",
     "source": "https://github.com/w3c/pointerevents/blob/gh-pages/extension.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/pointerevents/gh-pages/extension.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "pointerevents",
+      "branch": "gh-pages",
+      "path": "extension.html"
+    }
   },
   "https://w3c.github.io/reporting/": {
     "shortName": "reporting",
     "url": "https://w3c.github.io/reporting/",
     "source": "https://github.com/w3c/reporting/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/reporting/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "reporting",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://w3c.github.io/speech-api/": {
     "shortName": "speech-api",
     "url": "https://w3c.github.io/speech-api/",
     "source": "https://github.com/w3c/speech-api/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/speech-api/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "speech-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/webappsec-feature-policy/": {
     "shortName": "webappsec-feature-policy",
     "url": "https://w3c.github.io/webappsec-feature-policy/",
     "source": "https://github.com/w3c/webappsec-feature-policy/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-feature-policy/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-feature-policy",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/web-nfc/": {
     "shortName": "web-nfc",
     "url": "https://w3c.github.io/web-nfc/",
     "source": "https://github.com/w3c/web-nfc/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/web-nfc/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "web-nfc",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://webbluetoothcg.github.io/web-bluetooth/": {
     "shortName": "web-bluetooth",
     "url": "https://webbluetoothcg.github.io/web-bluetooth/",
     "source": "https://github.com/webbluetoothcg/web-bluetooth/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/webbluetoothcg/web-bluetooth/master/index.bs"
+    "github": {
+      "owner": "webbluetoothcg",
+      "repo": "web-bluetooth",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/animation-worklet/": {
     "shortName": "animation-worklet",
     "url": "https://wicg.github.io/animation-worklet/",
     "source": "https://github.com/wicg/animation-worklet/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/animation-worklet/gh-pages/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "animation-worklet",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/background-fetch/": {
     "shortName": "background-fetch",
     "url": "https://wicg.github.io/background-fetch/",
     "source": "https://github.com/wicg/background-fetch/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/background-fetch/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "background-fetch",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/BackgroundSync/spec/": {
     "shortName": "BackgroundSync-spec-index",
     "url": "https://wicg.github.io/BackgroundSync/spec/",
     "source": "https://github.com/wicg/BackgroundSync/blob/master/spec/index.html",
-    "rawSource": "https://raw.githubusercontent.com/wicg/BackgroundSync/master/spec/index.html"
+    "github": {
+      "owner": "wicg",
+      "repo": "BackgroundSync",
+      "branch": "master",
+      "path": "spec/index.html"
+    }
   },
   "https://wicg.github.io/cookie-store/": {
     "shortName": "cookie-store",
     "url": "https://wicg.github.io/cookie-store/",
     "source": "https://github.com/wicg/cookie-store/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/cookie-store/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "cookie-store",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/cors-rfc1918/": {
     "shortName": "cors-rfc1918",
     "url": "https://wicg.github.io/cors-rfc1918/",
     "source": "https://github.com/wicg/cors-rfc1918/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/wicg/cors-rfc1918/master/index.src.html"
+    "github": {
+      "owner": "wicg",
+      "repo": "cors-rfc1918",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://wicg.github.io/CSS-Parser-API/": {
     "shortName": "CSS-Parser-API",
     "url": "https://wicg.github.io/CSS-Parser-API/",
     "source": "https://github.com/wicg/CSS-Parser-API/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/CSS-Parser-API/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "CSS-Parser-API",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/element-timing/": {
     "shortName": "element-timing",
     "url": "https://wicg.github.io/element-timing/",
     "source": "https://github.com/wicg/element-timing/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/element-timing/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "element-timing",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/entries-api/": {
     "shortName": "entries-api",
     "url": "https://wicg.github.io/entries-api/",
     "source": "https://github.com/wicg/entries-api/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/entries-api/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "entries-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/event-timing/": {
     "shortName": "event-timing",
     "url": "https://wicg.github.io/event-timing/",
     "source": "https://github.com/wicg/event-timing/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/event-timing/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "event-timing",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/geolocation-sensor/": {
     "shortName": "geolocation-sensor",
     "url": "https://wicg.github.io/geolocation-sensor/",
     "source": "https://github.com/wicg/geolocation-sensor/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/wicg/geolocation-sensor/master/index.html"
+    "github": {
+      "owner": "wicg",
+      "repo": "geolocation-sensor",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://wicg.github.io/InputDeviceCapabilities/": {
     "shortName": "InputDeviceCapabilities",
     "url": "https://wicg.github.io/InputDeviceCapabilities/",
     "source": "https://github.com/wicg/InputDeviceCapabilities/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/wicg/InputDeviceCapabilities/gh-pages/index.html"
+    "github": {
+      "owner": "wicg",
+      "repo": "InputDeviceCapabilities",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://wicg.github.io/keyboard-lock/": {
     "shortName": "keyboard-lock",
     "url": "https://wicg.github.io/keyboard-lock/",
     "source": "https://github.com/wicg/keyboard-lock/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/keyboard-lock/gh-pages/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "keyboard-lock",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/keyboard-map/": {
     "shortName": "keyboard-map",
     "url": "https://wicg.github.io/keyboard-map/",
     "source": "https://github.com/wicg/keyboard-map/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/keyboard-map/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "keyboard-map",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/largest-contentful-paint/": {
     "shortName": "largest-contentful-paint",
     "url": "https://wicg.github.io/largest-contentful-paint/",
     "source": "https://github.com/wicg/largest-contentful-paint/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/largest-contentful-paint/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "largest-contentful-paint",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/layout-instability/": {
     "shortName": "layout-instability",
     "url": "https://wicg.github.io/layout-instability/",
     "source": "https://github.com/wicg/layout-instability/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/layout-instability/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "layout-instability",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://wicg.github.io/netinfo/": {
     "shortName": "netinfo",
     "url": "https://wicg.github.io/netinfo/",
     "source": "https://github.com/wicg/netinfo/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/wicg/netinfo/gh-pages/index.html"
+    "github": {
+      "owner": "wicg",
+      "repo": "netinfo",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://drafts.csswg.org/resize-observer/": {
     "shortName": "resize-observer-1",
     "url": "https://drafts.csswg.org/resize-observer/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/resize-observer-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "resize-observer-1/Overview.bs"
+    }
   },
   "https://wicg.github.io/scroll-animations/": {
     "shortName": "scroll-animations",
     "url": "https://wicg.github.io/scroll-animations/",
     "source": "https://github.com/wicg/scroll-animations/blob/master/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/scroll-animations/master/Overview.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "scroll-animations",
+      "branch": "master",
+      "path": "Overview.bs"
+    }
   },
   "https://wicg.github.io/shape-detection-api/": {
     "shortName": "shape-detection-api",
     "url": "https://wicg.github.io/shape-detection-api/",
     "source": "https://github.com/wicg/shape-detection-api/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/shape-detection-api/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "shape-detection-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://w3c.github.io/web-share/": {
     "shortName": "web-share",
     "url": "https://w3c.github.io/web-share/",
     "source": "https://github.com/w3c/web-share/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/web-share/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "web-share",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://wicg.github.io/webusb/": {
     "shortName": "webusb",
     "url": "https://wicg.github.io/webusb/",
     "source": "https://github.com/wicg/webusb/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/wicg/webusb/master/index.bs"
+    "github": {
+      "owner": "wicg",
+      "repo": "webusb",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.khronos.org/registry/webgl/specs/latest/1.0/": {
     "shortName": "webgl",
     "url": "https://www.khronos.org/registry/webgl/specs/latest/1.0/",
     "source": "https://github.com/KhronosGroup/webgl/blob/master/specs/latest/1.0/index.html",
-    "rawSource": "https://raw.githubusercontent.com/KhronosGroup/webgl/master/specs/latest/1.0/index.html"
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "webgl",
+      "branch": "master",
+      "path": "specs/latest/1.0/index.html"
+    }
   },
   "https://www.khronos.org/registry/webgl/specs/latest/2.0/": {
     "shortName": "webgl",
     "url": "https://www.khronos.org/registry/webgl/specs/latest/2.0/",
     "source": "https://github.com/KhronosGroup/webgl/blob/master/specs/latest/2.0/index.html",
-    "rawSource": "https://raw.githubusercontent.com/KhronosGroup/webgl/master/specs/latest/2.0/index.html"
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "webgl",
+      "branch": "master",
+      "path": "specs/latest/2.0/index.html"
+    }
   },
   "https://www.w3.org/TR/accelerometer/": {
     "shortName": "accelerometer",
     "url": "https://w3c.github.io/accelerometer/",
     "source": "https://github.com/w3c/accelerometer/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/accelerometer/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "accelerometer",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/ambient-light/": {
     "shortName": "ambient-light",
     "url": "https://w3c.github.io/ambient-light/",
     "source": "https://github.com/w3c/ambient-light/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/ambient-light/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "ambient-light",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/appmanifest/": {
     "shortName": "appmanifest",
     "url": "https://w3c.github.io/manifest/",
     "source": "https://github.com/w3c/manifest/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/manifest/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "manifest",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/audio-output/": {
     "shortName": "audio-output",
     "url": "https://w3c.github.io/mediacapture-output/",
     "source": "https://github.com/w3c/mediacapture-output/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-output/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-output",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/battery-status/": {
     "shortName": "battery-status",
     "url": "https://w3c.github.io/battery/",
     "source": "https://github.com/w3c/battery/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/battery/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "battery",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/beacon/": {
     "shortName": "beacon",
     "url": "https://w3c.github.io/beacon/",
     "source": "https://github.com/w3c/beacon/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/beacon/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "beacon",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/clipboard-apis/": {
     "shortName": "clipboard-apis",
     "url": "https://w3c.github.io/clipboard-apis/",
     "source": "https://github.com/w3c/clipboard-apis/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/clipboard-apis/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "clipboard-apis",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/credential-management-1/": {
     "shortName": "credential-management-1",
     "url": "https://w3c.github.io/webappsec-credential-management/",
     "source": "https://github.com/w3c/webappsec-credential-management/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-credential-management/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-credential-management",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://www.w3.org/TR/csp-embedded-enforcement/": {
     "shortName": "csp-embedded-enforcement",
     "url": "https://w3c.github.io/webappsec-cspee/",
     "source": "https://github.com/w3c/webappsec-cspee/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-cspee/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-cspee",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://www.w3.org/TR/CSP3/": {
     "shortName": "CSP3",
     "url": "https://w3c.github.io/webappsec-csp/",
     "source": "https://github.com/w3c/webappsec-csp/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-csp/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-csp",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://www.w3.org/TR/css-animations-1/": {
     "shortName": "css-animations-1",
     "url": "https://drafts.csswg.org/css-animations/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-animations-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-animations-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-animations-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-counter-styles-3/": {
     "shortName": "css-counter-styles-3",
     "url": "https://drafts.csswg.org/css-counter-styles/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-counter-styles-3/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-counter-styles-3/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-counter-styles-3/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-device-adapt-1/": {
     "shortName": "css-device-adapt-1",
     "url": "https://drafts.csswg.org/css-device-adapt/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-device-adapt-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-device-adapt-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-device-adapt-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-font-loading-3/": {
     "shortName": "css-font-loading-3",
     "url": "https://drafts.csswg.org/css-font-loading/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-font-loading-3/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-font-loading-3/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-font-loading-3/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-fonts-4/": {
     "shortName": "css-fonts-4",
     "url": "https://drafts.csswg.org/css-fonts-4/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-fonts-4/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-fonts-4/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-fonts-4/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-images-4/": {
     "shortName": "css-images-4",
     "url": "https://drafts.csswg.org/css-images-4/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-images-4/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-images-4/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-images-4/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-layout-api-1/": {
     "shortName": "css-layout-api-1",
     "url": "https://drafts.css-houdini.org/css-layout-api-1/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/css-layout-api/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/css-layout-api/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "css-layout-api/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-masking-1/": {
     "shortName": "css-masking-1",
     "url": "https://drafts.fxtf.org/css-masking-1/",
     "source": "https://github.com/w3c/fxtf-drafts/blob/master/css-masking-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/fxtf-drafts/master/css-masking-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "fxtf-drafts",
+      "branch": "master",
+      "path": "css-masking-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-paint-api-1/": {
     "shortName": "css-paint-api-1",
     "url": "https://drafts.css-houdini.org/css-paint-api-1/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/css-paint-api/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/css-paint-api/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "css-paint-api/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-properties-values-api-1/": {
     "shortName": "css-properties-values-api-1",
     "url": "https://drafts.css-houdini.org/css-properties-values-api-1/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/css-properties-values-api/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/css-properties-values-api/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "css-properties-values-api/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-pseudo-4/": {
     "shortName": "css-pseudo-4",
     "url": "https://drafts.csswg.org/css-pseudo-4/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-pseudo-4/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-pseudo-4/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-pseudo-4/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-regions-1/": {
     "shortName": "css-regions-1",
     "url": "https://drafts.csswg.org/css-regions/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-regions-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-regions-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-regions-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-transitions-1/": {
     "shortName": "css-transitions-1",
     "url": "https://drafts.csswg.org/css-transitions/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-transitions-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-transitions-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-transitions-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css-typed-om-1/": {
     "shortName": "css-typed-om-1",
     "url": "https://drafts.css-houdini.org/css-typed-om-1/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/css-typed-om/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/css-typed-om/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "css-typed-om/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/css3-conditional/": {
     "shortName": "css3-conditional",
     "url": "https://drafts.csswg.org/css-conditional-3/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/css-conditional-3/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/css-conditional-3/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-conditional-3/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/cssom-1/": {
     "shortName": "cssom-1",
     "url": "https://drafts.csswg.org/cssom/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/cssom-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/cssom-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "cssom-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/cssom-view-1/": {
     "shortName": "cssom-view-1",
     "url": "https://drafts.csswg.org/cssom-view/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/cssom-view-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/cssom-view-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "cssom-view-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/DOM-Parsing/": {
     "shortName": "DOM-Parsing",
     "url": "https://w3c.github.io/DOM-Parsing/",
     "source": "https://github.com/w3c/DOM-Parsing/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/DOM-Parsing/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "DOM-Parsing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/encoding/": {
     "shortName": "encoding",
     "url": "https://encoding.spec.whatwg.org/",
     "source": "https://github.com/whatwg/encoding/blob/master/encoding.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/encoding/master/encoding.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "encoding",
+      "branch": "master",
+      "path": "encoding.bs"
+    }
   },
   "https://www.w3.org/TR/encrypted-media/": {
     "shortName": "encrypted-media",
     "url": "https://w3c.github.io/encrypted-media/",
     "source": "https://github.com/w3c/encrypted-media/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/encrypted-media/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "encrypted-media",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/FileAPI/": {
     "shortName": "FileAPI",
     "url": "https://w3c.github.io/FileAPI/",
     "source": "https://github.com/w3c/FileAPI/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/FileAPI/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "FileAPI",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/filter-effects-1/": {
     "shortName": "filter-effects-1",
     "url": "https://drafts.fxtf.org/filter-effects-1/",
     "source": "https://github.com/w3c/fxtf-drafts/blob/master/filter-effects/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/fxtf-drafts/master/filter-effects/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "fxtf-drafts",
+      "branch": "master",
+      "path": "filter-effects/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/gamepad/": {
     "shortName": "gamepad",
     "url": "https://w3c.github.io/gamepad/",
     "source": "https://github.com/w3c/gamepad/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/gamepad/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "gamepad",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/generic-sensor/": {
     "shortName": "generic-sensor",
     "url": "https://w3c.github.io/sensors/",
     "source": "https://github.com/w3c/sensors/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/sensors/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "sensors",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/geolocation-API/": {
     "shortName": "geolocation-API",
     "url": "https://w3c.github.io/geolocation-api/",
     "source": "https://github.com/w3c/geolocation-api/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/geolocation-api/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "geolocation-api",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/geometry-1/": {
     "shortName": "geometry-1",
     "url": "https://drafts.fxtf.org/geometry/",
     "source": "https://github.com/w3c/fxtf-drafts/blob/master/geometry/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/fxtf-drafts/master/geometry/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "fxtf-drafts",
+      "branch": "master",
+      "path": "geometry/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/gyroscope/": {
     "shortName": "gyroscope",
     "url": "https://w3c.github.io/gyroscope/",
     "source": "https://github.com/w3c/gyroscope/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/gyroscope/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "gyroscope",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/hr-time-3/": {
     "shortName": "hr-time-3",
     "url": "https://w3c.github.io/hr-time/",
     "source": "https://github.com/w3c/hr-time/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/hr-time/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "hr-time",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/html-media-capture/": {
     "shortName": "html-media-capture",
     "url": "https://w3c.github.io/html-media-capture/",
     "source": "https://github.com/w3c/html-media-capture/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/html-media-capture/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "html-media-capture",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/image-capture/": {
     "shortName": "image-capture",
     "url": "https://w3c.github.io/mediacapture-image/",
     "source": "https://github.com/w3c/mediacapture-image/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-image/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-image",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/IndexedDB-2/": {
     "shortName": "IndexedDB-2",
     "url": "https://w3c.github.io/IndexedDB/",
     "source": "https://github.com/w3c/IndexedDB/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/IndexedDB/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "IndexedDB",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/input-events-2/": {
     "shortName": "input-events-2",
     "url": "https://w3c.github.io/input-events/",
     "source": "https://github.com/w3c/input-events/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/input-events/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "input-events",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/intersection-observer/": {
     "shortName": "intersection-observer",
     "url": "https://w3c.github.io/IntersectionObserver/",
     "source": "https://github.com/w3c/IntersectionObserver/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/IntersectionObserver/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "IntersectionObserver",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/longtasks-1/": {
     "shortName": "longtasks-1",
     "url": "https://w3c.github.io/longtasks/",
     "source": "https://github.com/w3c/longtasks/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/longtasks/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "longtasks",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/magnetometer/": {
     "shortName": "magnetometer",
     "url": "https://w3c.github.io/magnetometer/",
     "source": "https://github.com/w3c/magnetometer/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/magnetometer/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "magnetometer",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/media-source/": {
     "shortName": "media-source",
     "url": "https://w3c.github.io/media-source/",
     "source": "https://github.com/w3c/media-source/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/media-source/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "media-source",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/mediacapture-depth/": {
     "shortName": "mediacapture-depth",
     "url": "https://w3c.github.io/mediacapture-depth/",
     "source": "https://github.com/w3c/mediacapture-depth/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-depth/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-depth",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/mediacapture-fromelement/": {
     "shortName": "mediacapture-fromelement",
     "url": "https://w3c.github.io/mediacapture-fromelement/",
     "source": "https://github.com/w3c/mediacapture-fromelement/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-fromelement/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-fromelement",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/mediacapture-streams/": {
     "shortName": "mediacapture-streams",
     "url": "https://w3c.github.io/mediacapture-main/",
     "source": "https://github.com/w3c/mediacapture-main/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-main/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-main",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/mediastream-recording/": {
     "shortName": "mediastream-recording",
     "url": "https://w3c.github.io/mediacapture-record/",
     "source": "https://github.com/w3c/mediacapture-record/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-record/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-record",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/mst-content-hint/": {
     "shortName": "mst-content-hint",
     "url": "https://w3c.github.io/mst-content-hint/",
     "source": "https://github.com/w3c/mst-content-hint/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mst-content-hint/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mst-content-hint",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/navigation-timing-2/": {
     "shortName": "navigation-timing-2",
     "url": "https://w3c.github.io/navigation-timing/",
     "source": "https://github.com/w3c/navigation-timing/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/navigation-timing/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "navigation-timing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/orientation-event/": {
     "shortName": "orientation-event",
     "url": "https://w3c.github.io/deviceorientation/",
     "source": "https://github.com/w3c/deviceorientation/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/deviceorientation/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "deviceorientation",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/orientation-sensor/": {
     "shortName": "orientation-sensor",
     "url": "https://w3c.github.io/orientation-sensor/",
     "source": "https://github.com/w3c/orientation-sensor/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/orientation-sensor/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "orientation-sensor",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/page-visibility-2/": {
     "shortName": "page-visibility-2",
     "url": "https://w3c.github.io/page-visibility/",
     "source": "https://github.com/w3c/page-visibility/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/page-visibility/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "page-visibility",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/paint-timing/": {
     "shortName": "paint-timing",
     "url": "https://w3c.github.io/paint-timing/",
     "source": "https://github.com/w3c/paint-timing/blob/master/painttiming.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/paint-timing/master/painttiming.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "paint-timing",
+      "branch": "master",
+      "path": "painttiming.bs"
+    }
   },
   "https://www.w3.org/TR/payment-handler/": {
     "shortName": "payment-handler",
     "url": "https://w3c.github.io/payment-handler/",
     "source": "https://github.com/w3c/payment-handler/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/payment-handler/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "payment-handler",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/payment-method-basic-card/": {
     "shortName": "payment-method-basic-card",
     "url": "https://w3c.github.io/payment-method-basic-card/",
     "source": "https://github.com/w3c/payment-method-basic-card/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/payment-method-basic-card/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "payment-method-basic-card",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/payment-request/": {
     "shortName": "payment-request",
     "url": "https://w3c.github.io/payment-request/",
     "source": "https://github.com/w3c/payment-request/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/payment-request/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "payment-request",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/performance-timeline-2/": {
     "shortName": "performance-timeline-2",
     "url": "https://w3c.github.io/performance-timeline/",
     "source": "https://github.com/w3c/performance-timeline/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/performance-timeline/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "performance-timeline",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/permissions/": {
     "shortName": "permissions",
     "url": "https://w3c.github.io/permissions/",
     "source": "https://github.com/w3c/permissions/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/permissions/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "permissions",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/pointerevents2/": {
     "shortName": "pointerevents2",
     "url": "https://w3c.github.io/pointerevents/",
     "source": "https://github.com/w3c/pointerevents/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/pointerevents/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "pointerevents",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/pointerlock-2/": {
     "shortName": "pointerlock-2",
     "url": "https://w3c.github.io/pointerlock/",
     "source": "https://github.com/w3c/pointerlock/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/pointerlock/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "pointerlock",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/presentation-api/": {
     "shortName": "presentation-api",
     "url": "https://w3c.github.io/presentation-api/",
     "source": "https://github.com/w3c/presentation-api/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/presentation-api/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "presentation-api",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/proximity/": {
     "shortName": "proximity",
     "url": "https://w3c.github.io/proximity/",
     "source": "https://github.com/w3c/proximity/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/proximity/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "proximity",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/push-api/": {
     "shortName": "push-api",
     "url": "https://w3c.github.io/push-api/",
     "source": "https://github.com/w3c/push-api/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/push-api/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "push-api",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/referrer-policy/": {
     "shortName": "referrer-policy",
     "url": "https://w3c.github.io/webappsec-referrer-policy/",
     "source": "https://github.com/w3c/webappsec-referrer-policy/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-referrer-policy/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-referrer-policy",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://www.w3.org/TR/remote-playback/": {
     "shortName": "remote-playback",
     "url": "https://w3c.github.io/remote-playback/",
     "source": "https://github.com/w3c/remote-playback/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/remote-playback/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "remote-playback",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/requestidlecallback/": {
     "shortName": "requestidlecallback",
     "url": "https://w3c.github.io/requestidlecallback/",
     "source": "https://github.com/w3c/requestidlecallback/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/requestidlecallback/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "requestidlecallback",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/resource-timing-2/": {
     "shortName": "resource-timing-2",
     "url": "https://w3c.github.io/resource-timing/",
     "source": "https://github.com/w3c/resource-timing/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/resource-timing/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "resource-timing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/screen-capture/": {
     "shortName": "screen-capture",
     "url": "https://w3c.github.io/mediacapture-screen-share/",
     "source": "https://github.com/w3c/mediacapture-screen-share/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/mediacapture-screen-share/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-screen-share",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/screen-orientation/": {
     "shortName": "screen-orientation",
     "url": "https://w3c.github.io/screen-orientation/",
     "source": "https://github.com/w3c/screen-orientation/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/screen-orientation/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "screen-orientation",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/secure-contexts/": {
     "shortName": "secure-contexts",
     "url": "https://w3c.github.io/webappsec-secure-contexts/",
     "source": "https://github.com/w3c/webappsec-secure-contexts/blob/master/index.src.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-secure-contexts/master/index.src.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-secure-contexts",
+      "branch": "master",
+      "path": "index.src.html"
+    }
   },
   "https://www.w3.org/TR/selection-api/": {
     "shortName": "selection-api",
     "url": "https://w3c.github.io/selection-api/",
     "source": "https://github.com/w3c/selection-api/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/selection-api/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "selection-api",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/server-timing/": {
     "shortName": "server-timing",
     "url": "https://w3c.github.io/server-timing/",
     "source": "https://github.com/w3c/server-timing/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/server-timing/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "server-timing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/SRI/": {
     "shortName": "SRI",
     "url": "https://w3c.github.io/webappsec-subresource-integrity/",
     "source": "https://github.com/w3c/webappsec-subresource-integrity/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webappsec-subresource-integrity/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-subresource-integrity",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/SVG2/": {
     "shortName": "SVG2",
     "url": "https://svgwg.org/svg2-draft/",
     "source": null,
-    "rawSource": null
+    "github": null
   },
   "https://www.w3.org/TR/touch-events/": {
     "shortName": "touch-events",
     "url": "https://w3c.github.io/touch-events/",
     "source": "https://github.com/w3c/touch-events/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/touch-events/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "touch-events",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/uievents/": {
     "shortName": "uievents",
     "url": "https://w3c.github.io/uievents/",
     "source": "https://github.com/w3c/uievents/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/uievents/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "uievents",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/user-timing-2/": {
     "shortName": "user-timing-2",
     "url": "https://w3c.github.io/user-timing/",
     "source": "https://github.com/w3c/user-timing/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/user-timing/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "user-timing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/vibration/": {
     "shortName": "vibration",
     "url": "https://w3c.github.io/vibration/",
     "source": "https://github.com/w3c/vibration/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/vibration/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "vibration",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/wai-aria-1.2/": {
     "shortName": "wai-aria-1.2",
     "url": "https://rawgit.com/w3c/aria/master/",
     "source": "https://github.com/w3c/aria/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/aria/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "aria",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/wake-lock/": {
     "shortName": "wake-lock",
     "url": "https://w3c.github.io/wake-lock/",
     "source": "https://github.com/w3c/wake-lock/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/wake-lock/gh-pages/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "wake-lock",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/wasm-js-api-1/": {
     "shortName": "wasm-js-api-1",
     "url": "https://webassembly.github.io/spec/js-api/",
     "source": "https://github.com/webassembly/spec/blob/gh-pages/js-api/index.html",
-    "rawSource": "https://raw.githubusercontent.com/webassembly/spec/gh-pages/js-api/index.html"
+    "github": {
+      "owner": "webassembly",
+      "repo": "spec",
+      "branch": "gh-pages",
+      "path": "js-api/index.html"
+    }
   },
   "https://www.w3.org/TR/wasm-web-api-1/": {
     "shortName": "wasm-web-api-1",
     "url": "https://webassembly.github.io/spec/web-api/",
     "source": "https://github.com/webassembly/spec/blob/gh-pages/web-api/index.html",
-    "rawSource": "https://raw.githubusercontent.com/webassembly/spec/gh-pages/web-api/index.html"
+    "github": {
+      "owner": "webassembly",
+      "repo": "spec",
+      "branch": "gh-pages",
+      "path": "web-api/index.html"
+    }
   },
   "https://www.w3.org/TR/web-animations-1/": {
     "shortName": "web-animations-1",
     "url": "https://drafts.csswg.org/web-animations-1/",
     "source": "https://github.com/w3c/csswg-drafts/blob/master/web-animations-1/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/csswg-drafts/master/web-animations-1/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "web-animations-1/Overview.bs"
+    }
   },
   "https://www.w3.org/TR/webaudio/": {
     "shortName": "webaudio",
     "url": "https://webaudio.github.io/web-audio-api/",
     "source": "https://github.com/webaudio/web-audio-api/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/webaudio/web-audio-api/master/index.bs"
+    "github": {
+      "owner": "webaudio",
+      "repo": "web-audio-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/webauthn-1/": {
     "shortName": "webauthn-1",
     "url": "https://w3c.github.io/webauthn/",
     "source": "https://github.com/w3c/webauthn/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webauthn/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "webauthn",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/WebCryptoAPI/": {
     "shortName": "WebCryptoAPI",
     "url": "https://w3c.github.io/webcrypto/Overview.html",
     "source": "https://github.com/w3c/webcrypto/blob/gh-pages/Overview.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webcrypto/gh-pages/Overview.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webcrypto",
+      "branch": "gh-pages",
+      "path": "Overview.html"
+    }
   },
   "https://www.w3.org/TR/webdriver1/": {
     "shortName": "webdriver1",
     "url": "https://w3c.github.io/webdriver/",
     "source": "https://github.com/w3c/webdriver/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webdriver/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webdriver",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/WebIDL-1/": {
     "shortName": "WebIDL-1",
     "url": "https://heycam.github.io/webidl/",
     "source": "https://github.com/heycam/webidl/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/heycam/webidl/master/index.bs"
+    "github": {
+      "owner": "heycam",
+      "repo": "webidl",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/webmidi/": {
     "shortName": "webmidi",
     "url": "http://webaudio.github.io/web-midi-api/",
     "source": "https://github.com/webaudio/web-midi-api/blob/gh-pages/index.html",
-    "rawSource": "https://raw.githubusercontent.com/webaudio/web-midi-api/gh-pages/index.html"
+    "github": {
+      "owner": "webaudio",
+      "repo": "web-midi-api",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/webrtc-dscp/": {
     "shortName": "webrtc-dscp",
     "url": "https://w3c.github.io/webrtc-dscp-exp/",
     "source": "https://github.com/w3c/webrtc-dscp-exp/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webrtc-dscp-exp/master/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-dscp-exp",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/webrtc-stats/": {
     "shortName": "webrtc-stats",
     "url": "https://w3c.github.io/webrtc-stats/",
     "source": "https://github.com/w3c/webrtc-stats/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webrtc-stats/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-stats",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/webrtc/": {
     "shortName": "webrtc",
     "url": "https://w3c.github.io/webrtc-pc/",
     "source": "https://github.com/w3c/webrtc-pc/blob/master/index.html",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webrtc-pc/master/index.html"
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-pc",
+      "branch": "master",
+      "path": "index.html"
+    }
   },
   "https://www.w3.org/TR/webvtt1/": {
     "shortName": "webvtt1",
     "url": "https://w3c.github.io/webvtt/",
     "source": "https://github.com/w3c/webvtt/blob/master/webvtt.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/webvtt/master/webvtt.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "webvtt",
+      "branch": "master",
+      "path": "webvtt.bs"
+    }
   },
   "https://www.w3.org/TR/webxr/": {
     "shortName": "webxr",
     "url": "https://immersive-web.github.io/webxr/",
     "source": "https://github.com/immersive-web/webxr/blob/master/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/immersive-web/webxr/master/index.bs"
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr",
+      "branch": "master",
+      "path": "index.bs"
+    }
   },
   "https://www.w3.org/TR/worklets-1/": {
     "shortName": "worklets-1",
     "url": "https://drafts.css-houdini.org/worklets/",
     "source": "https://github.com/w3c/css-houdini-drafts/blob/master/worklets/Overview.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/css-houdini-drafts/master/worklets/Overview.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "worklets/Overview.bs"
+    }
   },
   "https://xhr.spec.whatwg.org/": {
     "shortName": "xhr",
     "url": "https://xhr.spec.whatwg.org/",
     "source": "https://github.com/whatwg/xhr/blob/master/xhr.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/xhr/master/xhr.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "xhr",
+      "branch": "master",
+      "path": "xhr.bs"
+    }
   },
   "https://dom.spec.whatwg.org/": {
     "shortName": "dom",
     "url": "https://dom.spec.whatwg.org/",
     "source": "https://github.com/whatwg/dom/blob/master/dom.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/dom/master/dom.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "dom",
+      "branch": "master",
+      "path": "dom.bs"
+    }
   },
   "https://html.spec.whatwg.org/": {
     "shortName": "html",
     "url": "https://html.spec.whatwg.org/",
     "source": "https://github.com/whatwg/html/blob/master/source",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/html/master/source"
+    "github": {
+      "owner": "whatwg",
+      "repo": "html",
+      "branch": "master",
+      "path": "source"
+    }
   },
   "https://notifications.spec.whatwg.org/": {
     "shortName": "notifications",
     "url": "https://notifications.spec.whatwg.org/",
     "source": "https://github.com/whatwg/notifications/blob/master/notifications.bs",
-    "rawSource": "https://raw.githubusercontent.com/whatwg/notifications/master/notifications.bs"
+    "github": {
+      "owner": "whatwg",
+      "repo": "notifications",
+      "branch": "master",
+      "path": "notifications.bs"
+    }
   },
   "https://w3c.github.io/ServiceWorker/": {
     "shortName": "ServiceWorker",
     "url": "https://w3c.github.io/ServiceWorker/",
     "source": "https://github.com/w3c/ServiceWorker/blob/gh-pages/index.bs",
-    "rawSource": "https://raw.githubusercontent.com/w3c/ServiceWorker/gh-pages/index.bs"
+    "github": {
+      "owner": "w3c",
+      "repo": "ServiceWorker",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
   }
 }
