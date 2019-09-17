@@ -108,7 +108,7 @@ function indent(str, by, chr) {
           previousSibling.textContent.match(/[ \t]*$/)[0]
           : ""
         const reformed =
-          indent(rewritten, indentSize, tabOrSpace)
+          indent(rewritten.replace(/>/g, "&gt;").replace(/</g, "&lt;"), indentSize, tabOrSpace)
           + "\n" + blockIndentation;
         if (localName === "pre") {
           diffs.push([innerHTML, reformed]);
