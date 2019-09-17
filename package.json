@@ -6,15 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "crawl-raw-source": "node src/crawl-raw-source.js",
-    "rewrite": "node src/rewrite.js"
+    "rewrite": "node src/rewrite.js",
+    "create-pullrequest": "node src/github-pullrequest.js"
   },
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
+    "@octokit/rest": "^16.28.9",
     "esm": "^3.2.25",
     "jsdom": "^15.1.1",
     "node-fetch": "^2.6.0",
     "reffy": "github:saschanaz/reffy#each-autofix",
-    "webidl2": "^23.8.1"
+    "webidl2": "^23.8.2"
   }
 }
