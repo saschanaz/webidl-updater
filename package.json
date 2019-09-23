@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^16.28.9",
+    "diff": "^4.0.1",
     "esm": "^3.2.25",
     "jsdom": "^15.1.1",
     "node-fetch": "^2.6.0",

@@ -1,5 +1,6 @@
 const fs = require("fs").promises;
 const webidl2 = require("webidl2");
+const diff = require("diff");
 const { JSDOM } = require("jsdom");
 const { fetchText } = require("./utils.js");
 const { similarReplace } = require("./similar-replace.js");
@@ -77,6 +78,7 @@ function indent(str, by, chr) {
   for (const file of await fs.readdir("rewritten")) {
     await fs.unlink(`rewritten/${file}`);
   }
+  const enableDiff = process.argv.includes("--diff");
 
   const specSourceList = mapToArray(specRawSources);
 
@@ -124,12 +126,17 @@ function indent(str, by, chr) {
       }
       rewrittenSpecs.push({
         title: targetSpecItem.shortName || targetSpecItem.doc.title,
-        html: text
+        html: text,
+        original: targetSpecItem.text
       })
     }
   }
   for (const spec of rewrittenSpecs) {
     await fs.writeFile(`rewritten/${spec.title}`, spec.html);
+    if (enableDiff) {
+      const diffText = diff.createPatch(spec.title, spec.original, spec.html);
+      await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
+    }
   }
 })().catch(e => {
   process.on("exit", () => {
