@@ -16,9 +16,9 @@ function btoa(str) {
 // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
 
 /**
- * This whatever function:
+ * This function:
  * - creates a local clone of the target spec
- * - creates a branch based on the main branch
+ * - creates a branch based on the target branch
  * - applies our autofixed source
  * - pushes it to the bot account
  * - and opens a pull request
@@ -63,9 +63,9 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const head = `heads/${forkBranch}`
   const ref = `refs/${head}`;
 
-  let refInfo;
+  let refInfoResponse;
   try {
-    refInfo = await octokit.git.getRef({
+    refInfoResponse = await octokit.git.getRef({
       owner: forkOwner,
       repo,
       ref: head
@@ -80,7 +80,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const latestCommitSha = baseCommitResponse.data.sha;
   const forkHead = `${forkOwner}:${forkBranch}`;
 
-  if (!refInfo) {
+  if (!refInfoResponse) {
     await octokit.git.createRef({
       owner: forkOwner,
       repo,
