@@ -8,10 +8,6 @@ const octokit = new Octokit({
   // ?? authentication, based on config.json
 });
 
-function atob(str) {
-  return Buffer.from(str, 'base64').toString();
-}
-
 function btoa(str) {
   return Buffer.from(str).toString('base64');
 }
@@ -100,14 +96,16 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     ref
   });
 
-  if (atob(fileResponse.data.content) !== updated) {
+  const content = btoa(updated);
+
+  if (fileResponse.data.content.split(/\s/g).join("") !== content) {
     await octokit.repos.createOrUpdateFile({
       owner: forkOwner,
       repo,
       branch: forkBranch,
       path,
       message,
-      content: btoa(updated),
+      content,
       sha: fileResponse.data.sha
     });
   }
