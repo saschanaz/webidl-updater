@@ -222,12 +222,12 @@
   "https://wicg.github.io/BackgroundSync/spec/": {
     "shortName": "BackgroundSync-spec-index",
     "url": "https://wicg.github.io/BackgroundSync/spec/",
-    "source": "https://github.com/wicg/BackgroundSync/blob/master/spec/index.html",
+    "source": "https://github.com/wicg/BackgroundSync/blob/master/spec/index.bs",
     "github": {
       "owner": "wicg",
       "repo": "BackgroundSync",
       "branch": "master",
-      "path": "spec/index.html"
+      "path": "spec/index.bs"
     }
   },
   "https://wicg.github.io/cookie-store/": {

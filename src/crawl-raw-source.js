@@ -189,11 +189,22 @@ async function guessForGeneralGitHubSpecs(url) {
   const masterBranch = `${repoUrl}/master/`;
   const ghPagesBranch = `${repoUrl}/gh-pages/`;
   if (path) {
-    const filePath = path.endsWith("/") ? path + "index.html" : path;
+    const shortNameWithPath = `${shortName}-${path.replace(/\//g, "-",).replace(".html", "")}`;
+
+    if (path.endsWith("/")) {
+      return {
+        shortName: shortNameWithPath + "index",
+        url: await checkIfExists(masterBranch + path + "index.bs") ||
+          await checkIfExists(masterBranch + path + "index.html") ||
+          await checkIfExists(ghPagesBranch + path + "index.bs") ||
+          await checkIfExists(ghPagesBranch + path + "index.html")
+      };
+    }
+
     return {
-      shortName: `${shortName}-${filePath.replace(/\//g, "-",).replace(".html", "")}`,
-      url: await checkIfExists(masterBranch + filePath) ||
-        await checkIfExists(ghPagesBranch + filePath)
+      shortName: shortNameWithPath,
+      url: await checkIfExists(masterBranch + path) ||
+        await checkIfExists(ghPagesBranch + path)
     };
   }
 
