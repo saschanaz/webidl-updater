@@ -73,13 +73,12 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   } catch {};
 
   if (!refInfo) {
-    const listResponse = await octokit.repos.listCommits({
+    const baseCommitResponse = await octokit.repos.getCommit({
       owner,
       repo,
-      sha: branch,
-      per_page: 1
+      ref: `refs/heads/${branch}`
     });
-    const latestCommitSha = listResponse.data[0].sha;
+    const latestCommitSha = baseCommitResponse.data.sha;
 
     await octokit.git.createRef({
       owner: forkOwner,
