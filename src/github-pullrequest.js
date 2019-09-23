@@ -58,27 +58,36 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   }
 
   const forkOwner = "autokagami";
-  const repoResponse = await octokit.repos.get({ owner: forkOwner, repo });
 
-  const base = repoResponse.data.default_branch;
+  const forkBranch = shortName;
+  const head = `heads/${forkBranch}`
+  const ref = `refs/${head}`;
 
-  const listResponse = await octokit.repos.listCommits({
-    owner,
-    repo,
-    sha: base,
-    per_page: 1
-  });
-  let latestCommitSha = listResponse.data[0].sha;
+  let refInfo;
+  try {
+    refInfo = await octokit.git.getRef({
+      owner: forkOwner,
+      repo,
+      ref: head
+    });
+  } catch {};
 
-  const head = `${branch}-${path}`;
-  const ref = `refs/heads/${head}`;
+  if (!refInfo) {
+    const listResponse = await octokit.repos.listCommits({
+      owner,
+      repo,
+      sha: branch,
+      per_page: 1
+    });
+    const latestCommitSha = listResponse.data[0].sha;
 
-  await octokit.git.createRef({
-    owner: forkOwner,
-    repo,
-    sha: latestCommitSha,
-    ref
-  });
+    await octokit.git.createRef({
+      owner: forkOwner,
+      repo,
+      sha: latestCommitSha,
+      ref
+    });
+  }
 
   const fileResponse = await octokit.repos.getContents({
     owner: forkOwner,
@@ -90,7 +99,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   await octokit.repos.createOrUpdateFile({
     owner: forkOwner,
     repo,
-    branch: head,
+    branch: forkBranch,
     path,
     message,
     content: btoa(updated),
@@ -100,8 +109,8 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   await octokit.pulls.create({
     owner,
     repo,
-    head: `${forkOwner}:${head}`,
-    base,
+    head: `${forkOwner}:${forkBranch}`,
+    base: branch,
     title: message,
     body
   });
