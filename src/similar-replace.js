@@ -11,8 +11,6 @@ const similarDict = {
  * @param {string} target
  */
 function similarSearch(input, target) {
-  const similarMatches = {};
-
   function similarMatch(index) {
     const initialPosition = index;
     for (let i = 0; i < target.length; index++, i++) {
@@ -26,7 +24,6 @@ function similarSearch(input, target) {
               i += key.length - 1;
               index += value.length - 1;
               matched = true;
-              similarMatches[key] = value;
               break;
             }
           }
@@ -55,8 +52,7 @@ function similarSearch(input, target) {
     if (matchedLength) {
       return {
         index,
-        length: matchedLength,
-        similarMatches
+        length: matchedLength
       };
     };
   }
@@ -71,14 +67,12 @@ function stringSplice(input, index, length, dest) {
 /**
  * @param {string} input
  * @param {string} orig
- * @param {string} dest
+ * @param {(match: string) => string} replacer
  */
-function similarReplace(input, orig, dest) {
+function similarReplace(input, orig, replacer) {
   const match = similarSearch(input, orig);
   if (match) {
-    for (const [key, value] of Object.entries(match.similarMatches)) {
-      dest = dest.replace(new RegExp(value, "g"), key);
-    }
+    const dest = replacer(input.slice(match.index, match.index + match.length));
     return stringSplice(input, match.index, match.length, dest);
   } else {
     debugger;

@@ -71,6 +71,20 @@ function indent(str, by, chr) {
   return lines.map(line => line.trim() ? prefix + line : line).join("\n");
 }
 
+/**
+ * @param {string} detector if this escapes, then escape the target in the same way
+ * @param {string} target string to escape
+ */
+function conditionalBracketEscape(detector, target) {
+  if (detector.includes("&lt;")) {
+    target = target.replace(/</g, "&lt;");
+  }
+  if (detector.includes("&gt;")) {
+    target = target.replace(/>/g, "&gt;");
+  }
+  return target;
+}
+
 (async () => {
   try {
     await fs.mkdir("rewritten");
@@ -110,7 +124,7 @@ function indent(str, by, chr) {
           previousSibling.textContent.match(/[ \t]*$/)[0]
           : ""
         const reformed =
-          indent(rewritten.replace(/>/g, "&gt;").replace(/</g, "&lt;"), indentSize, tabOrSpace)
+          indent(rewritten, indentSize, tabOrSpace)
           + "\n" + blockIndentation;
         if (localName === "pre") {
           diffs.push([innerHTML, reformed]);
@@ -122,7 +136,9 @@ function indent(str, by, chr) {
     if (diffs.length) {
       let { text } = targetSpecItem;
       for (const diff of diffs) {
-        text = similarReplace(text, diff[0], diff[1]);
+        text = similarReplace(text, diff[0], match => {
+          return conditionalBracketEscape(match, diff[1]);
+        });
       }
       rewrittenSpecs.push({
         title: targetSpecItem.shortName || targetSpecItem.doc.title,
