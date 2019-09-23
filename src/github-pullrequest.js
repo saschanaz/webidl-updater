@@ -72,20 +72,38 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     });
   } catch {};
 
-  if (!refInfo) {
-    const baseCommitResponse = await octokit.repos.getCommit({
-      owner,
-      repo,
-      ref: `refs/heads/${branch}`
-    });
-    const latestCommitSha = baseCommitResponse.data.sha;
+  const baseCommitResponse = await octokit.repos.getCommit({
+    owner,
+    repo,
+    ref: `refs/heads/${branch}`
+  });
+  const latestCommitSha = baseCommitResponse.data.sha;
+  const forkHead = `${forkOwner}:${forkBranch}`;
 
+  if (!refInfo) {
     await octokit.git.createRef({
       owner: forkOwner,
       repo,
       sha: latestCommitSha,
       ref
     });
+  } else {
+    // check if the branch is based on the latest commit
+    const compareResponse = await octokit.repos.compareCommits({
+      owner,
+      repo,
+      base: latestCommitSha,
+      head: forkHead
+    });
+    if (compareResponse.data.status === "diverged") {
+      await octokit.git.updateRef({
+        owner: forkOwner,
+        repo,
+        sha: latestCommitSha,
+        ref: head,
+        force: true
+      });
+    }
   }
 
   const fileResponse = await octokit.repos.getContents({
@@ -109,7 +127,6 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     });
   }
 
-  const forkHead = `${forkOwner}:${forkBranch}`;
   const pulls = await octokit.pulls.list({
     owner,
     repo,
