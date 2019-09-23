@@ -194,7 +194,8 @@ async function guessForGeneralGitHubSpecs(url) {
     if (path.endsWith("/")) {
       return {
         shortName: shortNameWithPath + "index",
-        url: await checkIfExists(masterBranch + path + "index.bs") ||
+        url: await checkIfExists(masterBranch + "document/" + path + "index.bs") || // WebAssembly
+          await checkIfExists(masterBranch + path + "index.bs") ||
           await checkIfExists(masterBranch + path + "index.html") ||
           await checkIfExists(ghPagesBranch + path + "index.bs") ||
           await checkIfExists(ghPagesBranch + path + "index.html")
@@ -215,8 +216,10 @@ async function guessForGeneralGitHubSpecs(url) {
     url: await checkIfExists(masterBranch + "index.bs") ||
       await checkIfExists(masterBranch + "Overview.bs") ||
       await checkIfExists(masterBranch + customName) ||
+      await checkIfExists(masterBranch + shortName + "-respec.html") || // encrypted-media
       await checkIfExists(masterBranch + "index.src.html") ||
       await checkIfExists(masterBranch + "index.html") ||
+      await checkIfExists(ghPagesBranch + shortName + "-respec.html") || // media-source
       await checkIfExists(ghPagesBranch + "index.bs") ||
       await checkIfExists(ghPagesBranch + "index.html") ||
       await checkIfExists(masterBranch + "spec/index.bs") ||

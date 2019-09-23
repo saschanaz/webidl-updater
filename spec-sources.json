@@ -772,12 +772,12 @@
   "https://www.w3.org/TR/encrypted-media/": {
     "shortName": "encrypted-media",
     "url": "https://w3c.github.io/encrypted-media/",
-    "source": "https://github.com/w3c/encrypted-media/blob/master/index.html",
+    "source": "https://github.com/w3c/encrypted-media/blob/master/encrypted-media-respec.html",
     "github": {
       "owner": "w3c",
       "repo": "encrypted-media",
       "branch": "master",
-      "path": "index.html"
+      "path": "encrypted-media-respec.html"
     }
   },
   "https://www.w3.org/TR/FileAPI/": {
@@ -948,12 +948,12 @@
   "https://www.w3.org/TR/media-source/": {
     "shortName": "media-source",
     "url": "https://w3c.github.io/media-source/",
-    "source": "https://github.com/w3c/media-source/blob/gh-pages/index.html",
+    "source": "https://github.com/w3c/media-source/blob/gh-pages/media-source-respec.html",
     "github": {
       "owner": "w3c",
       "repo": "media-source",
       "branch": "gh-pages",
-      "path": "index.html"
+      "path": "media-source-respec.html"
     }
   },
   "https://www.w3.org/TR/mediacapture-depth/": {
@@ -1361,23 +1361,23 @@
   "https://www.w3.org/TR/wasm-js-api-1/": {
     "shortName": "wasm-js-api-1",
     "url": "https://webassembly.github.io/spec/js-api/",
-    "source": "https://github.com/webassembly/spec/blob/gh-pages/js-api/index.html",
+    "source": "https://github.com/webassembly/spec/blob/master/document/js-api/index.bs",
     "github": {
       "owner": "webassembly",
       "repo": "spec",
-      "branch": "gh-pages",
-      "path": "js-api/index.html"
+      "branch": "master",
+      "path": "document/js-api/index.bs"
     }
   },
   "https://www.w3.org/TR/wasm-web-api-1/": {
     "shortName": "wasm-web-api-1",
     "url": "https://webassembly.github.io/spec/web-api/",
-    "source": "https://github.com/webassembly/spec/blob/gh-pages/web-api/index.html",
+    "source": "https://github.com/webassembly/spec/blob/master/document/web-api/index.bs",
     "github": {
       "owner": "webassembly",
       "repo": "spec",
-      "branch": "gh-pages",
-      "path": "web-api/index.html"
+      "branch": "master",
+      "path": "document/web-api/index.bs"
     }
   },
   "https://www.w3.org/TR/web-animations-1/": {
