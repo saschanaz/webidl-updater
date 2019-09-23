@@ -106,16 +106,23 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     sha: fileResponse.data.sha
   });
 
-  await octokit.pulls.create({
+  const forkHead = `${forkOwner}:${forkBranch}`;
+  const pulls = await octokit.pulls.list({
     owner,
     repo,
-    head: `${forkOwner}:${forkBranch}`,
-    base: branch,
-    title: message,
-    body
+    state: "open",
+    head: forkHead
   });
-
-  // what about deleting merged branch?
+  if (!pulls.data.length) {
+    await octokit.pulls.create({
+      owner,
+      repo,
+      head: forkHead,
+      base: branch,
+      title: message,
+      body
+    });
+  }
 }
 
 async function main() {
