@@ -127,7 +127,7 @@ function conditionalBracketEscape(detector, target) {
         const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
         const indentSize = getFirstLineIndentation(innerHTML);
         const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
-        const blockIndentation = (previousSibling && previousSibling.nodeType === 3) ?
+        const blockIndentation = previousSibling ?
           previousSibling.textContent.match(/[ \t]*$/)[0]
           : ""
         const reformed =
