@@ -145,16 +145,25 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   }
 }
 
+const incompatible = [
+  // Specs that mixes IDL and HTML elements
+  "html",
+  "webgl",
+
+  // old readonly
+  "animation-worklet"
+];
+
 async function main() {
-  for (const value of Object.values(specSources)) {
+  for (const value of Object.values(specSources).filter(value => !incompatible.includes(value.shortName))) {
     let file;
     try {
       file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
     } catch {
-      break;
+      continue;
     }
     if (!value.github) {
-      break;
+      continue;
     }
     await createPullRequest(file, value.shortName, value.github);
   }
