@@ -19,11 +19,18 @@ function getRawGit(githubInfo) {
 
 /**
  * Loading everything in once tends to break, thus do it one by one
+ * @param {*[]} specSourceList
  */
 async function extractOneByOne(specSourceList) {
   const results = [];
-  for (const { github, url, shortName } of specSourceList) {
-    const text = await fetchText(getRawGit(github) || url);
+  const fetchedList = await Promise.all(specSourceList.map(async item => {
+    const text = await fetchText(getRawGit(item.github) || item.url);
+    return {
+      shortName: item.shortName,
+      text
+    };
+  }));
+  for (const { shortName, text } of fetchedList) {
     // Passing url or html to extract() will process everything,
     // so just skip it by passing jsdom object with script disabled.
     let { window } = new JSDOM(text);
