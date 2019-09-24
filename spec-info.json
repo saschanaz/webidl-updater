@@ -12,6 +12,17 @@
     ]
   },
   {
+    "url": "https://dom.spec.whatwg.org/",
+    "versions": [
+      "https://dom.spec.whatwg.org/",
+      "https://www.w3.org/TR/dom/",
+      "https://www.w3.org/TR/dom41/",
+      "https://www.w3.org/TR/DOM-Level-3-Core/",
+      "https://www.w3.org/TR/domcore/",
+      "https://www.w3.org/TR/REC-DOM-Level-1/"
+    ]
+  },
+  {
     "url": "https://drafts.css-houdini.org/box-tree-api/",
     "versions": [
       "https://drafts.css-houdini.org/box-tree-api/"
@@ -33,6 +44,44 @@
     "url": "https://fullscreen.spec.whatwg.org/",
     "versions": [
       "https://fullscreen.spec.whatwg.org/"
+    ]
+  },
+  {
+    "url": "https://html.spec.whatwg.org/",
+    "versions": [
+      "https://html.spec.whatwg.org/",
+      "https://w3c.github.io/html/",
+      "https://www.w3.org/TR/html/",
+      "https://www.w3.org/TR/html5/",
+      "https://www.w3.org/TR/html51/",
+      "https://www.w3.org/TR/html52/",
+      "https://www.whatwg.org/specs/web-apps/current-work/multipage/",
+      "https://www.w3.org/TR/eventsource/",
+      "https://www.w3.org/TR/webmessaging/",
+      "https://www.w3.org/TR/2dcontext/",
+      "https://www.w3.org/TR/2dcontext2/",
+      "https://www.w3.org/TR/webstorage/",
+      "https://www.w3.org/TR/workers/",
+      "https://www.w3.org/TR/websockets/",
+      "https://www.w3.org/html/wg/drafts/html/master/webappapis.html"
+    ]
+  },
+  {
+    "url": "https://immersive-web.github.io/webxr-ar-module/",
+    "versions": [
+      "https://immersive-web.github.io/webxr-ar-module/"
+    ]
+  },
+  {
+    "url": "https://immersive-web.github.io/webxr-gamepads-module/",
+    "versions": [
+      "https://immersive-web.github.io/webxr-gamepads-module/"
+    ]
+  },
+  {
+    "url": "https://notifications.spec.whatwg.org/",
+    "versions": [
+      "https://notifications.spec.whatwg.org/"
     ]
   },
   {
@@ -81,6 +130,12 @@
     "url": "https://w3c.github.io/reporting/",
     "versions": [
       "https://w3c.github.io/reporting/"
+    ]
+  },
+  {
+    "url": "https://w3c.github.io/ServiceWorker/",
+    "versions": [
+      "https://w3c.github.io/ServiceWorker/"
     ]
   },
   {
@@ -298,6 +353,7 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-appmanifest-20190924/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190911/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190903/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190821/",
@@ -397,13 +453,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20160422/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160421/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160414/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160406/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190911/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190924/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -1673,6 +1728,7 @@
     "url": "https://www.w3.org/TR/payment-handler/",
     "shortname": "payment-handler",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-payment-handler-20190924/",
       "https://www.w3.org/TR/2018/WD-payment-handler-20180108/",
       "https://www.w3.org/TR/2017/WD-payment-handler-20171203/",
       "https://www.w3.org/TR/2017/WD-payment-handler-20171129/",
@@ -1698,7 +1754,7 @@
     ],
     "title": "Payment Handler API",
     "latest": "https://www.w3.org/TR/payment-handler/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-payment-handler-20180108/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-handler-20190924/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/payment-handler/"
@@ -2926,49 +2982,6 @@
     "url": "https://xhr.spec.whatwg.org/",
     "versions": [
       "https://xhr.spec.whatwg.org/"
-    ]
-  },
-  {
-    "url": "https://dom.spec.whatwg.org/",
-    "versions": [
-      "https://dom.spec.whatwg.org/",
-      "https://www.w3.org/TR/dom/",
-      "https://www.w3.org/TR/dom41/",
-      "https://www.w3.org/TR/DOM-Level-3-Core/",
-      "https://www.w3.org/TR/domcore/",
-      "https://www.w3.org/TR/REC-DOM-Level-1/"
-    ]
-  },
-  {
-    "url": "https://html.spec.whatwg.org/",
-    "versions": [
-      "https://html.spec.whatwg.org/",
-      "https://w3c.github.io/html/",
-      "https://www.w3.org/TR/html/",
-      "https://www.w3.org/TR/html5/",
-      "https://www.w3.org/TR/html51/",
-      "https://www.w3.org/TR/html52/",
-      "https://www.whatwg.org/specs/web-apps/current-work/multipage/",
-      "https://www.w3.org/TR/eventsource/",
-      "https://www.w3.org/TR/webmessaging/",
-      "https://www.w3.org/TR/2dcontext/",
-      "https://www.w3.org/TR/2dcontext2/",
-      "https://www.w3.org/TR/webstorage/",
-      "https://www.w3.org/TR/workers/",
-      "https://www.w3.org/TR/websockets/",
-      "https://www.w3.org/html/wg/drafts/html/master/webappapis.html"
-    ]
-  },
-  {
-    "url": "https://notifications.spec.whatwg.org/",
-    "versions": [
-      "https://notifications.spec.whatwg.org/"
-    ]
-  },
-  {
-    "url": "https://w3c.github.io/ServiceWorker/",
-    "versions": [
-      "https://w3c.github.io/ServiceWorker/"
     ]
   }
 ]

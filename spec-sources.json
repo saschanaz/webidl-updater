@@ -21,6 +21,17 @@
       "path": "index.bs"
     }
   },
+  "https://dom.spec.whatwg.org/": {
+    "shortName": "dom",
+    "url": "https://dom.spec.whatwg.org/",
+    "source": "https://github.com/whatwg/dom/blob/master/dom.bs",
+    "github": {
+      "owner": "whatwg",
+      "repo": "dom",
+      "branch": "master",
+      "path": "dom.bs"
+    }
+  },
   "https://drafts.css-houdini.org/box-tree-api/": {
     "shortName": "box-tree-api",
     "url": "https://drafts.css-houdini.org/box-tree-api/",
@@ -63,6 +74,50 @@
       "repo": "fullscreen",
       "branch": "master",
       "path": "fullscreen.bs"
+    }
+  },
+  "https://html.spec.whatwg.org/": {
+    "shortName": "html",
+    "url": "https://html.spec.whatwg.org/",
+    "source": "https://github.com/whatwg/html/blob/master/source",
+    "github": {
+      "owner": "whatwg",
+      "repo": "html",
+      "branch": "master",
+      "path": "source"
+    }
+  },
+  "https://immersive-web.github.io/webxr-ar-module/": {
+    "shortName": "webxr-ar-module",
+    "url": "https://immersive-web.github.io/webxr-ar-module/",
+    "source": "https://github.com/immersive-web/webxr-ar-module/blob/master/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-ar-module",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://immersive-web.github.io/webxr-gamepads-module/": {
+    "shortName": "webxr-gamepads-module",
+    "url": "https://immersive-web.github.io/webxr-gamepads-module/",
+    "source": "https://github.com/immersive-web/webxr-gamepads-module/blob/master/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-gamepads-module",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://notifications.spec.whatwg.org/": {
+    "shortName": "notifications",
+    "url": "https://notifications.spec.whatwg.org/",
+    "source": "https://github.com/whatwg/notifications/blob/master/notifications.bs",
+    "github": {
+      "owner": "whatwg",
+      "repo": "notifications",
+      "branch": "master",
+      "path": "notifications.bs"
     }
   },
   "https://storage.spec.whatwg.org/": {
@@ -151,6 +206,17 @@
       "repo": "reporting",
       "branch": "master",
       "path": "index.src.html"
+    }
+  },
+  "https://w3c.github.io/ServiceWorker/": {
+    "shortName": "ServiceWorker",
+    "url": "https://w3c.github.io/ServiceWorker/",
+    "source": "https://github.com/w3c/ServiceWorker/blob/gh-pages/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "ServiceWorker",
+      "branch": "gh-pages",
+      "path": "index.bs"
     }
   },
   "https://w3c.github.io/speech-api/": {
@@ -1532,50 +1598,6 @@
       "repo": "xhr",
       "branch": "master",
       "path": "xhr.bs"
-    }
-  },
-  "https://dom.spec.whatwg.org/": {
-    "shortName": "dom",
-    "url": "https://dom.spec.whatwg.org/",
-    "source": "https://github.com/whatwg/dom/blob/master/dom.bs",
-    "github": {
-      "owner": "whatwg",
-      "repo": "dom",
-      "branch": "master",
-      "path": "dom.bs"
-    }
-  },
-  "https://html.spec.whatwg.org/": {
-    "shortName": "html",
-    "url": "https://html.spec.whatwg.org/",
-    "source": "https://github.com/whatwg/html/blob/master/source",
-    "github": {
-      "owner": "whatwg",
-      "repo": "html",
-      "branch": "master",
-      "path": "source"
-    }
-  },
-  "https://notifications.spec.whatwg.org/": {
-    "shortName": "notifications",
-    "url": "https://notifications.spec.whatwg.org/",
-    "source": "https://github.com/whatwg/notifications/blob/master/notifications.bs",
-    "github": {
-      "owner": "whatwg",
-      "repo": "notifications",
-      "branch": "master",
-      "path": "notifications.bs"
-    }
-  },
-  "https://w3c.github.io/ServiceWorker/": {
-    "shortName": "ServiceWorker",
-    "url": "https://w3c.github.io/ServiceWorker/",
-    "source": "https://github.com/w3c/ServiceWorker/blob/gh-pages/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "ServiceWorker",
-      "branch": "gh-pages",
-      "path": "index.bs"
     }
   }
 }

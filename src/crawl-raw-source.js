@@ -12,17 +12,11 @@ const { fetchText } = require("./utils.js");
  */
 const config = require("../config.json");
 
-const specIdl = require("reffy/src/specs/specs-idl.json");
-const specWhatwgIdl = require("reffy/src/specs/specs-whatwg-idl.json");
+/** @type {string[]} */
+const specUrls = require("reffy/src/specs/specs-idl.json");
 const specSources = require("../spec-sources.json");
 
 const { completeWithShortName, completeWithInfoFromW3CApi } = require("reffy/src/lib/util.js");
-
-/** @type {string[]} */
-const urls = [
-  ...specIdl,
-  ...specWhatwgIdl
-];
 
 /**
  * @param {string} url
@@ -281,7 +275,7 @@ async function tryReadSpecInfoList() {
   try {
     return require("../spec-info.json");
   } catch {
-    const specinfo = await Promise.all(urls.map(getSpecInfo))
+    const specinfo = await Promise.all(specUrls.map(getSpecInfo))
     await fs.writeFile("spec-info.json", JSON.stringify(specinfo, null, 2) + "\n");
     return specinfo;
   }
