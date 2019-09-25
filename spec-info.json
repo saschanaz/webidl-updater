@@ -35,6 +35,18 @@
     ]
   },
   {
+    "url": "https://drafts.csswg.org/resize-observer/",
+    "versions": [
+      "https://drafts.csswg.org/resize-observer/"
+    ]
+  },
+  {
+    "url": "https://drafts.csswg.org/scroll-animations-1/",
+    "versions": [
+      "https://drafts.csswg.org/scroll-animations-1/"
+    ]
+  },
+  {
     "url": "https://fetch.spec.whatwg.org/",
     "versions": [
       "https://fetch.spec.whatwg.org/"
@@ -157,15 +169,15 @@
     ]
   },
   {
-    "url": "https://webbluetoothcg.github.io/web-bluetooth/",
+    "url": "https://w3c.github.io/web-share/",
     "versions": [
-      "https://webbluetoothcg.github.io/web-bluetooth/"
+      "https://w3c.github.io/web-share/"
     ]
   },
   {
-    "url": "https://wicg.github.io/animation-worklet/",
+    "url": "https://webbluetoothcg.github.io/web-bluetooth/",
     "versions": [
-      "https://wicg.github.io/animation-worklet/"
+      "https://webbluetoothcg.github.io/web-bluetooth/"
     ]
   },
   {
@@ -259,27 +271,9 @@
     ]
   },
   {
-    "url": "https://drafts.csswg.org/resize-observer/",
-    "versions": [
-      "https://drafts.csswg.org/resize-observer/"
-    ]
-  },
-  {
-    "url": "https://wicg.github.io/scroll-animations/",
-    "versions": [
-      "https://wicg.github.io/scroll-animations/"
-    ]
-  },
-  {
     "url": "https://wicg.github.io/shape-detection-api/",
     "versions": [
       "https://wicg.github.io/shape-detection-api/"
-    ]
-  },
-  {
-    "url": "https://w3c.github.io/web-share/",
-    "versions": [
-      "https://w3c.github.io/web-share/"
     ]
   },
   {
@@ -353,6 +347,7 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-appmanifest-20190925/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190924/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190911/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190903/",
@@ -452,13 +447,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20160426/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160422/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160421/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160414/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190924/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190925/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -652,6 +646,21 @@
     "edDraft": "https://drafts.csswg.org/css-animations/"
   },
   {
+    "url": "https://www.w3.org/TR/css-animation-worklet-1/",
+    "shortname": "css-animation-worklet-1",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-css-animation-worklet-1-20190625/",
+      "https://drafts.css-houdini.org/css-animationworklet-1/",
+      "https://www.w3.org/TR/css-animation-worklet-1/"
+    ],
+    "title": "CSS Animation Worklet API",
+    "latest": "https://www.w3.org/TR/css-animation-worklet-1/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-css-animation-worklet-1-20190625/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://drafts.css-houdini.org/css-animationworklet-1/"
+  },
+  {
     "url": "https://www.w3.org/TR/css-counter-styles-3/",
     "shortname": "css-counter-styles-3",
     "versions": [
@@ -779,6 +788,21 @@
     "edDraft": "https://drafts.fxtf.org/css-masking-1/"
   },
   {
+    "url": "https://www.w3.org/TR/css-nav-1/",
+    "shortname": "css-nav-1",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-css-nav-1-20190423/",
+      "https://drafts.csswg.org/css-nav-1/",
+      "https://www.w3.org/TR/css-nav-1/"
+    ],
+    "title": "CSS Spatial Navigation Level 1",
+    "latest": "https://www.w3.org/TR/css-nav-1/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-css-nav-1-20190423/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://drafts.csswg.org/css-nav-1/"
+  },
+  {
     "url": "https://www.w3.org/TR/css-paint-api-1/",
     "shortname": "css-paint-api-1",
     "versions": [
@@ -849,6 +873,22 @@
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://drafts.csswg.org/css-regions/"
+  },
+  {
+    "url": "https://www.w3.org/TR/css-shadow-parts-1/",
+    "shortname": "css-shadow-parts-1",
+    "versions": [
+      "https://www.w3.org/TR/2018/WD-css-shadow-parts-1-20181115/",
+      "https://drafts.csswg.org/css-shadow-parts/",
+      "https://www.w3.org/TR/css-shadow-parts-1/",
+      "http://drafts.csswg.org/css-shadow-parts/"
+    ],
+    "title": "CSS Shadow Parts",
+    "latest": "https://www.w3.org/TR/css-shadow-parts-1/",
+    "datedUrl": "https://www.w3.org/TR/2018/WD-css-shadow-parts-1-20181115/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "http://drafts.csswg.org/css-shadow-parts/"
   },
   {
     "url": "https://www.w3.org/TR/css-transitions-1/",
@@ -2859,6 +2899,40 @@
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/webrtc-dscp-exp/"
+  },
+  {
+    "url": "https://www.w3.org/TR/webrtc-identity/",
+    "shortname": "webrtc-identity",
+    "versions": [
+      "https://www.w3.org/TR/2018/CR-webrtc-identity-20180927/",
+      "https://www.w3.org/TR/2018/CR-webrtc-20180621/",
+      "https://www.w3.org/TR/2017/CR-webrtc-20171102/",
+      "https://www.w3.org/TR/2017/WD-webrtc-20170822/",
+      "https://www.w3.org/TR/2017/WD-webrtc-20170605/",
+      "https://www.w3.org/TR/2017/WD-webrtc-20170515/",
+      "https://www.w3.org/TR/2017/WD-webrtc-20170508/",
+      "https://www.w3.org/TR/2017/WD-webrtc-20170313/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20161124/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20161123/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20160913/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20160803/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20160531/",
+      "https://www.w3.org/TR/2016/WD-webrtc-20160128/",
+      "https://www.w3.org/TR/2015/WD-webrtc-20150210/",
+      "https://www.w3.org/TR/2013/WD-webrtc-20130910/",
+      "https://www.w3.org/TR/2012/WD-webrtc-20120821/",
+      "https://www.w3.org/TR/2012/WD-webrtc-20120209/",
+      "https://www.w3.org/TR/2011/WD-webrtc-20111027/",
+      "https://w3c.github.io/webrtc-identity/identity.html",
+      "https://w3c.github.io/webrtc-pc/",
+      "https://www.w3.org/TR/webrtc-identity/"
+    ],
+    "title": "Identity for WebRTC 1.0",
+    "latest": "https://www.w3.org/TR/webrtc-identity/",
+    "datedUrl": "https://www.w3.org/TR/2018/CR-webrtc-identity-20180927/",
+    "datedStatus": "Candidate Recommendation",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/webrtc-identity/identity.html"
   },
   {
     "url": "https://www.w3.org/TR/webrtc-stats/",

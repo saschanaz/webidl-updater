@@ -54,6 +54,28 @@
       "path": "font-metrics-api/Overview.bs"
     }
   },
+  "https://drafts.csswg.org/resize-observer/": {
+    "shortName": "resize-observer-1",
+    "url": "https://drafts.csswg.org/resize-observer/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "resize-observer-1/Overview.bs"
+    }
+  },
+  "https://drafts.csswg.org/scroll-animations-1/": {
+    "shortName": "scroll-animations-1",
+    "url": "https://drafts.csswg.org/scroll-animations-1/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/scroll-animations-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "scroll-animations-1/Overview.bs"
+    }
+  },
   "https://fetch.spec.whatwg.org/": {
     "shortName": "fetch",
     "url": "https://fetch.spec.whatwg.org/",
@@ -252,6 +274,17 @@
       "path": "index.html"
     }
   },
+  "https://w3c.github.io/web-share/": {
+    "shortName": "web-share",
+    "url": "https://w3c.github.io/web-share/",
+    "source": "https://github.com/w3c/web-share/blob/master/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "web-share",
+      "branch": "master",
+      "path": "index.html"
+    }
+  },
   "https://webbluetoothcg.github.io/web-bluetooth/": {
     "shortName": "web-bluetooth",
     "url": "https://webbluetoothcg.github.io/web-bluetooth/",
@@ -260,17 +293,6 @@
       "owner": "webbluetoothcg",
       "repo": "web-bluetooth",
       "branch": "master",
-      "path": "index.bs"
-    }
-  },
-  "https://wicg.github.io/animation-worklet/": {
-    "shortName": "animation-worklet",
-    "url": "https://wicg.github.io/animation-worklet/",
-    "source": "https://github.com/wicg/animation-worklet/blob/gh-pages/index.bs",
-    "github": {
-      "owner": "wicg",
-      "repo": "animation-worklet",
-      "branch": "gh-pages",
       "path": "index.bs"
     }
   },
@@ -439,28 +461,6 @@
       "path": "index.html"
     }
   },
-  "https://drafts.csswg.org/resize-observer/": {
-    "shortName": "resize-observer-1",
-    "url": "https://drafts.csswg.org/resize-observer/",
-    "source": "https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "csswg-drafts",
-      "branch": "master",
-      "path": "resize-observer-1/Overview.bs"
-    }
-  },
-  "https://wicg.github.io/scroll-animations/": {
-    "shortName": "scroll-animations",
-    "url": "https://wicg.github.io/scroll-animations/",
-    "source": "https://github.com/wicg/scroll-animations/blob/master/Overview.bs",
-    "github": {
-      "owner": "wicg",
-      "repo": "scroll-animations",
-      "branch": "master",
-      "path": "Overview.bs"
-    }
-  },
   "https://wicg.github.io/shape-detection-api/": {
     "shortName": "shape-detection-api",
     "url": "https://wicg.github.io/shape-detection-api/",
@@ -470,17 +470,6 @@
       "repo": "shape-detection-api",
       "branch": "master",
       "path": "index.bs"
-    }
-  },
-  "https://w3c.github.io/web-share/": {
-    "shortName": "web-share",
-    "url": "https://w3c.github.io/web-share/",
-    "source": "https://github.com/w3c/web-share/blob/master/index.html",
-    "github": {
-      "owner": "w3c",
-      "repo": "web-share",
-      "branch": "master",
-      "path": "index.html"
     }
   },
   "https://wicg.github.io/webusb/": {
@@ -637,6 +626,17 @@
       "path": "css-animations-1/Overview.bs"
     }
   },
+  "https://www.w3.org/TR/css-animation-worklet-1/": {
+    "shortName": "css-animation-worklet-1",
+    "url": "https://drafts.css-houdini.org/css-animationworklet-1/",
+    "source": "https://github.com/w3c/css-houdini-drafts/blob/master/css-animationworklet/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "css-houdini-drafts",
+      "branch": "master",
+      "path": "css-animationworklet/Overview.bs"
+    }
+  },
   "https://www.w3.org/TR/css-counter-styles-3/": {
     "shortName": "css-counter-styles-3",
     "url": "https://drafts.csswg.org/css-counter-styles/",
@@ -714,6 +714,17 @@
       "path": "css-masking-1/Overview.bs"
     }
   },
+  "https://www.w3.org/TR/css-nav-1/": {
+    "shortName": "css-nav-1",
+    "url": "https://drafts.csswg.org/css-nav-1/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/css-nav-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-nav-1/Overview.bs"
+    }
+  },
   "https://www.w3.org/TR/css-paint-api-1/": {
     "shortName": "css-paint-api-1",
     "url": "https://drafts.css-houdini.org/css-paint-api-1/",
@@ -756,6 +767,17 @@
       "repo": "csswg-drafts",
       "branch": "master",
       "path": "css-regions-1/Overview.bs"
+    }
+  },
+  "https://www.w3.org/TR/css-shadow-parts-1/": {
+    "shortName": "css-shadow-parts-1",
+    "url": "http://drafts.csswg.org/css-shadow-parts/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/css-shadow-parts-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-shadow-parts-1/Overview.bs"
     }
   },
   "https://www.w3.org/TR/css-transitions-1/": {
@@ -1532,6 +1554,17 @@
       "repo": "webrtc-dscp-exp",
       "branch": "master",
       "path": "index.bs"
+    }
+  },
+  "https://www.w3.org/TR/webrtc-identity/": {
+    "shortName": "webrtc-identity",
+    "url": "https://w3c.github.io/webrtc-identity/identity.html",
+    "source": "https://github.com/w3c/webrtc-identity/blob/master/identity.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-identity",
+      "branch": "master",
+      "path": "identity.html"
     }
   },
   "https://www.w3.org/TR/webrtc-stats/": {
