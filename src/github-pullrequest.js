@@ -149,9 +149,6 @@ const incompatible = [
   // Specs that mixes IDL and HTML elements
   "html",
   "webgl",
-
-  // old readonly
-  "animation-worklet"
 ];
 
 async function main() {
