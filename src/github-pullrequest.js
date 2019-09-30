@@ -71,7 +71,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const latestCommitSha = baseCommitResponse.data.sha;
   const forkHead = `${forkOwner}:${forkBranch}`;
 
-  await ensureRef(forkOwner, head);
+  await ensureHeadExists(head);
 
   const pullsResponse = await octokit.pulls.list({
     owner,
@@ -143,18 +143,18 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     });
   }
 
-  async function ensureRef(owner, head) {
+  async function ensureHeadExists(head) {
     let refInfoResponse;
     try {
       refInfoResponse = await octokit.git.getRef({
-        owner,
+        owner: forkOwner,
         repo,
         ref: head
       });
     } catch {};
     if (!refInfoResponse) {
       await octokit.git.createRef({
-        owner,
+        owner: forkOwner,
         repo,
         sha: latestCommitSha,
         ref: `refs/${head}`
