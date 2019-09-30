@@ -80,6 +80,13 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const latestCommitSha = baseCommitResponse.data.sha;
   const forkHead = `${forkOwner}:${forkBranch}`;
 
+  const pullsResponse = await octokit.pulls.list({
+    owner,
+    repo,
+    state: "open",
+    head: forkHead
+  });
+
   if (!refInfoResponse) {
     await octokit.git.createRef({
       owner: forkOwner,
@@ -88,14 +95,13 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       ref
     });
   } else {
-    // check if the branch is based on the latest commit
-    const compareResponse = await octokit.repos.compareCommits({
+    // check if the existing PR is mergeable
+    const pullResponse = await octokit.pulls.get({
       owner,
       repo,
-      base: latestCommitSha,
-      head: forkHead
+      pull_number: pullsResponse.data[0].number
     });
-    if (compareResponse.data.status === "diverged") {
+    if (pullResponse.data.mergeable === false) { // null means it's being recomputed
       await octokit.git.updateRef({
         owner: forkOwner,
         repo,
@@ -127,13 +133,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     });
   }
 
-  const pulls = await octokit.pulls.list({
-    owner,
-    repo,
-    state: "open",
-    head: forkHead
-  });
-  if (!pulls.data.length) {
+  if (!pullsResponse.data.length) {
     await octokit.pulls.create({
       owner,
       repo,
@@ -152,7 +152,8 @@ const incompatible = [
 ];
 
 async function main() {
-  for (const value of Object.values(specSources).filter(value => !incompatible.includes(value.shortName))) {
+  const sources = Object.values(specSources).filter(value => !incompatible.includes(value.shortName));
+  await Promise.all(sources.map(value => {
     let file;
     try {
       file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
@@ -163,7 +164,7 @@ async function main() {
       continue;
     }
     await createPullRequest(file, value.shortName, value.github);
-  }
+  }));
 }
 
 main().catch(e => {
