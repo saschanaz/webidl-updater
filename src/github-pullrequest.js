@@ -153,15 +153,15 @@ const incompatible = [
 
 async function main() {
   const sources = Object.values(specSources).filter(value => !incompatible.includes(value.shortName));
-  await Promise.all(sources.map(value => {
+  await Promise.all(sources.map(async value => {
     let file;
     try {
       file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
     } catch {
-      continue;
+      return;
     }
     if (!value.github) {
-      continue;
+      return;
     }
     await createPullRequest(file, value.shortName, value.github);
   }));
