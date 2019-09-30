@@ -508,11 +508,11 @@
   "https://www.w3.org/TR/accelerometer/": {
     "shortName": "accelerometer",
     "url": "https://w3c.github.io/accelerometer/",
-    "source": "https://github.com/w3c/accelerometer/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/accelerometer/blob/master/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "accelerometer",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.bs"
     }
   },
@@ -937,11 +937,11 @@
   "https://www.w3.org/TR/gyroscope/": {
     "shortName": "gyroscope",
     "url": "https://w3c.github.io/gyroscope/",
-    "source": "https://github.com/w3c/gyroscope/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/gyroscope/blob/master/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "gyroscope",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.bs"
     }
   },
@@ -1025,11 +1025,11 @@
   "https://www.w3.org/TR/magnetometer/": {
     "shortName": "magnetometer",
     "url": "https://w3c.github.io/magnetometer/",
-    "source": "https://github.com/w3c/magnetometer/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/magnetometer/blob/master/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "magnetometer",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.bs"
     }
   },
@@ -1113,22 +1113,22 @@
   "https://www.w3.org/TR/orientation-event/": {
     "shortName": "orientation-event",
     "url": "https://w3c.github.io/deviceorientation/",
-    "source": "https://github.com/w3c/deviceorientation/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/deviceorientation/blob/master/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "deviceorientation",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.bs"
     }
   },
   "https://www.w3.org/TR/orientation-sensor/": {
     "shortName": "orientation-sensor",
     "url": "https://w3c.github.io/orientation-sensor/",
-    "source": "https://github.com/w3c/orientation-sensor/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/orientation-sensor/blob/master/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "orientation-sensor",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.bs"
     }
   },
