@@ -63,15 +63,6 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const head = `heads/${forkBranch}`
   const ref = `refs/${head}`;
 
-  let refInfoResponse;
-  try {
-    refInfoResponse = await octokit.git.getRef({
-      owner: forkOwner,
-      repo,
-      ref: head
-    });
-  } catch {};
-
   const baseCommitResponse = await octokit.repos.getCommit({
     owner,
     repo,
@@ -80,6 +71,8 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const latestCommitSha = baseCommitResponse.data.sha;
   const forkHead = `${forkOwner}:${forkBranch}`;
 
+  await ensureRef(forkOwner, head);
+
   const pullsResponse = await octokit.pulls.list({
     owner,
     repo,
@@ -87,14 +80,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     head: forkHead
   });
 
-  if (!refInfoResponse) {
-    await octokit.git.createRef({
-      owner: forkOwner,
-      repo,
-      sha: latestCommitSha,
-      ref
-    });
-  } else if (pullsResponse.data.length) {
+  if (pullsResponse.data.length) {
     // check if the existing PR is mergeable
     const pullResponse = await octokit.pulls.get({
       owner,
@@ -155,6 +141,25 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       title: message,
       body
     });
+  }
+
+  async function ensureRef(owner, head) {
+    let refInfoResponse;
+    try {
+      refInfoResponse = await octokit.git.getRef({
+        owner,
+        repo,
+        ref: head
+      });
+    } catch {};
+    if (!refInfoResponse) {
+      await octokit.git.createRef({
+        owner,
+        repo,
+        sha: latestCommitSha,
+        ref: `refs/${head}`
+      });
+    }
   }
 
   async function forceUpdateToLatestCommit() {
