@@ -94,7 +94,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       sha: latestCommitSha,
       ref
     });
-  } else {
+  } else if (pullsResponse.data.length) {
     // check if the existing PR is mergeable
     const pullResponse = await octokit.pulls.get({
       owner,
@@ -102,13 +102,18 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       pull_number: pullsResponse.data[0].number
     });
     if (pullResponse.data.mergeable === false) { // null means it's being recomputed
-      await octokit.git.updateRef({
-        owner: forkOwner,
-        repo,
-        sha: latestCommitSha,
-        ref: head,
-        force: true
-      });
+      await forceUpdateToLatestCommit();
+    }
+  } else {
+    // check if the branch is based on the latest commit
+    const compareResponse = await octokit.repos.compareCommits({
+      owner,
+      repo,
+      base: latestCommitSha,
+      head: forkHead
+    });
+    if (compareResponse.data.status === "diverged") {
+      await forceUpdateToLatestCommit();
     }
   }
 
@@ -133,7 +138,15 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     });
   }
 
-  if (!pullsResponse.data.length) {
+  // Currently existing PR can potentially be closed
+  const pullsResponse2 = await octokit.pulls.list({
+    owner,
+    repo,
+    state: "open",
+    head: forkHead
+  });
+
+  if (!pullsResponse2.data.length) {
     await octokit.pulls.create({
       owner,
       repo,
@@ -141,6 +154,16 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       base: branch,
       title: message,
       body
+    });
+  }
+
+  async function forceUpdateToLatestCommit() {
+    await octokit.git.updateRef({
+      owner: forkOwner,
+      repo,
+      sha: latestCommitSha,
+      ref: head,
+      force: true
     });
   }
 }
