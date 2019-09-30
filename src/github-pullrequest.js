@@ -60,8 +60,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
   const forkOwner = "autokagami";
 
   const forkBranch = shortName;
-  const head = `heads/${forkBranch}`
-  const ref = `refs/${head}`;
+  const head = `heads/${forkBranch}`;
 
   const baseCommitResponse = await octokit.repos.getCommit({
     owner,
@@ -103,26 +102,7 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
     }
   }
 
-  const fileResponse = await octokit.repos.getContents({
-    owner: forkOwner,
-    repo,
-    path,
-    ref
-  });
-
-  const content = btoa(updated);
-
-  if (fileResponse.data.content.split(/\s/g).join("") !== content) {
-    await octokit.repos.createOrUpdateFile({
-      owner: forkOwner,
-      repo,
-      branch: forkBranch,
-      path,
-      message,
-      content,
-      sha: fileResponse.data.sha
-    });
-  }
+  await updateFileOnBranch(forkBranch);
 
   // Currently existing PR can potentially be closed
   const pullsResponse2 = await octokit.pulls.list({
@@ -141,6 +121,29 @@ async function createPullRequest(updated, shortName, { owner, repo, branch, path
       title: message,
       body
     });
+  }
+
+  async function updateFileOnBranch(branch) {
+    const fileResponse = await octokit.repos.getContents({
+      owner: forkOwner,
+      repo,
+      path,
+      ref: `refs/heads/${branch}`
+    });
+
+    const content = btoa(updated);
+
+    if (fileResponse.data.content.split(/\s/g).join("") !== content) {
+      await octokit.repos.createOrUpdateFile({
+        owner: forkOwner,
+        repo,
+        branch,
+        path,
+        message,
+        content,
+        sha: fileResponse.data.sha
+      });
+    }
   }
 
   async function ensureHeadExists(head) {
