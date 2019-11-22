@@ -12,12 +12,12 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^16.30.1",
+    "@octokit/rest": "^16.35.0",
     "diff": "^4.0.1",
     "esm": "^3.2.25",
-    "jsdom": "^15.1.1",
+    "jsdom": "^15.2.1",
     "node-fetch": "^2.6.0",
     "reffy": "github:saschanaz/reffy#each-autofix",
-    "webidl2": "^23.9.0"
+    "webidl2": "^23.10.1"
   }
 }
