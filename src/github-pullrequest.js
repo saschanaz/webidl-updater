@@ -23,18 +23,18 @@ function btoa(str) {
  * - pushes it to the bot account
  * - and opens a pull request
  * @param {string} updated updated file content
+ * @param {string} shortName
+ * @param {boolean} inMonoRepo
  * @param {object} githubInfo
  * @param {string} githubInfo.owner
  * @param {string} githubInfo.repo
  * @param {string} githubInfo.branch
  * @param {string} githubInfo.path
  */
-async function createPullRequest(updated, shortName, { owner, repo, branch, path }) {
-  // whatever
-
-  // should detect there already is a relevant PR
-
-  const message = `[${shortName}] Align with Web IDL specification`;
+async function createPullRequest(updated, shortName, inMonoRepo, { owner, repo, branch, path }) {
+  const message =
+    inMonoRepo ? `[${shortName}] Align with Web IDL specification` :
+    "Editorial: Align with Web IDL specification";
   const body = `This is an automated pull request to align the spec with the latest Web IDL specification.
 
   Currently the autofix might introduce some awkward code formatting, so please feel free to modify the formatting.
@@ -182,7 +182,29 @@ const incompatible = [
   "webgl",
 ];
 
+function createRepoMap() {
+  /** @type {Map<string, object[]>} */
+  const map = new Map();
+  const sources = Object.values(specSources).filter(source => source.github)
+  for (const source of sources) {
+    const repo = `${source.github.owner}/${source.github.repo}`;
+    if (map.has(repo)) {
+      map.get(repo).push(source);
+    } else {
+      map.set(repo, [source]);
+    }
+  }
+  return new WeakMap(
+    sources.map(source => [
+      source,
+      map.get(`${source.github.owner}/${source.github.repo}`).length
+    ])
+  );
+}
+
 async function main() {
+  const repoMap = createRepoMap();
+
   const sources = Object.values(specSources).filter(value => !incompatible.includes(value.shortName));
   await Promise.all(sources.map(async value => {
     let file;
@@ -194,7 +216,7 @@ async function main() {
     if (!value.github) {
       return;
     }
-    await createPullRequest(file, value.shortName, value.github);
+    await createPullRequest(file, value.shortName, repoMap.get(value) > 1, value.github);
   }));
 }
 
