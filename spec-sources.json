@@ -208,17 +208,6 @@
       "path": "index.bs"
     }
   },
-  "https://w3c.github.io/pointerevents/extension.html": {
-    "shortName": "pointerevents-extension",
-    "url": "https://w3c.github.io/pointerevents/extension.html",
-    "source": "https://github.com/w3c/pointerevents/blob/gh-pages/extension.html",
-    "github": {
-      "owner": "w3c",
-      "repo": "pointerevents",
-      "branch": "gh-pages",
-      "path": "extension.html"
-    }
-  },
   "https://w3c.github.io/reporting/": {
     "shortName": "reporting",
     "url": "https://w3c.github.io/reporting/",
@@ -238,17 +227,6 @@
       "owner": "w3c",
       "repo": "ServiceWorker",
       "branch": "gh-pages",
-      "path": "index.bs"
-    }
-  },
-  "https://w3c.github.io/speech-api/": {
-    "shortName": "speech-api",
-    "url": "https://w3c.github.io/speech-api/",
-    "source": "https://github.com/w3c/speech-api/blob/master/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "speech-api",
-      "branch": "master",
       "path": "index.bs"
     }
   },
@@ -468,6 +446,17 @@
     "github": {
       "owner": "wicg",
       "repo": "shape-detection-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://wicg.github.io/speech-api/": {
+    "shortName": "speech-api",
+    "url": "https://wicg.github.io/speech-api/",
+    "source": "https://github.com/wicg/speech-api/blob/master/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "speech-api",
       "branch": "master",
       "path": "index.bs"
     }

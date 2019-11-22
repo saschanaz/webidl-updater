@@ -133,12 +133,6 @@
     ]
   },
   {
-    "url": "https://w3c.github.io/pointerevents/extension.html",
-    "versions": [
-      "https://w3c.github.io/pointerevents/extension.html"
-    ]
-  },
-  {
     "url": "https://w3c.github.io/reporting/",
     "versions": [
       "https://w3c.github.io/reporting/"
@@ -148,12 +142,6 @@
     "url": "https://w3c.github.io/ServiceWorker/",
     "versions": [
       "https://w3c.github.io/ServiceWorker/"
-    ]
-  },
-  {
-    "url": "https://w3c.github.io/speech-api/",
-    "versions": [
-      "https://w3c.github.io/speech-api/"
     ]
   },
   {
@@ -277,6 +265,12 @@
     ]
   },
   {
+    "url": "https://wicg.github.io/speech-api/",
+    "versions": [
+      "https://wicg.github.io/speech-api/"
+    ]
+  },
+  {
     "url": "https://wicg.github.io/webusb/",
     "versions": [
       "https://wicg.github.io/webusb/"
@@ -347,6 +341,16 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191115/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191112/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191104/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191024/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191016/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191014/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191011/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191010/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191001/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20190926/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190925/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190924/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20190911/",
@@ -437,22 +441,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20160901/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160825/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160812/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160809/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160805/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160714/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160629/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160609/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160519/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160518/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160426/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160422/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160421/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20190925/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20191115/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -720,6 +714,7 @@
     "url": "https://www.w3.org/TR/css-fonts-4/",
     "shortname": "css-fonts-4",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-css-fonts-4-20191113/",
       "https://www.w3.org/TR/2018/WD-css-fonts-4-20180920/",
       "https://www.w3.org/TR/2018/WD-css-fonts-4-20180410/",
       "https://www.w3.org/TR/2017/WD-css-fonts-4-20170711/",
@@ -730,7 +725,7 @@
     ],
     "title": "CSS Fonts Module Level 4",
     "latest": "https://www.w3.org/TR/css-fonts-4/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-fonts-4-20180920/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-css-fonts-4-20191113/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://drafts.csswg.org/css-fonts-4/"
@@ -823,6 +818,7 @@
     "url": "https://www.w3.org/TR/css-properties-values-api-1/",
     "shortname": "css-properties-values-api-1",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-css-properties-values-api-1-20191025/",
       "https://www.w3.org/TR/2017/WD-css-properties-values-api-1-20171109/",
       "https://www.w3.org/TR/2016/WD-css-properties-values-api-1-20160607/",
       "https://drafts.css-houdini.org/css-properties-values-api-1/",
@@ -830,7 +826,7 @@
     ],
     "title": "CSS Properties and Values API Level 1",
     "latest": "https://www.w3.org/TR/css-properties-values-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2017/WD-css-properties-values-api-1-20171109/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-css-properties-values-api-1-20191025/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://drafts.css-houdini.org/css-properties-values-api-1/"
@@ -1145,6 +1141,10 @@
     "url": "https://www.w3.org/TR/gamepad/",
     "shortname": "gamepad",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-gamepad-20191114/",
+      "https://www.w3.org/TR/2019/WD-gamepad-20191010/",
+      "https://www.w3.org/TR/2019/WD-gamepad-20191003/",
+      "https://www.w3.org/TR/2019/WD-gamepad-20191001/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190923/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190922/",
       "https://www.w3.org/TR/2019/WD-gamepad-20190920/",
@@ -1186,7 +1186,7 @@
     ],
     "title": "Gamepad",
     "latest": "https://www.w3.org/TR/gamepad/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-gamepad-20190923/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-gamepad-20191114/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/gamepad/"
@@ -1768,6 +1768,8 @@
     "url": "https://www.w3.org/TR/payment-handler/",
     "shortname": "payment-handler",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-payment-handler-20191021/",
+      "https://www.w3.org/TR/2019/WD-payment-handler-20191017/",
       "https://www.w3.org/TR/2019/WD-payment-handler-20190924/",
       "https://www.w3.org/TR/2018/WD-payment-handler-20180108/",
       "https://www.w3.org/TR/2017/WD-payment-handler-20171203/",
@@ -1794,7 +1796,7 @@
     ],
     "title": "Payment Handler API",
     "latest": "https://www.w3.org/TR/payment-handler/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-handler-20190924/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-handler-20191021/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/payment-handler/"
@@ -1803,6 +1805,8 @@
     "url": "https://www.w3.org/TR/payment-method-basic-card/",
     "shortname": "payment-method-basic-card",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191120/",
+      "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191119/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20190917/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20190730/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20190425/",
@@ -1840,7 +1844,7 @@
     ],
     "title": "Payment Method: Basic Card",
     "latest": "https://www.w3.org/TR/payment-method-basic-card/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20190917/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191120/",
     "datedStatus": "Working Draft",
     "informative": true,
     "edDraft": "https://w3c.github.io/payment-method-basic-card/"
@@ -1929,6 +1933,7 @@
     "url": "https://www.w3.org/TR/performance-timeline-2/",
     "shortname": "performance-timeline-2",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-performance-timeline-2-20191024/",
       "https://www.w3.org/TR/2019/WD-performance-timeline-2-20190917/",
       "https://www.w3.org/TR/2019/WD-performance-timeline-2-20190626/",
       "https://www.w3.org/TR/2019/WD-performance-timeline-2-20190423/",
@@ -1968,7 +1973,7 @@
     ],
     "title": "Performance Timeline Level 2",
     "latest": "https://www.w3.org/TR/performance-timeline-2/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-performance-timeline-2-20190917/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-performance-timeline-2-20191024/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/performance-timeline/"
@@ -2080,6 +2085,7 @@
     "url": "https://www.w3.org/TR/push-api/",
     "shortname": "push-api",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-push-api-20191003/",
       "https://www.w3.org/TR/2019/WD-push-api-20190724/",
       "https://www.w3.org/TR/2019/WD-push-api-20190717/",
       "https://www.w3.org/TR/2019/WD-push-api-20190716/",
@@ -2117,7 +2123,7 @@
     ],
     "title": "Push API",
     "latest": "https://www.w3.org/TR/push-api/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-push-api-20190724/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-push-api-20191003/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/push-api/"
@@ -2225,16 +2231,16 @@
     "url": "https://www.w3.org/TR/screen-capture/",
     "shortname": "screen-capture",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-screen-capture-20191119/",
       "https://www.w3.org/TR/2016/WD-screen-capture-20160714/",
       "https://www.w3.org/TR/2016/WD-screen-capture-20160607/",
       "https://www.w3.org/TR/2015/WD-screen-capture-20150210/",
       "https://w3c.github.io/mediacapture-screen-share/",
-      "https://www.w3.org/TR/screen-capture/",
-      "http://www.w3.org/TR/screen-capture/"
+      "https://www.w3.org/TR/screen-capture/"
     ],
     "title": "Screen Capture",
-    "latest": "http://www.w3.org/TR/screen-capture/",
-    "datedUrl": "http://www.w3.org/TR/2016/WD-screen-capture-20160714/",
+    "latest": "https://www.w3.org/TR/screen-capture/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-capture-20191119/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/mediacapture-screen-share/"
@@ -2243,6 +2249,8 @@
     "url": "https://www.w3.org/TR/screen-orientation/",
     "shortname": "screen-orientation",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-screen-orientation-20191102/",
+      "https://www.w3.org/TR/2019/WD-screen-orientation-20191024/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190903/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190723/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190722/",
@@ -2300,7 +2308,7 @@
     ],
     "title": "The Screen Orientation API",
     "latest": "https://www.w3.org/TR/screen-orientation/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-orientation-20190903/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-orientation-20191102/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/screen-orientation/"
@@ -2623,6 +2631,7 @@
     "url": "https://www.w3.org/TR/wasm-js-api-1/",
     "shortname": "wasm-js-api-1",
     "versions": [
+      "https://www.w3.org/TR/2019/PR-wasm-js-api-1-20191001/",
       "https://www.w3.org/TR/2019/CR-wasm-js-api-1-20190718/",
       "https://www.w3.org/TR/2018/WD-wasm-js-api-1-20180904/",
       "https://www.w3.org/TR/2018/WD-wasm-js-api-1-20180215/",
@@ -2631,8 +2640,8 @@
     ],
     "title": "WebAssembly JavaScript Interface",
     "latest": "https://www.w3.org/TR/wasm-js-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/CR-wasm-js-api-1-20190718/",
-    "datedStatus": "Candidate Recommendation",
+    "datedUrl": "https://www.w3.org/TR/2019/PR-wasm-js-api-1-20191001/",
+    "datedStatus": "Proposed Recommendation",
     "informative": false,
     "edDraft": "https://webassembly.github.io/spec/js-api/"
   },
@@ -2640,6 +2649,7 @@
     "url": "https://www.w3.org/TR/wasm-web-api-1/",
     "shortname": "wasm-web-api-1",
     "versions": [
+      "https://www.w3.org/TR/2019/PR-wasm-web-api-1-20191001/",
       "https://www.w3.org/TR/2019/CR-wasm-web-api-1-20190718/",
       "https://www.w3.org/TR/2018/WD-wasm-web-api-1-20180904/",
       "https://www.w3.org/TR/2018/WD-wasm-web-api-1-20180215/",
@@ -2648,8 +2658,8 @@
     ],
     "title": "WebAssembly Web API",
     "latest": "https://www.w3.org/TR/wasm-web-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/CR-wasm-web-api-1-20190718/",
-    "datedStatus": "Candidate Recommendation",
+    "datedUrl": "https://www.w3.org/TR/2019/PR-wasm-web-api-1-20191001/",
+    "datedStatus": "Proposed Recommendation",
     "informative": false,
     "edDraft": "https://webassembly.github.io/spec/web-api/"
   },
@@ -3024,6 +3034,7 @@
     "url": "https://www.w3.org/TR/webxr/",
     "shortname": "webxr",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-webxr-20191010/",
       "https://www.w3.org/TR/2019/WD-webxr-20190521/",
       "https://www.w3.org/TR/2019/WD-webxr-20190205/",
       "https://immersive-web.github.io/webxr/",
@@ -3031,7 +3042,7 @@
     ],
     "title": "WebXR Device API",
     "latest": "https://www.w3.org/TR/webxr/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-webxr-20190521/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-webxr-20191010/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://immersive-web.github.io/webxr/"
