@@ -99,7 +99,7 @@ function conditionalBracketEscape(detector, target) {
   for (const file of await fs.readdir("rewritten")) {
     await fs.unlink(`rewritten/${file}`);
   }
-  const enableDiff = process.argv.includes("--diff");
+  const disableDiff = process.argv.includes("--no-diff");
 
   const specSourceList = mapToArray(specRawSources);
 
@@ -156,7 +156,7 @@ function conditionalBracketEscape(detector, target) {
   }
   for (const spec of rewrittenSpecs) {
     await fs.writeFile(`rewritten/${spec.title}`, spec.html);
-    if (enableDiff) {
+    if (!disableDiff) {
       const diffText = diff.createPatch(spec.title, spec.original, spec.html);
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
     }
