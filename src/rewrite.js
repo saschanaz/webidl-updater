@@ -9,6 +9,12 @@ const { extract } = require("reffy/src/cli/extract-webidl.js");
 
 const specRawSources = require("../spec-sources.json");
 
+const brokenSpecs = [
+  "https://svgwg.org/specs/animations/",
+  // https://github.com/w3c/csswg-drafts/issues/4683
+  "https://drafts.csswg.org/resize-observer/",
+];
+
 function getRawGit(githubInfo) {
   if (!githubInfo) {
     return null;
@@ -23,7 +29,8 @@ function getRawGit(githubInfo) {
  */
 async function extractOneByOne(specSourceList) {
   const results = [];
-  const fetchedList = await Promise.all(specSourceList.map(async item => {
+  const targetSpecs = specSourceList.filter(item => !brokenSpecs.includes(item.url));
+  const fetchedList = await Promise.all(targetSpecs.map(async item => {
     const text = await fetchText(getRawGit(item.github) || item.url);
     return {
       shortName: item.shortName,
