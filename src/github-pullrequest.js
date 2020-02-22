@@ -1,4 +1,4 @@
-const Octokit = require("@octokit/rest");
+const { Octokit } = require("@octokit/rest");
 const config = require("../config.json");
 const specSources = require("../spec-sources.json");
 const fs = require("fs").promises;
@@ -86,7 +86,9 @@ async function createPullRequest(updated, shortName, inMonoRepo, { owner, repo, 
       repo,
       pull_number: pullsResponse.data[0].number
     });
-    if (pullResponse.data.mergeable === false) { // null means it's being recomputed
+    if (pullResponse.data.mergeable === true) {
+      await mergeFromMaster();
+    } else if (pullResponse.data.mergeable === false) { // null means it's being recomputed
       await forceUpdateToLatestCommit();
     }
   } else {
@@ -172,6 +174,15 @@ async function createPullRequest(updated, shortName, inMonoRepo, { owner, repo, 
       sha: latestCommitSha,
       ref: head,
       force: true
+    });
+  }
+
+  async function mergeFromMaster() {
+    await octokit.repos.merge({
+      owner: forkOwner,
+      repo,
+      base: forkBranch,
+      head: latestCommitSha
     });
   }
 }
