@@ -54,17 +54,6 @@
       "path": "font-metrics-api/Overview.bs"
     }
   },
-  "https://drafts.csswg.org/resize-observer/": {
-    "shortName": "resize-observer-1",
-    "url": "https://drafts.csswg.org/resize-observer/",
-    "source": "https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "csswg-drafts",
-      "branch": "master",
-      "path": "resize-observer-1/Overview.bs"
-    }
-  },
   "https://drafts.csswg.org/scroll-animations-1/": {
     "shortName": "scroll-animations-1",
     "url": "https://drafts.csswg.org/scroll-animations-1/",
@@ -109,28 +98,6 @@
       "path": "source"
     }
   },
-  "https://immersive-web.github.io/webxr-ar-module/": {
-    "shortName": "webxr-ar-module",
-    "url": "https://immersive-web.github.io/webxr-ar-module/",
-    "source": "https://github.com/immersive-web/webxr-ar-module/blob/master/index.bs",
-    "github": {
-      "owner": "immersive-web",
-      "repo": "webxr-ar-module",
-      "branch": "master",
-      "path": "index.bs"
-    }
-  },
-  "https://immersive-web.github.io/webxr-gamepads-module/": {
-    "shortName": "webxr-gamepads-module",
-    "url": "https://immersive-web.github.io/webxr-gamepads-module/",
-    "source": "https://github.com/immersive-web/webxr-gamepads-module/blob/master/index.bs",
-    "github": {
-      "owner": "immersive-web",
-      "repo": "webxr-gamepads-module",
-      "branch": "master",
-      "path": "index.bs"
-    }
-  },
   "https://notifications.spec.whatwg.org/": {
     "shortName": "notifications",
     "url": "https://notifications.spec.whatwg.org/",
@@ -153,6 +120,12 @@
       "path": "storage.bs"
     }
   },
+  "https://svgwg.org/specs/animations/": {
+    "shortName": null,
+    "url": "https://svgwg.org/specs/animations/",
+    "source": null,
+    "github": null
+  },
   "https://url.spec.whatwg.org/": {
     "shortName": "url",
     "url": "https://url.spec.whatwg.org/",
@@ -164,15 +137,15 @@
       "path": "url.bs"
     }
   },
-  "https://w3c.github.io/media-capabilities/": {
-    "shortName": "media-capabilities",
-    "url": "https://w3c.github.io/media-capabilities/",
-    "source": "https://github.com/w3c/media-capabilities/blob/master/index.bs",
+  "https://w3c.github.io/gamepad/extensions.html": {
+    "shortName": "gamepad-extensions",
+    "url": "https://w3c.github.io/gamepad/extensions.html",
+    "source": "https://github.com/w3c/gamepad/blob/gh-pages/extensions.html",
     "github": {
       "owner": "w3c",
-      "repo": "media-capabilities",
-      "branch": "master",
-      "path": "index.bs"
+      "repo": "gamepad",
+      "branch": "gh-pages",
+      "path": "extensions.html"
     }
   },
   "https://w3c.github.io/media-playback-quality/": {
@@ -184,28 +157,6 @@
       "repo": "media-playback-quality",
       "branch": "gh-pages",
       "path": "index.html"
-    }
-  },
-  "https://w3c.github.io/mediasession/": {
-    "shortName": "mediasession",
-    "url": "https://w3c.github.io/mediasession/",
-    "source": "https://github.com/w3c/mediasession/blob/master/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "mediasession",
-      "branch": "master",
-      "path": "index.bs"
-    }
-  },
-  "https://w3c.github.io/picture-in-picture/": {
-    "shortName": "picture-in-picture",
-    "url": "https://w3c.github.io/picture-in-picture/",
-    "source": "https://github.com/w3c/picture-in-picture/blob/master/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "picture-in-picture",
-      "branch": "master",
-      "path": "index.bs"
     }
   },
   "https://w3c.github.io/reporting/": {
@@ -252,17 +203,6 @@
       "path": "index.html"
     }
   },
-  "https://w3c.github.io/web-share/": {
-    "shortName": "web-share",
-    "url": "https://w3c.github.io/web-share/",
-    "source": "https://github.com/w3c/web-share/blob/master/index.html",
-    "github": {
-      "owner": "w3c",
-      "repo": "web-share",
-      "branch": "master",
-      "path": "index.html"
-    }
-  },
   "https://webbluetoothcg.github.io/web-bluetooth/": {
     "shortName": "web-bluetooth",
     "url": "https://webbluetoothcg.github.io/web-bluetooth/",
@@ -283,6 +223,17 @@
       "repo": "background-fetch",
       "branch": "master",
       "path": "index.bs"
+    }
+  },
+  "https://wicg.github.io/badging/": {
+    "shortName": "badging",
+    "url": "https://wicg.github.io/badging/",
+    "source": "https://github.com/wicg/badging/blob/master/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "badging",
+      "branch": "master",
+      "path": "index.html"
     }
   },
   "https://wicg.github.io/BackgroundSync/spec/": {
@@ -373,6 +324,17 @@
       "path": "index.html"
     }
   },
+  "https://wicg.github.io/frame-timing/": {
+    "shortName": "frame-timing",
+    "url": "https://wicg.github.io/frame-timing/",
+    "source": "https://github.com/wicg/frame-timing/blob/gh-pages/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "frame-timing",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
+  },
   "https://wicg.github.io/InputDeviceCapabilities/": {
     "shortName": "InputDeviceCapabilities",
     "url": "https://wicg.github.io/InputDeviceCapabilities/",
@@ -381,6 +343,17 @@
       "owner": "wicg",
       "repo": "InputDeviceCapabilities",
       "branch": "gh-pages",
+      "path": "index.html"
+    }
+  },
+  "https://wicg.github.io/js-self-profiling/": {
+    "shortName": "js-self-profiling",
+    "url": "https://wicg.github.io/js-self-profiling/",
+    "source": "https://github.com/wicg/js-self-profiling/blob/master/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "js-self-profiling",
+      "branch": "master",
       "path": "index.html"
     }
   },
@@ -428,6 +401,17 @@
       "path": "index.bs"
     }
   },
+  "https://wicg.github.io/native-file-system/": {
+    "shortName": "native-file-system",
+    "url": "https://wicg.github.io/native-file-system/",
+    "source": "https://github.com/wicg/native-file-system/blob/master/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "native-file-system",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://wicg.github.io/netinfo/": {
     "shortName": "netinfo",
     "url": "https://wicg.github.io/netinfo/",
@@ -437,6 +421,39 @@
       "repo": "netinfo",
       "branch": "gh-pages",
       "path": "index.html"
+    }
+  },
+  "https://wicg.github.io/page-lifecycle/": {
+    "shortName": "page-lifecycle",
+    "url": "https://wicg.github.io/page-lifecycle/",
+    "source": "https://github.com/wicg/page-lifecycle/blob/gh-pages/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "page-lifecycle",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
+  },
+  "https://wicg.github.io/permissions-request/": {
+    "shortName": "permissions-request",
+    "url": "https://wicg.github.io/permissions-request/",
+    "source": "https://github.com/wicg/permissions-request/blob/master/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "permissions-request",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://wicg.github.io/permissions-revoke/": {
+    "shortName": "permissions-revoke",
+    "url": "https://wicg.github.io/permissions-revoke/",
+    "source": "https://github.com/wicg/permissions-revoke/blob/master/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "permissions-revoke",
+      "branch": "master",
+      "path": "index.bs"
     }
   },
   "https://wicg.github.io/shape-detection-api/": {
@@ -457,6 +474,39 @@
     "github": {
       "owner": "wicg",
       "repo": "speech-api",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://wicg.github.io/video-raf/": {
+    "shortName": "video-raf",
+    "url": "https://wicg.github.io/video-raf/",
+    "source": "https://github.com/wicg/video-raf/blob/gh-pages/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "video-raf",
+      "branch": "gh-pages",
+      "path": "index.bs"
+    }
+  },
+  "https://wicg.github.io/visual-viewport/": {
+    "shortName": "visual-viewport",
+    "url": "https://wicg.github.io/visual-viewport/",
+    "source": "https://github.com/wicg/visual-viewport/blob/gh-pages/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "visual-viewport",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
+  },
+  "https://wicg.github.io/web-locks/": {
+    "shortName": "web-locks",
+    "url": "https://wicg.github.io/web-locks/",
+    "source": "https://github.com/wicg/web-locks/blob/master/index.bs",
+    "github": {
+      "owner": "wicg",
+      "repo": "web-locks",
       "branch": "master",
       "path": "index.bs"
     }
@@ -824,6 +874,17 @@
       "path": "cssom-view-1/Overview.bs"
     }
   },
+  "https://www.w3.org/TR/device-memory-1/": {
+    "shortName": "device-memory-1",
+    "url": "https://w3c.github.io/device-memory/",
+    "source": "https://github.com/w3c/device-memory/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "device-memory",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://www.w3.org/TR/DOM-Parsing/": {
     "shortName": "DOM-Parsing",
     "url": "https://w3c.github.io/DOM-Parsing/",
@@ -1022,6 +1083,17 @@
       "path": "index.bs"
     }
   },
+  "https://www.w3.org/TR/media-capabilities/": {
+    "shortName": "media-capabilities",
+    "url": "https://w3c.github.io/media-capabilities/",
+    "source": "https://github.com/w3c/media-capabilities/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "media-capabilities",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://www.w3.org/TR/media-source/": {
     "shortName": "media-source",
     "url": "https://w3c.github.io/media-source/",
@@ -1064,6 +1136,17 @@
       "repo": "mediacapture-main",
       "branch": "master",
       "path": "index.html"
+    }
+  },
+  "https://www.w3.org/TR/mediasession/": {
+    "shortName": "mediasession",
+    "url": "https://w3c.github.io/mediasession/",
+    "source": "https://github.com/w3c/mediasession/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "mediasession",
+      "branch": "master",
+      "path": "index.bs"
     }
   },
   "https://www.w3.org/TR/mediastream-recording/": {
@@ -1198,8 +1281,19 @@
       "path": "index.bs"
     }
   },
-  "https://www.w3.org/TR/pointerevents2/": {
-    "shortName": "pointerevents2",
+  "https://www.w3.org/TR/picture-in-picture/": {
+    "shortName": "picture-in-picture",
+    "url": "https://w3c.github.io/picture-in-picture/",
+    "source": "https://github.com/w3c/picture-in-picture/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "picture-in-picture",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://www.w3.org/TR/pointerevents3/": {
+    "shortName": "pointerevents3",
     "url": "https://w3c.github.io/pointerevents/",
     "source": "https://github.com/w3c/pointerevents/blob/gh-pages/index.html",
     "github": {
@@ -1284,6 +1378,17 @@
       "repo": "requestidlecallback",
       "branch": "gh-pages",
       "path": "index.html"
+    }
+  },
+  "https://www.w3.org/TR/resize-observer-1/": {
+    "shortName": "resize-observer-1",
+    "url": "https://drafts.csswg.org/resize-observer/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/resize-observer-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "resize-observer-1/Overview.bs"
     }
   },
   "https://www.w3.org/TR/resource-timing-2/": {
@@ -1468,6 +1573,17 @@
       "path": "web-animations-1/Overview.bs"
     }
   },
+  "https://www.w3.org/TR/web-share/": {
+    "shortName": "web-share",
+    "url": "https://w3c.github.io/web-share/",
+    "source": "https://github.com/w3c/web-share/blob/master/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "web-share",
+      "branch": "master",
+      "path": "index.html"
+    }
+  },
   "https://www.w3.org/TR/webaudio/": {
     "shortName": "webaudio",
     "url": "https://webaudio.github.io/web-audio-api/",
@@ -1479,8 +1595,8 @@
       "path": "index.bs"
     }
   },
-  "https://www.w3.org/TR/webauthn-1/": {
-    "shortName": "webauthn-1",
+  "https://www.w3.org/TR/webauthn-2/": {
+    "shortName": "webauthn-2",
     "url": "https://w3c.github.io/webauthn/",
     "source": "https://github.com/w3c/webauthn/blob/master/index.bs",
     "github": {
@@ -1534,17 +1650,6 @@
       "path": "index.html"
     }
   },
-  "https://www.w3.org/TR/webrtc-dscp/": {
-    "shortName": "webrtc-dscp",
-    "url": "https://w3c.github.io/webrtc-dscp-exp/",
-    "source": "https://github.com/w3c/webrtc-dscp-exp/blob/master/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "webrtc-dscp-exp",
-      "branch": "master",
-      "path": "index.bs"
-    }
-  },
   "https://www.w3.org/TR/webrtc-identity/": {
     "shortName": "webrtc-identity",
     "url": "https://w3c.github.io/webrtc-identity/identity.html",
@@ -1556,6 +1661,17 @@
       "path": "identity.html"
     }
   },
+  "https://www.w3.org/TR/webrtc-priority/": {
+    "shortName": "webrtc-priority",
+    "url": "http://w3c.github.io/webrtc-priority/",
+    "source": "https://github.com/w3c/webrtc-priority/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-priority",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://www.w3.org/TR/webrtc-stats/": {
     "shortName": "webrtc-stats",
     "url": "https://w3c.github.io/webrtc-stats/",
@@ -1563,6 +1679,17 @@
     "github": {
       "owner": "w3c",
       "repo": "webrtc-stats",
+      "branch": "master",
+      "path": "index.html"
+    }
+  },
+  "https://www.w3.org/TR/webrtc-svc/": {
+    "shortName": "webrtc-svc",
+    "url": "https://w3c.github.io/webrtc-svc/",
+    "source": "https://github.com/w3c/webrtc-svc/blob/master/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "webrtc-svc",
       "branch": "master",
       "path": "index.html"
     }
@@ -1596,6 +1723,28 @@
     "github": {
       "owner": "immersive-web",
       "repo": "webxr",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://www.w3.org/TR/webxr-ar-module/": {
+    "shortName": "webxr-ar-module",
+    "url": "https://immersive-web.github.io/webxr-ar-module/",
+    "source": "https://github.com/immersive-web/webxr-ar-module/blob/master/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-ar-module",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
+  "https://www.w3.org/TR/webxr-gamepads-module/": {
+    "shortName": "webxr-gamepads-module",
+    "url": "https://immersive-web.github.io/webxr-gamepads-module/",
+    "source": "https://github.com/immersive-web/webxr-gamepads-module/blob/master/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-gamepads-module",
       "branch": "master",
       "path": "index.bs"
     }

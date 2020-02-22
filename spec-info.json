@@ -35,12 +35,6 @@
     ]
   },
   {
-    "url": "https://drafts.csswg.org/resize-observer/",
-    "versions": [
-      "https://drafts.csswg.org/resize-observer/"
-    ]
-  },
-  {
     "url": "https://drafts.csswg.org/scroll-animations-1/",
     "versions": [
       "https://drafts.csswg.org/scroll-animations-1/"
@@ -79,18 +73,6 @@
     ]
   },
   {
-    "url": "https://immersive-web.github.io/webxr-ar-module/",
-    "versions": [
-      "https://immersive-web.github.io/webxr-ar-module/"
-    ]
-  },
-  {
-    "url": "https://immersive-web.github.io/webxr-gamepads-module/",
-    "versions": [
-      "https://immersive-web.github.io/webxr-gamepads-module/"
-    ]
-  },
-  {
     "url": "https://notifications.spec.whatwg.org/",
     "versions": [
       "https://notifications.spec.whatwg.org/"
@@ -103,33 +85,27 @@
     ]
   },
   {
+    "url": "https://svgwg.org/specs/animations/",
+    "versions": [
+      "https://svgwg.org/specs/animations/"
+    ]
+  },
+  {
     "url": "https://url.spec.whatwg.org/",
     "versions": [
       "https://url.spec.whatwg.org/"
     ]
   },
   {
-    "url": "https://w3c.github.io/media-capabilities/",
+    "url": "https://w3c.github.io/gamepad/extensions.html",
     "versions": [
-      "https://w3c.github.io/media-capabilities/"
+      "https://w3c.github.io/gamepad/extensions.html"
     ]
   },
   {
     "url": "https://w3c.github.io/media-playback-quality/",
     "versions": [
       "https://w3c.github.io/media-playback-quality/"
-    ]
-  },
-  {
-    "url": "https://w3c.github.io/mediasession/",
-    "versions": [
-      "https://w3c.github.io/mediasession/"
-    ]
-  },
-  {
-    "url": "https://w3c.github.io/picture-in-picture/",
-    "versions": [
-      "https://w3c.github.io/picture-in-picture/"
     ]
   },
   {
@@ -157,12 +133,6 @@
     ]
   },
   {
-    "url": "https://w3c.github.io/web-share/",
-    "versions": [
-      "https://w3c.github.io/web-share/"
-    ]
-  },
-  {
     "url": "https://webbluetoothcg.github.io/web-bluetooth/",
     "versions": [
       "https://webbluetoothcg.github.io/web-bluetooth/"
@@ -172,6 +142,12 @@
     "url": "https://wicg.github.io/background-fetch/",
     "versions": [
       "https://wicg.github.io/background-fetch/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/badging/",
+    "versions": [
+      "https://wicg.github.io/badging/"
     ]
   },
   {
@@ -223,9 +199,21 @@
     ]
   },
   {
+    "url": "https://wicg.github.io/frame-timing/",
+    "versions": [
+      "https://wicg.github.io/frame-timing/"
+    ]
+  },
+  {
     "url": "https://wicg.github.io/InputDeviceCapabilities/",
     "versions": [
       "https://wicg.github.io/InputDeviceCapabilities/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/js-self-profiling/",
+    "versions": [
+      "https://wicg.github.io/js-self-profiling/"
     ]
   },
   {
@@ -253,9 +241,33 @@
     ]
   },
   {
+    "url": "https://wicg.github.io/native-file-system/",
+    "versions": [
+      "https://wicg.github.io/native-file-system/"
+    ]
+  },
+  {
     "url": "https://wicg.github.io/netinfo/",
     "versions": [
       "https://wicg.github.io/netinfo/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/page-lifecycle/",
+    "versions": [
+      "https://wicg.github.io/page-lifecycle/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/permissions-request/",
+    "versions": [
+      "https://wicg.github.io/permissions-request/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/permissions-revoke/",
+    "versions": [
+      "https://wicg.github.io/permissions-revoke/"
     ]
   },
   {
@@ -268,6 +280,24 @@
     "url": "https://wicg.github.io/speech-api/",
     "versions": [
       "https://wicg.github.io/speech-api/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/video-raf/",
+    "versions": [
+      "https://wicg.github.io/video-raf/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/visual-viewport/",
+    "versions": [
+      "https://wicg.github.io/visual-viewport/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/web-locks/",
+    "versions": [
+      "https://wicg.github.io/web-locks/"
     ]
   },
   {
@@ -294,6 +324,7 @@
     "url": "https://www.w3.org/TR/accelerometer/",
     "shortname": "accelerometer",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-accelerometer-20191212/",
       "https://www.w3.org/TR/2019/WD-accelerometer-20190307/",
       "https://www.w3.org/TR/2018/CR-accelerometer-20180320/",
       "https://www.w3.org/TR/2017/WD-accelerometer-20171018/",
@@ -306,8 +337,8 @@
     ],
     "title": "Accelerometer",
     "latest": "https://www.w3.org/TR/accelerometer/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-accelerometer-20190307/",
-    "datedStatus": "Working Draft",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-accelerometer-20191212/",
+    "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/accelerometer/"
   },
@@ -341,6 +372,8 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191209/",
+      "https://www.w3.org/TR/2019/WD-appmanifest-20191204/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191115/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191112/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191104/",
@@ -439,14 +472,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20161007/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160912/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20160901/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160825/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160812/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20191115/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20191209/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -786,13 +817,14 @@
     "url": "https://www.w3.org/TR/css-nav-1/",
     "shortname": "css-nav-1",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-css-nav-1-20191126/",
       "https://www.w3.org/TR/2019/WD-css-nav-1-20190423/",
       "https://drafts.csswg.org/css-nav-1/",
       "https://www.w3.org/TR/css-nav-1/"
     ],
     "title": "CSS Spatial Navigation Level 1",
     "latest": "https://www.w3.org/TR/css-nav-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-nav-1-20190423/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-css-nav-1-20191126/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://drafts.csswg.org/css-nav-1/"
@@ -983,6 +1015,21 @@
     "edDraft": "https://drafts.csswg.org/cssom-view/"
   },
   {
+    "url": "https://www.w3.org/TR/device-memory-1/",
+    "shortname": "device-memory-1",
+    "versions": [
+      "https://www.w3.org/TR/2018/WD-device-memory-1-20180925/",
+      "https://w3c.github.io/device-memory/",
+      "https://www.w3.org/TR/device-memory-1/"
+    ],
+    "title": "Device Memory",
+    "latest": "https://www.w3.org/TR/device-memory-1/",
+    "datedUrl": "https://www.w3.org/TR/2018/WD-device-memory-1-20180925/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/device-memory/"
+  },
+  {
     "url": "https://www.w3.org/TR/DOM-Parsing/",
     "shortname": "DOM-Parsing",
     "versions": [
@@ -1141,6 +1188,7 @@
     "url": "https://www.w3.org/TR/gamepad/",
     "shortname": "gamepad",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-gamepad-20200121/",
       "https://www.w3.org/TR/2019/WD-gamepad-20191114/",
       "https://www.w3.org/TR/2019/WD-gamepad-20191010/",
       "https://www.w3.org/TR/2019/WD-gamepad-20191003/",
@@ -1186,7 +1234,7 @@
     ],
     "title": "Gamepad",
     "latest": "https://www.w3.org/TR/gamepad/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-gamepad-20191114/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-gamepad-20200121/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/gamepad/"
@@ -1195,6 +1243,7 @@
     "url": "https://www.w3.org/TR/generic-sensor/",
     "shortname": "generic-sensor",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-generic-sensor-20191212/",
       "https://www.w3.org/TR/2019/WD-generic-sensor-20190307/",
       "https://www.w3.org/TR/2018/CR-generic-sensor-20180320/",
       "https://www.w3.org/TR/2017/WD-generic-sensor-20171018/",
@@ -1211,8 +1260,8 @@
     ],
     "title": "Generic Sensor API",
     "latest": "https://www.w3.org/TR/generic-sensor/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-generic-sensor-20190307/",
-    "datedStatus": "Working Draft",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-generic-sensor-20191212/",
+    "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/sensors/"
   },
@@ -1261,6 +1310,7 @@
     "url": "https://www.w3.org/TR/gyroscope/",
     "shortname": "gyroscope",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-gyroscope-20191212/",
       "https://www.w3.org/TR/2019/WD-gyroscope-20190307/",
       "https://www.w3.org/TR/2018/CR-gyroscope-20180320/",
       "https://www.w3.org/TR/2017/WD-gyroscope-20171018/",
@@ -1273,8 +1323,8 @@
     ],
     "title": "Gyroscope",
     "latest": "https://www.w3.org/TR/gyroscope/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-gyroscope-20190307/",
-    "datedStatus": "Working Draft",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-gyroscope-20191212/",
+    "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/gyroscope/"
   },
@@ -1484,6 +1534,21 @@
     "edDraft": "https://w3c.github.io/magnetometer/"
   },
   {
+    "url": "https://www.w3.org/TR/media-capabilities/",
+    "shortname": "media-capabilities",
+    "versions": [
+      "https://www.w3.org/TR/2020/WD-media-capabilities-20200130/",
+      "https://w3c.github.io/media-capabilities/",
+      "https://www.w3.org/TR/media-capabilities/"
+    ],
+    "title": "Media Capabilities",
+    "latest": "https://www.w3.org/TR/media-capabilities/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-media-capabilities-20200130/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/media-capabilities/"
+  },
+  {
     "url": "https://www.w3.org/TR/media-source/",
     "shortname": "media-source",
     "versions": [
@@ -1585,6 +1650,21 @@
     "edDraft": "https://w3c.github.io/mediacapture-main/"
   },
   {
+    "url": "https://www.w3.org/TR/mediasession/",
+    "shortname": "mediasession",
+    "versions": [
+      "https://www.w3.org/TR/2020/WD-mediasession-20200130/",
+      "https://w3c.github.io/mediasession/",
+      "https://www.w3.org/TR/mediasession/"
+    ],
+    "title": "Media Session Standard",
+    "latest": "https://www.w3.org/TR/mediasession/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-mediasession-20200130/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/mediasession/"
+  },
+  {
     "url": "https://www.w3.org/TR/mediastream-recording/",
     "shortname": "mediastream-recording",
     "versions": [
@@ -1620,13 +1700,14 @@
     "url": "https://www.w3.org/TR/mst-content-hint/",
     "shortname": "mst-content-hint",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-mst-content-hint-20200214/",
       "https://www.w3.org/TR/2018/WD-mst-content-hint-20180703/",
       "https://w3c.github.io/mst-content-hint/",
       "https://www.w3.org/TR/mst-content-hint/"
     ],
     "title": "MediaStreamTrack Content Hints",
     "latest": "https://www.w3.org/TR/mst-content-hint/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-mst-content-hint-20180703/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-mst-content-hint-20200214/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/mst-content-hint/"
@@ -1635,6 +1716,8 @@
     "url": "https://www.w3.org/TR/navigation-timing-2/",
     "shortname": "navigation-timing-2",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-navigation-timing-2-20200121/",
+      "https://www.w3.org/TR/2019/WD-navigation-timing-2-20191217/",
       "https://www.w3.org/TR/2019/WD-navigation-timing-2-20190715/",
       "https://www.w3.org/TR/2019/WD-navigation-timing-2-20190627/",
       "https://www.w3.org/TR/2019/WD-navigation-timing-2-20190626/",
@@ -1686,7 +1769,7 @@
     ],
     "title": "Navigation Timing Level 2",
     "latest": "https://www.w3.org/TR/navigation-timing-2/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-navigation-timing-2-20190715/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-navigation-timing-2-20200121/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/navigation-timing/"
@@ -1714,6 +1797,7 @@
     "url": "https://www.w3.org/TR/orientation-sensor/",
     "shortname": "orientation-sensor",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-orientation-sensor-20191212/",
       "https://www.w3.org/TR/2019/WD-orientation-sensor-20190307/",
       "https://www.w3.org/TR/2018/CR-orientation-sensor-20180320/",
       "https://www.w3.org/TR/2017/WD-orientation-sensor-20171018/",
@@ -1724,8 +1808,8 @@
     ],
     "title": "Orientation Sensor",
     "latest": "https://www.w3.org/TR/orientation-sensor/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-orientation-sensor-20190307/",
-    "datedStatus": "Working Draft",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-orientation-sensor-20191212/",
+    "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/orientation-sensor/"
   },
@@ -1805,6 +1889,9 @@
     "url": "https://www.w3.org/TR/payment-method-basic-card/",
     "shortname": "payment-method-basic-card",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-payment-method-basic-card-20200213/",
+      "https://www.w3.org/TR/2020/WD-payment-method-basic-card-20200212/",
+      "https://www.w3.org/TR/2020/WD-payment-method-basic-card-20200123/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191120/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191119/",
       "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20190917/",
@@ -1844,7 +1931,7 @@
     ],
     "title": "Payment Method: Basic Card",
     "latest": "https://www.w3.org/TR/payment-method-basic-card/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-payment-method-basic-card-20191120/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-payment-method-basic-card-20200213/",
     "datedStatus": "Working Draft",
     "informative": true,
     "edDraft": "https://w3c.github.io/payment-method-basic-card/"
@@ -1853,6 +1940,7 @@
     "url": "https://www.w3.org/TR/payment-request/",
     "shortname": "payment-request",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-payment-request-20191212/",
       "https://www.w3.org/TR/2019/CR-payment-request-20190416/",
       "https://www.w3.org/TR/2018/CR-payment-request-20180830/",
       "https://www.w3.org/TR/2018/CR-payment-request-20180827/",
@@ -1924,7 +2012,7 @@
     ],
     "title": "Payment Request API",
     "latest": "https://www.w3.org/TR/payment-request/",
-    "datedUrl": "https://www.w3.org/TR/2019/CR-payment-request-20190416/",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-payment-request-20191212/",
     "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/payment-request/"
@@ -1995,26 +2083,32 @@
     "edDraft": "https://w3c.github.io/permissions/"
   },
   {
-    "url": "https://www.w3.org/TR/pointerevents2/",
-    "shortname": "pointerevents2",
+    "url": "https://www.w3.org/TR/picture-in-picture/",
+    "shortname": "picture-in-picture",
     "versions": [
-      "https://www.w3.org/TR/2019/REC-pointerevents2-20190404/",
-      "https://www.w3.org/TR/2019/PR-pointerevents2-20190221/",
-      "https://www.w3.org/TR/2018/CR-pointerevents2-20181211/",
-      "https://www.w3.org/TR/2018/PR-pointerevents2-20181016/",
-      "https://www.w3.org/TR/2018/CR-pointerevents2-20180522/",
-      "https://www.w3.org/TR/2018/CR-pointerevents2-20180510/",
-      "https://www.w3.org/TR/2018/WD-pointerevents2-20180404/",
-      "https://www.w3.org/TR/2018/WD-pointerevents2-20180206/",
-      "https://www.w3.org/TR/2016/WD-pointerevents2-20160719/",
-      "https://w3c.github.io/pointerevents/",
-      "https://www.w3.org/TR/pointerevents2/",
-      "https://www.w3.org/TR/pointerevents/"
+      "https://www.w3.org/TR/2020/WD-picture-in-picture-20200130/",
+      "https://w3c.github.io/picture-in-picture/",
+      "https://www.w3.org/TR/picture-in-picture/"
     ],
-    "title": "Pointer Events",
-    "latest": "https://www.w3.org/TR/pointerevents2/",
-    "datedUrl": "https://www.w3.org/TR/2019/REC-pointerevents2-20190404/",
-    "datedStatus": "Recommendation",
+    "title": "Picture-in-Picture",
+    "latest": "https://www.w3.org/TR/picture-in-picture/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-picture-in-picture-20200130/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/picture-in-picture/"
+  },
+  {
+    "url": "https://www.w3.org/TR/pointerevents3/",
+    "shortname": "pointerevents3",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-pointerevents3-20191212/",
+      "https://w3c.github.io/pointerevents/",
+      "https://www.w3.org/TR/pointerevents3/"
+    ],
+    "title": "Pointer Events Level 3",
+    "latest": "https://www.w3.org/TR/pointerevents3/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-pointerevents3-20191212/",
+    "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/pointerevents/"
   },
@@ -2085,6 +2179,7 @@
     "url": "https://www.w3.org/TR/push-api/",
     "shortname": "push-api",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-push-api-20200204/",
       "https://www.w3.org/TR/2019/WD-push-api-20191003/",
       "https://www.w3.org/TR/2019/WD-push-api-20190724/",
       "https://www.w3.org/TR/2019/WD-push-api-20190717/",
@@ -2123,7 +2218,7 @@
     ],
     "title": "Push API",
     "latest": "https://www.w3.org/TR/push-api/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-push-api-20191003/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-push-api-20200204/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/push-api/"
@@ -2195,9 +2290,27 @@
     "edDraft": "https://w3c.github.io/requestidlecallback/"
   },
   {
+    "url": "https://www.w3.org/TR/resize-observer-1/",
+    "shortname": "resize-observer-1",
+    "versions": [
+      "https://www.w3.org/TR/2020/WD-resize-observer-1-20200211/",
+      "https://drafts.csswg.org/resize-observer/",
+      "https://www.w3.org/TR/resize-observer-1/"
+    ],
+    "title": "Resize Observer",
+    "latest": "https://www.w3.org/TR/resize-observer-1/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-resize-observer-1-20200211/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://drafts.csswg.org/resize-observer/"
+  },
+  {
     "url": "https://www.w3.org/TR/resource-timing-2/",
     "shortname": "resource-timing-2",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-resource-timing-2-20200218/",
+      "https://www.w3.org/TR/2020/WD-resource-timing-2-20200123/",
+      "https://www.w3.org/TR/2019/WD-resource-timing-2-20191128/",
       "https://www.w3.org/TR/2019/WD-resource-timing-2-20190923/",
       "https://www.w3.org/TR/2019/WD-resource-timing-2-20190626/",
       "https://www.w3.org/TR/2019/WD-resource-timing-2-20190619/",
@@ -2222,7 +2335,7 @@
     ],
     "title": "Resource Timing Level 2",
     "latest": "https://www.w3.org/TR/resource-timing-2/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-resource-timing-2-20190923/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-resource-timing-2-20200218/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/resource-timing/"
@@ -2249,6 +2362,7 @@
     "url": "https://www.w3.org/TR/screen-orientation/",
     "shortname": "screen-orientation",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-screen-orientation-20200122/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20191102/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20191024/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20190903/",
@@ -2308,7 +2422,7 @@
     ],
     "title": "The Screen Orientation API",
     "latest": "https://www.w3.org/TR/screen-orientation/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-screen-orientation-20191102/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-screen-orientation-20200122/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/screen-orientation/"
@@ -2378,6 +2492,7 @@
     "url": "https://www.w3.org/TR/server-timing/",
     "shortname": "server-timing",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-server-timing-20200120/",
       "https://www.w3.org/TR/2019/WD-server-timing-20190307/",
       "https://www.w3.org/TR/2019/WD-server-timing-20190122/",
       "https://www.w3.org/TR/2018/WD-server-timing-20181019/",
@@ -2407,7 +2522,7 @@
     ],
     "title": "Server Timing",
     "latest": "https://www.w3.org/TR/server-timing/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-server-timing-20190307/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-server-timing-20200120/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/server-timing/"
@@ -2576,6 +2691,7 @@
     "url": "https://www.w3.org/TR/wai-aria-1.2/",
     "shortname": "wai-aria-1.2",
     "versions": [
+      "https://www.w3.org/TR/2019/WD-wai-aria-1.2-20191218/",
       "https://www.w3.org/TR/2018/WD-wai-aria-1.2-20181218/",
       "https://www.w3.org/TR/2018/WD-wai-aria-1.2-20180719/",
       "https://rawgit.com/w3c/aria/master/",
@@ -2583,7 +2699,7 @@
     ],
     "title": "Accessible Rich Internet Applications (WAI-ARIA) 1.2",
     "latest": "https://www.w3.org/TR/wai-aria-1.2/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-wai-aria-1.2-20181218/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-wai-aria-1.2-20191218/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://rawgit.com/w3c/aria/master/"
@@ -2631,6 +2747,7 @@
     "url": "https://www.w3.org/TR/wasm-js-api-1/",
     "shortname": "wasm-js-api-1",
     "versions": [
+      "https://www.w3.org/TR/2019/REC-wasm-js-api-1-20191205/",
       "https://www.w3.org/TR/2019/PR-wasm-js-api-1-20191001/",
       "https://www.w3.org/TR/2019/CR-wasm-js-api-1-20190718/",
       "https://www.w3.org/TR/2018/WD-wasm-js-api-1-20180904/",
@@ -2640,8 +2757,8 @@
     ],
     "title": "WebAssembly JavaScript Interface",
     "latest": "https://www.w3.org/TR/wasm-js-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/PR-wasm-js-api-1-20191001/",
-    "datedStatus": "Proposed Recommendation",
+    "datedUrl": "https://www.w3.org/TR/2019/REC-wasm-js-api-1-20191205/",
+    "datedStatus": "Recommendation",
     "informative": false,
     "edDraft": "https://webassembly.github.io/spec/js-api/"
   },
@@ -2649,6 +2766,7 @@
     "url": "https://www.w3.org/TR/wasm-web-api-1/",
     "shortname": "wasm-web-api-1",
     "versions": [
+      "https://www.w3.org/TR/2019/REC-wasm-web-api-1-20191205/",
       "https://www.w3.org/TR/2019/PR-wasm-web-api-1-20191001/",
       "https://www.w3.org/TR/2019/CR-wasm-web-api-1-20190718/",
       "https://www.w3.org/TR/2018/WD-wasm-web-api-1-20180904/",
@@ -2658,8 +2776,8 @@
     ],
     "title": "WebAssembly Web API",
     "latest": "https://www.w3.org/TR/wasm-web-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/PR-wasm-web-api-1-20191001/",
-    "datedStatus": "Proposed Recommendation",
+    "datedUrl": "https://www.w3.org/TR/2019/REC-wasm-web-api-1-20191205/",
+    "datedStatus": "Recommendation",
     "informative": false,
     "edDraft": "https://webassembly.github.io/spec/web-api/"
   },
@@ -2681,6 +2799,21 @@
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://drafts.csswg.org/web-animations-1/"
+  },
+  {
+    "url": "https://www.w3.org/TR/web-share/",
+    "shortname": "web-share",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-web-share-20191217/",
+      "https://w3c.github.io/web-share/",
+      "https://www.w3.org/TR/web-share/"
+    ],
+    "title": "Web Share API",
+    "latest": "https://www.w3.org/TR/web-share/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-web-share-20191217/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/web-share/"
   },
   {
     "url": "https://www.w3.org/TR/webaudio/",
@@ -2705,30 +2838,18 @@
     "edDraft": "https://webaudio.github.io/web-audio-api/"
   },
   {
-    "url": "https://www.w3.org/TR/webauthn-1/",
-    "shortname": "webauthn-1",
+    "url": "https://www.w3.org/TR/webauthn-2/",
+    "shortname": "webauthn-2",
     "versions": [
-      "https://www.w3.org/TR/2019/REC-webauthn-1-20190304/",
-      "https://www.w3.org/TR/2019/PR-webauthn-20190117/",
-      "https://www.w3.org/TR/2018/CR-webauthn-20180807/",
-      "https://www.w3.org/TR/2018/CR-webauthn-20180320/",
-      "https://www.w3.org/TR/2018/WD-webauthn-20180315/",
-      "https://www.w3.org/TR/2018/WD-webauthn-20180306/",
-      "https://www.w3.org/TR/2017/WD-webauthn-20171205/",
-      "https://www.w3.org/TR/2017/WD-webauthn-20170811/",
-      "https://www.w3.org/TR/2017/WD-webauthn-20170505/",
-      "https://www.w3.org/TR/2017/WD-webauthn-20170216/",
-      "https://www.w3.org/TR/2016/WD-webauthn-20161207/",
-      "https://www.w3.org/TR/2016/WD-webauthn-20160928/",
-      "https://www.w3.org/TR/2016/WD-webauthn-20160902/",
-      "https://www.w3.org/TR/2016/WD-webauthn-20160531/",
+      "https://www.w3.org/TR/2019/WD-webauthn-2-20191126/",
+      "https://www.w3.org/TR/2019/WD-webauthn-2-20190604/",
       "https://w3c.github.io/webauthn/",
-      "https://www.w3.org/TR/webauthn-1/"
+      "https://www.w3.org/TR/webauthn-2/"
     ],
-    "title": "Web Authentication:An API for accessing Public Key Credentials Level 1",
-    "latest": "https://www.w3.org/TR/webauthn-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/REC-webauthn-1-20190304/",
-    "datedStatus": "Recommendation",
+    "title": "Web Authentication: An API for accessing Public Key Credentials - Level 2",
+    "latest": "https://www.w3.org/TR/webauthn-2/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-webauthn-2-20191126/",
+    "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/webauthn/"
   },
@@ -2896,21 +3017,6 @@
     "edDraft": "http://webaudio.github.io/web-midi-api/"
   },
   {
-    "url": "https://www.w3.org/TR/webrtc-dscp/",
-    "shortname": "webrtc-dscp",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-webrtc-dscp-20180703/",
-      "https://w3c.github.io/webrtc-dscp-exp/",
-      "https://www.w3.org/TR/webrtc-dscp/"
-    ],
-    "title": "WebRTC DSCP Control API",
-    "latest": "https://www.w3.org/TR/webrtc-dscp/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-webrtc-dscp-20180703/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://w3c.github.io/webrtc-dscp-exp/"
-  },
-  {
     "url": "https://www.w3.org/TR/webrtc-identity/",
     "shortname": "webrtc-identity",
     "versions": [
@@ -2945,9 +3051,27 @@
     "edDraft": "https://w3c.github.io/webrtc-identity/identity.html"
   },
   {
+    "url": "https://www.w3.org/TR/webrtc-priority/",
+    "shortname": "webrtc-priority",
+    "versions": [
+      "https://www.w3.org/TR/2020/WD-webrtc-priority-20200123/",
+      "https://www.w3.org/TR/2018/WD-webrtc-dscp-20180703/",
+      "https://w3c.github.io/webrtc-priority/",
+      "https://www.w3.org/TR/webrtc-priority/",
+      "http://w3c.github.io/webrtc-priority/"
+    ],
+    "title": "WebRTC Priority Control API",
+    "latest": "https://www.w3.org/TR/webrtc-priority/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-webrtc-priority-20200123/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "http://w3c.github.io/webrtc-priority/"
+  },
+  {
     "url": "https://www.w3.org/TR/webrtc-stats/",
     "shortname": "webrtc-stats",
     "versions": [
+      "https://www.w3.org/TR/2020/CR-webrtc-stats-20200114/",
       "https://www.w3.org/TR/2018/CR-webrtc-stats-20180703/",
       "https://www.w3.org/TR/2018/WD-webrtc-stats-20180627/",
       "https://www.w3.org/TR/2018/WD-webrtc-stats-20180519/",
@@ -2971,15 +3095,31 @@
     ],
     "title": "Identifiers for WebRTC's Statistics API",
     "latest": "https://www.w3.org/TR/webrtc-stats/",
-    "datedUrl": "https://www.w3.org/TR/2018/CR-webrtc-stats-20180703/",
+    "datedUrl": "https://www.w3.org/TR/2020/CR-webrtc-stats-20200114/",
     "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/webrtc-stats/"
   },
   {
+    "url": "https://www.w3.org/TR/webrtc-svc/",
+    "shortname": "webrtc-svc",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-webrtc-svc-20191022/",
+      "https://w3c.github.io/webrtc-svc/",
+      "https://www.w3.org/TR/webrtc-svc/"
+    ],
+    "title": "Scalable Video Coding (SVC) Extension for WebRTC",
+    "latest": "https://www.w3.org/TR/webrtc-svc/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-webrtc-svc-20191022/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://w3c.github.io/webrtc-svc/"
+  },
+  {
     "url": "https://www.w3.org/TR/webrtc/",
     "shortname": "webrtc",
     "versions": [
+      "https://www.w3.org/TR/2019/CR-webrtc-20191213/",
       "https://www.w3.org/TR/2018/CR-webrtc-20180927/",
       "https://www.w3.org/TR/2018/CR-webrtc-20180621/",
       "https://www.w3.org/TR/2017/CR-webrtc-20171102/",
@@ -3004,7 +3144,7 @@
     ],
     "title": "WebRTC 1.0: Real-time Communication Between Browsers",
     "latest": "https://www.w3.org/TR/webrtc/",
-    "datedUrl": "https://www.w3.org/TR/2018/CR-webrtc-20180927/",
+    "datedUrl": "https://www.w3.org/TR/2019/CR-webrtc-20191213/",
     "datedStatus": "Candidate Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/webrtc-pc/"
@@ -3046,6 +3186,38 @@
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://immersive-web.github.io/webxr/"
+  },
+  {
+    "url": "https://www.w3.org/TR/webxr-ar-module/",
+    "shortname": "webxr-ar-module",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-webxr-ar-module-1-20191010/",
+      "https://immersive-web.github.io/webxr-ar-module/",
+      "https://www.w3.org/TR/webxr-ar-module/",
+      "https://www.w3.org/TR/webxr-ar-module-1/"
+    ],
+    "title": "WebXR Augmented Reality Module - Level 1",
+    "latest": "https://www.w3.org/TR/webxr-ar-module-1/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-webxr-ar-module-1-20191010/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://immersive-web.github.io/webxr-ar-module/"
+  },
+  {
+    "url": "https://www.w3.org/TR/webxr-gamepads-module/",
+    "shortname": "webxr-gamepads-module",
+    "versions": [
+      "https://www.w3.org/TR/2019/WD-webxr-gamepads-module-1-20191010/",
+      "https://immersive-web.github.io/webxr-gamepads-module/",
+      "https://www.w3.org/TR/webxr-gamepads-module/",
+      "https://www.w3.org/TR/webxr-gamepads-module-1/"
+    ],
+    "title": "WebXR Gamepads Module - Level 1",
+    "latest": "https://www.w3.org/TR/webxr-gamepads-module-1/",
+    "datedUrl": "https://www.w3.org/TR/2019/WD-webxr-gamepads-module-1-20191010/",
+    "datedStatus": "Working Draft",
+    "informative": false,
+    "edDraft": "https://immersive-web.github.io/webxr-gamepads-module/"
   },
   {
     "url": "https://www.w3.org/TR/worklets-1/",
