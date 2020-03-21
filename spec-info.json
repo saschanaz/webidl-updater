@@ -23,24 +23,6 @@
     ]
   },
   {
-    "url": "https://drafts.css-houdini.org/box-tree-api/",
-    "versions": [
-      "https://drafts.css-houdini.org/box-tree-api/"
-    ]
-  },
-  {
-    "url": "https://drafts.css-houdini.org/font-metrics-api/",
-    "versions": [
-      "https://drafts.css-houdini.org/font-metrics-api/"
-    ]
-  },
-  {
-    "url": "https://drafts.csswg.org/scroll-animations-1/",
-    "versions": [
-      "https://drafts.csswg.org/scroll-animations-1/"
-    ]
-  },
-  {
     "url": "https://fetch.spec.whatwg.org/",
     "versions": [
       "https://fetch.spec.whatwg.org/"
@@ -70,6 +52,12 @@
       "https://www.w3.org/TR/workers/",
       "https://www.w3.org/TR/websockets/",
       "https://www.w3.org/html/wg/drafts/html/master/webappapis.html"
+    ]
+  },
+  {
+    "url": "https://immersive-web.github.io/hit-test/",
+    "versions": [
+      "https://immersive-web.github.io/hit-test/"
     ]
   },
   {
@@ -154,6 +142,12 @@
     "url": "https://wicg.github.io/BackgroundSync/spec/",
     "versions": [
       "https://wicg.github.io/BackgroundSync/spec/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/construct-stylesheets/",
+    "versions": [
+      "https://wicg.github.io/construct-stylesheets/"
     ]
   },
   {
@@ -253,6 +247,12 @@
     ]
   },
   {
+    "url": "https://wicg.github.io/origin-policy/",
+    "versions": [
+      "https://wicg.github.io/origin-policy/"
+    ]
+  },
+  {
     "url": "https://wicg.github.io/page-lifecycle/",
     "versions": [
       "https://wicg.github.io/page-lifecycle/"
@@ -298,6 +298,12 @@
     "url": "https://wicg.github.io/web-locks/",
     "versions": [
       "https://wicg.github.io/web-locks/"
+    ]
+  },
+  {
+    "url": "https://wicg.github.io/web-transport/",
+    "versions": [
+      "https://wicg.github.io/web-transport/"
     ]
   },
   {
@@ -372,6 +378,8 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-appmanifest-20200319/",
+      "https://www.w3.org/TR/2020/WD-appmanifest-20200318/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191209/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191204/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191115/",
@@ -470,14 +478,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20161103/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20161013/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20161007/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160912/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20160901/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-appmanifest-20191209/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-appmanifest-20200319/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -652,369 +658,6 @@
     "edDraft": "https://w3c.github.io/webappsec-csp/"
   },
   {
-    "url": "https://www.w3.org/TR/css-animations-1/",
-    "shortname": "css-animations-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-css-animations-1-20181011/",
-      "https://www.w3.org/TR/2017/WD-css-animations-1-20171130/",
-      "https://www.w3.org/TR/2013/WD-css3-animations-20130219/",
-      "https://www.w3.org/TR/2012/WD-css3-animations-20120403/",
-      "https://www.w3.org/TR/2009/WD-css3-animations-20090320/",
-      "https://drafts.csswg.org/css-animations/",
-      "https://www.w3.org/TR/css-animations-1/"
-    ],
-    "title": "CSS Animations Level 1",
-    "latest": "https://www.w3.org/TR/css-animations-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-animations-1-20181011/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-animations/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-animation-worklet-1/",
-    "shortname": "css-animation-worklet-1",
-    "versions": [
-      "https://www.w3.org/TR/2019/WD-css-animation-worklet-1-20190625/",
-      "https://drafts.css-houdini.org/css-animationworklet-1/",
-      "https://www.w3.org/TR/css-animation-worklet-1/"
-    ],
-    "title": "CSS Animation Worklet API",
-    "latest": "https://www.w3.org/TR/css-animation-worklet-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-animation-worklet-1-20190625/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.css-houdini.org/css-animationworklet-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-counter-styles-3/",
-    "shortname": "css-counter-styles-3",
-    "versions": [
-      "https://www.w3.org/TR/2017/CR-css-counter-styles-3-20171214/",
-      "https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150611/",
-      "https://www.w3.org/TR/2015/CR-css-counter-styles-3-20150203/",
-      "https://www.w3.org/TR/2014/WD-css-counter-styles-3-20140826/",
-      "https://www.w3.org/TR/2013/WD-css-counter-styles-3-20130718/",
-      "https://www.w3.org/TR/2013/WD-css-counter-styles-3-20130221/",
-      "https://www.w3.org/TR/2012/WD-css-counter-styles-3-20121009/",
-      "https://drafts.csswg.org/css-counter-styles/",
-      "https://www.w3.org/TR/css-counter-styles-3/"
-    ],
-    "title": "CSS Counter Styles Level 3",
-    "latest": "https://www.w3.org/TR/css-counter-styles-3/",
-    "datedUrl": "https://www.w3.org/TR/2017/CR-css-counter-styles-3-20171214/",
-    "datedStatus": "Candidate Recommendation",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-counter-styles/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-device-adapt-1/",
-    "shortname": "css-device-adapt-1",
-    "versions": [
-      "https://www.w3.org/TR/2016/WD-css-device-adapt-1-20160329/",
-      "https://www.w3.org/TR/2015/WD-css-device-adapt-1-20151126/",
-      "https://www.w3.org/TR/2011/WD-css-device-adapt-20110915/",
-      "https://drafts.csswg.org/css-device-adapt/",
-      "https://www.w3.org/TR/css-device-adapt-1/",
-      "http://www.w3.org/TR/css-device-adapt-1/"
-    ],
-    "title": "CSS Device Adaptation Module Level 1",
-    "latest": "http://www.w3.org/TR/css-device-adapt-1/",
-    "datedUrl": "http://www.w3.org/TR/2016/WD-css-device-adapt-1-20160329/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-device-adapt/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-font-loading-3/",
-    "shortname": "css-font-loading-3",
-    "versions": [
-      "https://www.w3.org/TR/2014/WD-css-font-loading-3-20140522/",
-      "https://www.w3.org/TR/2014/WD-css-font-loading-3-20140220/",
-      "https://drafts.csswg.org/css-font-loading/",
-      "https://www.w3.org/TR/css-font-loading-3/",
-      "http://www.w3.org/TR/css-font-loading-3/"
-    ],
-    "title": "CSS Font Loading Module Level 3",
-    "latest": "http://www.w3.org/TR/css-font-loading-3/",
-    "datedUrl": "http://www.w3.org/TR/2014/WD-css-font-loading-3-20140522/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-font-loading/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-fonts-4/",
-    "shortname": "css-fonts-4",
-    "versions": [
-      "https://www.w3.org/TR/2019/WD-css-fonts-4-20191113/",
-      "https://www.w3.org/TR/2018/WD-css-fonts-4-20180920/",
-      "https://www.w3.org/TR/2018/WD-css-fonts-4-20180410/",
-      "https://www.w3.org/TR/2017/WD-css-fonts-4-20170711/",
-      "https://drafts.csswg.org/css-fonts-4/",
-      "https://www.w3.org/TR/css-fonts-4/",
-      "https://www.w3.org/TR/css3-fonts/",
-      "https://www.w3.org/TR/css-fonts-3/"
-    ],
-    "title": "CSS Fonts Module Level 4",
-    "latest": "https://www.w3.org/TR/css-fonts-4/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-fonts-4-20191113/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-fonts-4/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-images-4/",
-    "shortname": "css-images-4",
-    "versions": [
-      "https://www.w3.org/TR/2017/WD-css-images-4-20170413/",
-      "https://www.w3.org/TR/2012/WD-css4-images-20120911/",
-      "https://drafts.csswg.org/css-images-4/",
-      "https://www.w3.org/TR/css-images-4/"
-    ],
-    "title": "CSS Image Values and Replaced Content Module Level 4",
-    "latest": "https://www.w3.org/TR/css-images-4/",
-    "datedUrl": "https://www.w3.org/TR/2017/WD-css-images-4-20170413/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-images-4/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-layout-api-1/",
-    "shortname": "css-layout-api-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-css-layout-api-1-20180412/",
-      "https://drafts.css-houdini.org/css-layout-api-1/",
-      "https://www.w3.org/TR/css-layout-api-1/"
-    ],
-    "title": "CSS Layout API Level 1",
-    "latest": "https://www.w3.org/TR/css-layout-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-layout-api-1-20180412/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.css-houdini.org/css-layout-api-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-masking-1/",
-    "shortname": "css-masking-1",
-    "versions": [
-      "https://www.w3.org/TR/2014/CR-css-masking-1-20140826/",
-      "https://www.w3.org/TR/2014/WD-css-masking-1-20140522/",
-      "https://www.w3.org/TR/2014/WD-css-masking-1-20140213/",
-      "https://www.w3.org/TR/2013/WD-css-masking-1-20131029/",
-      "https://www.w3.org/TR/2013/WD-css-masking-20130620/",
-      "https://www.w3.org/TR/2012/WD-css-masking-20121115/",
-      "https://drafts.fxtf.org/css-masking-1/",
-      "https://www.w3.org/TR/css-masking-1/",
-      "http://www.w3.org/TR/css-masking-1/"
-    ],
-    "title": "CSS Masking Module Level 1",
-    "latest": "http://www.w3.org/TR/css-masking-1/",
-    "datedUrl": "http://www.w3.org/TR/2014/CR-css-masking-1-20140826/",
-    "datedStatus": "Candidate Recommendation",
-    "informative": false,
-    "edDraft": "https://drafts.fxtf.org/css-masking-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-nav-1/",
-    "shortname": "css-nav-1",
-    "versions": [
-      "https://www.w3.org/TR/2019/WD-css-nav-1-20191126/",
-      "https://www.w3.org/TR/2019/WD-css-nav-1-20190423/",
-      "https://drafts.csswg.org/css-nav-1/",
-      "https://www.w3.org/TR/css-nav-1/"
-    ],
-    "title": "CSS Spatial Navigation Level 1",
-    "latest": "https://www.w3.org/TR/css-nav-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-nav-1-20191126/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-nav-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-paint-api-1/",
-    "shortname": "css-paint-api-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/CR-css-paint-api-1-20180809/",
-      "https://www.w3.org/TR/2018/WD-css-paint-api-1-20180410/",
-      "https://www.w3.org/TR/2016/WD-css-paint-api-1-20160607/",
-      "https://drafts.css-houdini.org/css-paint-api-1/",
-      "https://www.w3.org/TR/css-paint-api-1/"
-    ],
-    "title": "CSS Painting API Level 1",
-    "latest": "https://www.w3.org/TR/css-paint-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/CR-css-paint-api-1-20180809/",
-    "datedStatus": "Candidate Recommendation",
-    "informative": false,
-    "edDraft": "https://drafts.css-houdini.org/css-paint-api-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-properties-values-api-1/",
-    "shortname": "css-properties-values-api-1",
-    "versions": [
-      "https://www.w3.org/TR/2019/WD-css-properties-values-api-1-20191025/",
-      "https://www.w3.org/TR/2017/WD-css-properties-values-api-1-20171109/",
-      "https://www.w3.org/TR/2016/WD-css-properties-values-api-1-20160607/",
-      "https://drafts.css-houdini.org/css-properties-values-api-1/",
-      "https://www.w3.org/TR/css-properties-values-api-1/"
-    ],
-    "title": "CSS Properties and Values API Level 1",
-    "latest": "https://www.w3.org/TR/css-properties-values-api-1/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-properties-values-api-1-20191025/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.css-houdini.org/css-properties-values-api-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-pseudo-4/",
-    "shortname": "css-pseudo-4",
-    "versions": [
-      "https://www.w3.org/TR/2019/WD-css-pseudo-4-20190225/",
-      "https://www.w3.org/TR/2016/WD-css-pseudo-4-20160607/",
-      "https://www.w3.org/TR/2015/WD-css-pseudo-4-20150115/",
-      "https://drafts.csswg.org/css-pseudo-4/",
-      "https://www.w3.org/TR/css-pseudo-4/"
-    ],
-    "title": "CSS Pseudo-Elements Module Level 4",
-    "latest": "https://www.w3.org/TR/css-pseudo-4/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-css-pseudo-4-20190225/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-pseudo-4/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-regions-1/",
-    "shortname": "css-regions-1",
-    "versions": [
-      "https://www.w3.org/TR/2014/WD-css-regions-1-20141009/",
-      "https://www.w3.org/TR/2014/WD-css3-regions-20140218/",
-      "https://www.w3.org/TR/2013/WD-css3-regions-20130528/",
-      "https://www.w3.org/TR/2012/WD-css3-regions-20120823/",
-      "https://www.w3.org/TR/2012/WD-css3-regions-20120503/",
-      "https://www.w3.org/TR/2011/WD-css3-regions-20111129/",
-      "https://www.w3.org/TR/2011/WD-css3-regions-20110609/",
-      "https://drafts.csswg.org/css-regions/",
-      "https://www.w3.org/TR/css-regions-1/",
-      "http://www.w3.org/TR/css-regions-1/"
-    ],
-    "title": "CSS Regions Module Level 1",
-    "latest": "http://www.w3.org/TR/css-regions-1/",
-    "datedUrl": "http://www.w3.org/TR/2014/WD-css-regions-1-20141009/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-regions/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-shadow-parts-1/",
-    "shortname": "css-shadow-parts-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-css-shadow-parts-1-20181115/",
-      "https://drafts.csswg.org/css-shadow-parts/",
-      "https://www.w3.org/TR/css-shadow-parts-1/",
-      "http://drafts.csswg.org/css-shadow-parts/"
-    ],
-    "title": "CSS Shadow Parts",
-    "latest": "https://www.w3.org/TR/css-shadow-parts-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-shadow-parts-1-20181115/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "http://drafts.csswg.org/css-shadow-parts/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-transitions-1/",
-    "shortname": "css-transitions-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-css-transitions-1-20181011/",
-      "https://www.w3.org/TR/2017/WD-css-transitions-1-20171130/",
-      "https://www.w3.org/TR/2013/WD-css3-transitions-20131119/",
-      "https://www.w3.org/TR/2013/WD-css3-transitions-20130212/",
-      "https://www.w3.org/TR/2012/WD-css3-transitions-20120403/",
-      "https://www.w3.org/TR/2009/WD-css3-transitions-20091201/",
-      "https://www.w3.org/TR/2009/WD-css3-transitions-20090320",
-      "https://drafts.csswg.org/css-transitions/",
-      "https://www.w3.org/TR/css-transitions-1/"
-    ],
-    "title": "CSS Transitions",
-    "latest": "https://www.w3.org/TR/css-transitions-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-transitions-1-20181011/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-transitions/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css-typed-om-1/",
-    "shortname": "css-typed-om-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-css-typed-om-1-20180410/",
-      "https://www.w3.org/TR/2017/WD-css-typed-om-1-20170801/",
-      "https://www.w3.org/TR/2016/WD-css-typed-om-1-20160607/",
-      "https://drafts.css-houdini.org/css-typed-om-1/",
-      "https://www.w3.org/TR/css-typed-om-1/"
-    ],
-    "title": "CSS Typed OM Level 1",
-    "latest": "https://www.w3.org/TR/css-typed-om-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-css-typed-om-1-20180410/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.css-houdini.org/css-typed-om-1/"
-  },
-  {
-    "url": "https://www.w3.org/TR/css3-conditional/",
-    "shortname": "css3-conditional",
-    "versions": [
-      "https://www.w3.org/TR/2013/CR-css3-conditional-20130404/",
-      "https://www.w3.org/TR/2012/WD-css3-conditional-20121213/",
-      "https://www.w3.org/TR/2012/WD-css3-conditional-20120911/",
-      "https://www.w3.org/TR/2011/WD-css3-conditional-20110901/",
-      "https://drafts.csswg.org/css-conditional-3/",
-      "https://www.w3.org/TR/css3-conditional/",
-      "http://www.w3.org/TR/css3-conditional/"
-    ],
-    "title": "CSS Conditional Rules Module Level 3",
-    "latest": "http://www.w3.org/TR/css3-conditional/",
-    "datedUrl": "http://www.w3.org/TR/2013/CR-css3-conditional-20130404/",
-    "datedStatus": "Candidate Recommendation",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/css-conditional-3/"
-  },
-  {
-    "url": "https://www.w3.org/TR/cssom-1/",
-    "shortname": "cssom-1",
-    "versions": [
-      "https://www.w3.org/TR/2016/WD-cssom-1-20160317/",
-      "https://www.w3.org/TR/2013/WD-cssom-20131205/",
-      "https://www.w3.org/TR/2011/WD-cssom-20110712/",
-      "https://drafts.csswg.org/cssom/",
-      "https://www.w3.org/TR/cssom-1/",
-      "http://www.w3.org/TR/cssom-1/"
-    ],
-    "title": "CSS Object Model (CSSOM)",
-    "latest": "http://www.w3.org/TR/cssom-1/",
-    "datedUrl": "http://www.w3.org/TR/2016/WD-cssom-1-20160317/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/cssom/"
-  },
-  {
-    "url": "https://www.w3.org/TR/cssom-view-1/",
-    "shortname": "cssom-view-1",
-    "versions": [
-      "https://www.w3.org/TR/2016/WD-cssom-view-1-20160317/",
-      "https://www.w3.org/TR/2013/WD-cssom-view-20131217/",
-      "https://www.w3.org/TR/2011/WD-cssom-view-20110804/",
-      "https://www.w3.org/TR/2009/WD-cssom-view-20090804/",
-      "https://www.w3.org/TR/2008/WD-cssom-view-20080222/",
-      "https://drafts.csswg.org/cssom-view/",
-      "https://www.w3.org/TR/cssom-view-1/",
-      "http://www.w3.org/TR/cssom-view-1/",
-      "https://www.w3.org/TR/cssom-view/"
-    ],
-    "title": "CSSOM View Module",
-    "latest": "http://www.w3.org/TR/cssom-view-1/",
-    "datedUrl": "http://www.w3.org/TR/2016/WD-cssom-view-1-20160317/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.csswg.org/cssom-view/"
-  },
-  {
     "url": "https://www.w3.org/TR/device-memory-1/",
     "shortname": "device-memory-1",
     "versions": [
@@ -1165,29 +808,10 @@
     "edDraft": "https://w3c.github.io/FileAPI/"
   },
   {
-    "url": "https://www.w3.org/TR/filter-effects-1/",
-    "shortname": "filter-effects-1",
-    "versions": [
-      "https://www.w3.org/TR/2018/WD-filter-effects-1-20181218/",
-      "https://www.w3.org/TR/2018/WD-filter-effects-1-20181124/",
-      "https://www.w3.org/TR/2014/WD-filter-effects-1-20141125/",
-      "https://www.w3.org/TR/2013/WD-filter-effects-1-20131126/",
-      "https://www.w3.org/TR/2013/WD-filter-effects-20130523/",
-      "https://www.w3.org/TR/2012/WD-filter-effects-20121025/",
-      "https://drafts.fxtf.org/filter-effects-1/",
-      "https://www.w3.org/TR/filter-effects-1/"
-    ],
-    "title": "Filter Effects Module Level 1",
-    "latest": "https://www.w3.org/TR/filter-effects-1/",
-    "datedUrl": "https://www.w3.org/TR/2018/WD-filter-effects-1-20181218/",
-    "datedStatus": "Working Draft",
-    "informative": false,
-    "edDraft": "https://drafts.fxtf.org/filter-effects-1/"
-  },
-  {
     "url": "https://www.w3.org/TR/gamepad/",
     "shortname": "gamepad",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-gamepad-20200225/",
       "https://www.w3.org/TR/2020/WD-gamepad-20200121/",
       "https://www.w3.org/TR/2019/WD-gamepad-20191114/",
       "https://www.w3.org/TR/2019/WD-gamepad-20191010/",
@@ -1234,7 +858,7 @@
     ],
     "title": "Gamepad",
     "latest": "https://www.w3.org/TR/gamepad/",
-    "datedUrl": "https://www.w3.org/TR/2020/WD-gamepad-20200121/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-gamepad-20200225/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/gamepad/"
@@ -2453,6 +2077,7 @@
     "url": "https://www.w3.org/TR/selection-api/",
     "shortname": "selection-api",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-selection-api-20200226/",
       "https://www.w3.org/TR/2019/WD-selection-api-20190820/",
       "https://www.w3.org/TR/2019/WD-selection-api-20190607/",
       "https://www.w3.org/TR/2019/WD-selection-api-20190605/",
@@ -2483,7 +2108,7 @@
     ],
     "title": "Selection API",
     "latest": "https://www.w3.org/TR/selection-api/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-selection-api-20190820/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-selection-api-20200226/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/selection-api/"
@@ -2550,32 +2175,6 @@
     "datedStatus": "Recommendation",
     "informative": false,
     "edDraft": "https://w3c.github.io/webappsec-subresource-integrity/"
-  },
-  {
-    "url": "https://www.w3.org/TR/SVG2/",
-    "shortname": "SVG2",
-    "versions": [
-      "https://www.w3.org/TR/2018/CR-SVG2-20181004/",
-      "https://www.w3.org/TR/2018/CR-SVG2-20180807/",
-      "https://www.w3.org/TR/2016/CR-SVG2-20160915/",
-      "https://www.w3.org/TR/2015/WD-SVG2-20150915/",
-      "https://www.w3.org/TR/2015/WD-SVG2-20150709/",
-      "https://www.w3.org/TR/2015/WD-SVG2-20150409/",
-      "https://www.w3.org/TR/2014/WD-SVG2-20140211/",
-      "https://www.w3.org/TR/2013/WD-SVG2-20130618/",
-      "https://www.w3.org/TR/2013/WD-SVG2-20130409/",
-      "https://www.w3.org/TR/2012/WD-SVG2-20120828/",
-      "https://svgwg.org/svg2-draft/",
-      "https://www.w3.org/TR/SVG2/",
-      "https://www.w3.org/TR/SVG/",
-      "https://www.w3.org/TR/SVG11/"
-    ],
-    "title": "Scalable Vector Graphics (SVG) 2",
-    "latest": "https://www.w3.org/TR/SVG2/",
-    "datedUrl": "https://www.w3.org/TR/2018/CR-SVG2-20181004/",
-    "datedStatus": "Candidate Recommendation",
-    "informative": false,
-    "edDraft": "https://svgwg.org/svg2-draft/"
   },
   {
     "url": "https://www.w3.org/TR/touch-events/",

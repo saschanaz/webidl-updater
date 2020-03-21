@@ -5,7 +5,7 @@ const { JSDOM } = require("jsdom");
 const { fetchText } = require("./utils.js");
 const { similarReplace } = require("./similar-replace.js");
 
-const { extract } = require("reffy/src/cli/extract-webidl.js");
+const extract = require("reffy/builds/extract-webidl.js");
 
 const specRawSources = require("../spec-sources.json");
 
@@ -44,7 +44,7 @@ async function extractOneByOne(specSourceList) {
     // eval is used for generater check, just skip it
     window.eval = () => {};
     results.push({
-      ...await extract(window),
+      ...await extract(window.document),
       text,
       shortName
     });
