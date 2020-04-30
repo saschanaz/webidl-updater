@@ -35,14 +35,15 @@
     ]
   },
   {
-    "url": "https://html.spec.whatwg.org/",
+    "url": "https://html.spec.whatwg.org/multipage/",
     "versions": [
-      "https://html.spec.whatwg.org/",
+      "https://html.spec.whatwg.org/multipage/",
       "https://w3c.github.io/html/",
       "https://www.w3.org/TR/html/",
       "https://www.w3.org/TR/html5/",
       "https://www.w3.org/TR/html51/",
       "https://www.w3.org/TR/html52/",
+      "https://html.spec.whatwg.org/",
       "https://www.whatwg.org/specs/web-apps/current-work/multipage/",
       "https://www.w3.org/TR/eventsource/",
       "https://www.w3.org/TR/webmessaging/",
@@ -283,9 +284,9 @@
     ]
   },
   {
-    "url": "https://wicg.github.io/video-raf/",
+    "url": "https://wicg.github.io/video-rvfc/",
     "versions": [
-      "https://wicg.github.io/video-raf/"
+      "https://wicg.github.io/video-rvfc/"
     ]
   },
   {
@@ -378,6 +379,8 @@
     "url": "https://www.w3.org/TR/appmanifest/",
     "shortname": "appmanifest",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-appmanifest-20200330/",
+      "https://www.w3.org/TR/2020/WD-appmanifest-20200326/",
       "https://www.w3.org/TR/2020/WD-appmanifest-20200319/",
       "https://www.w3.org/TR/2020/WD-appmanifest-20200318/",
       "https://www.w3.org/TR/2019/WD-appmanifest-20191209/",
@@ -476,14 +479,12 @@
       "https://www.w3.org/TR/2016/WD-appmanifest-20161108/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20161107/",
       "https://www.w3.org/TR/2016/WD-appmanifest-20161103/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20161013/",
-      "https://www.w3.org/TR/2016/WD-appmanifest-20161007/",
       "https://w3c.github.io/manifest/",
       "https://www.w3.org/TR/appmanifest/"
     ],
     "title": "Web App Manifest",
     "latest": "https://www.w3.org/TR/appmanifest/",
-    "datedUrl": "https://www.w3.org/TR/2020/WD-appmanifest-20200319/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-appmanifest-20200330/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/manifest/"
@@ -1986,6 +1987,8 @@
     "url": "https://www.w3.org/TR/screen-orientation/",
     "shortname": "screen-orientation",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-screen-orientation-20200417/",
+      "https://www.w3.org/TR/2020/WD-screen-orientation-20200330/",
       "https://www.w3.org/TR/2020/WD-screen-orientation-20200122/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20191102/",
       "https://www.w3.org/TR/2019/WD-screen-orientation-20191024/",
@@ -2046,7 +2049,7 @@
     ],
     "title": "The Screen Orientation API",
     "latest": "https://www.w3.org/TR/screen-orientation/",
-    "datedUrl": "https://www.w3.org/TR/2020/WD-screen-orientation-20200122/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-screen-orientation-20200417/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/screen-orientation/"
@@ -2117,6 +2120,7 @@
     "url": "https://www.w3.org/TR/server-timing/",
     "shortname": "server-timing",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-server-timing-20200420/",
       "https://www.w3.org/TR/2020/WD-server-timing-20200120/",
       "https://www.w3.org/TR/2019/WD-server-timing-20190307/",
       "https://www.w3.org/TR/2019/WD-server-timing-20190122/",
@@ -2147,7 +2151,7 @@
     ],
     "title": "Server Timing",
     "latest": "https://www.w3.org/TR/server-timing/",
-    "datedUrl": "https://www.w3.org/TR/2020/WD-server-timing-20200120/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-server-timing-20200420/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/server-timing/"
@@ -2703,13 +2707,14 @@
     "url": "https://www.w3.org/TR/webrtc-svc/",
     "shortname": "webrtc-svc",
     "versions": [
+      "https://www.w3.org/TR/2020/WD-webrtc-svc-20200408/",
       "https://www.w3.org/TR/2019/WD-webrtc-svc-20191022/",
       "https://w3c.github.io/webrtc-svc/",
       "https://www.w3.org/TR/webrtc-svc/"
     ],
     "title": "Scalable Video Coding (SVC) Extension for WebRTC",
     "latest": "https://www.w3.org/TR/webrtc-svc/",
-    "datedUrl": "https://www.w3.org/TR/2019/WD-webrtc-svc-20191022/",
+    "datedUrl": "https://www.w3.org/TR/2020/WD-webrtc-svc-20200408/",
     "datedStatus": "Working Draft",
     "informative": false,
     "edDraft": "https://w3c.github.io/webrtc-svc/"

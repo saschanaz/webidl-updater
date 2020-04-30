@@ -54,9 +54,9 @@
       "path": "fullscreen.bs"
     }
   },
-  "https://html.spec.whatwg.org/": {
+  "https://html.spec.whatwg.org/multipage/": {
     "shortName": "html",
-    "url": "https://html.spec.whatwg.org/",
+    "url": "https://html.spec.whatwg.org/multipage/",
     "source": "https://github.com/whatwg/html/blob/master/source",
     "github": {
       "owner": "whatwg",
@@ -124,17 +124,6 @@
       "repo": "gamepad",
       "branch": "gh-pages",
       "path": "extensions.html"
-    }
-  },
-  "https://w3c.github.io/geolocation-sensor/": {
-    "shortName": "geolocation-sensor",
-    "url": "https://w3c.github.io/geolocation-sensor/",
-    "source": "https://github.com/w3c/geolocation-sensor/blob/master/index.html",
-    "github": {
-      "owner": "w3c",
-      "repo": "geolocation-sensor",
-      "branch": "master",
-      "path": "index.html"
     }
   },
   "https://w3c.github.io/media-playback-quality/": {
@@ -313,6 +302,17 @@
       "path": "index.bs"
     }
   },
+  "https://wicg.github.io/geolocation-sensor/": {
+    "shortName": "geolocation-sensor",
+    "url": "https://wicg.github.io/geolocation-sensor/",
+    "source": "https://github.com/wicg/geolocation-sensor/blob/master/index.html",
+    "github": {
+      "owner": "wicg",
+      "repo": "geolocation-sensor",
+      "branch": "master",
+      "path": "index.html"
+    }
+  },
   "https://wicg.github.io/frame-timing/": {
     "shortName": "frame-timing",
     "url": "https://wicg.github.io/frame-timing/",
@@ -478,13 +478,13 @@
       "path": "index.bs"
     }
   },
-  "https://wicg.github.io/video-raf/": {
-    "shortName": "video-raf",
-    "url": "https://wicg.github.io/video-raf/",
-    "source": "https://github.com/wicg/video-raf/blob/gh-pages/index.bs",
+  "https://wicg.github.io/video-rvfc/": {
+    "shortName": "video-rvfc",
+    "url": "https://wicg.github.io/video-rvfc/",
+    "source": "https://github.com/wicg/video-rvfc/blob/gh-pages/index.bs",
     "github": {
       "owner": "wicg",
-      "repo": "video-raf",
+      "repo": "video-rvfc",
       "branch": "gh-pages",
       "path": "index.bs"
     }
@@ -1306,11 +1306,11 @@
   "https://www.w3.org/TR/wake-lock/": {
     "shortName": "wake-lock",
     "url": "https://w3c.github.io/wake-lock/",
-    "source": "https://github.com/w3c/wake-lock/blob/gh-pages/index.html",
+    "source": "https://github.com/w3c/wake-lock/blob/master/index.html",
     "github": {
       "owner": "w3c",
       "repo": "wake-lock",
-      "branch": "gh-pages",
+      "branch": "master",
       "path": "index.html"
     }
   },
