@@ -222,6 +222,7 @@ async function guessForGeneralGitHubSpecs(url) {
 }
 
 async function detectURLAndShortName(url) {
+  console.log(`${url} ...`)
   const guessed = await guessForDraftsOrgSpecs(url) ||
     await guessForWHATWGSpecs(url) ||
     await guessForKhronosSpecs(url) ||
