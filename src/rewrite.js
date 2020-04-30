@@ -114,7 +114,7 @@ function conditionalBracketEscape(detector, target) {
   const astArray = results.map(r => {
     return r.idl.map((idl, i) => webidl2.parse(idl, {
       concrete: true,
-      sourceName: [r.doc.title, i]
+      sourceName: [r.shortName, i]
     }));
   });
   const validations = webidl2.validate(astArray.flat());
@@ -155,7 +155,7 @@ function conditionalBracketEscape(detector, target) {
         });
       }
       rewrittenSpecs.push({
-        title: targetSpecItem.shortName || targetSpecItem.doc.title,
+        title: targetSpecItem.shortName,
         html: text,
         original: targetSpecItem.text
       })
@@ -163,6 +163,10 @@ function conditionalBracketEscape(detector, target) {
   }
   for (const spec of rewrittenSpecs) {
     await fs.writeFile(`rewritten/${spec.title}`, spec.html);
+    await fs.writeFile(
+      `rewritten/${spec.title}.validations.txt`,
+      validations.filter(v => v.sourceName[0] === spec.title).map(v => v.message).join("\n\n")
+    );
     if (!disableDiff) {
       const diffText = diff.createPatch(spec.title, spec.original, spec.html);
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
