@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "crawl-raw-source": "node src/crawl-raw-source.js",
     "rewrite": "node src/rewrite.js",
-    "create-pullrequest": "node src/github-pullrequest.js"
+    "create-pullrequest": "node src/github-pullrequest.js",
+    "clean": "node src/clean.js"
   },
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
@@ -18,6 +19,6 @@
     "jsdom": "^15.2.1",
     "node-fetch": "^2.6.0",
     "reffy": "github:saschanaz/reffy#each-autofix",
-    "webidl2": "^23.11.0"
+    "webidl2": "^23.12.1"
   }
 }
