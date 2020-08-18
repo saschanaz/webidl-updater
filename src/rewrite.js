@@ -10,9 +10,20 @@ const extract = require("reffy/builds/extract-webidl.js");
 const specRawSources = require("../spec-sources.json");
 
 const brokenSpecs = [
+  "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
+  "https://svgwg.org/specs/paths/",
   "https://svgwg.org/specs/animations/",
-  // https://github.com/w3c/csswg-drafts/issues/4683
-  "https://drafts.csswg.org/resize-observer/",
+];
+
+// includes some manual HTML inside IDL but shouldn't be hard to restore them
+const manualHtmlAllowList = [
+  "is-input-pending",
+  "css-counter-styles-3",
+  "webgl1",
+  "webgl2",
+  "generic-sensor",
+  "media-capabilities",
+  "mst-content-hint"
 ];
 
 function getRawGit(githubInfo) {
@@ -125,28 +136,15 @@ function conditionalBracketEscape(detector, target) {
   }
   const rewrittenSpecs = [];
   for (const [specIndex, spec] of Object.entries(astArray)) {
-    let diffs = [];
     const targetSpecItem = results[specIndex];
-    for (const [blockIndex, block] of Object.entries(spec)) {
-      const originalIdl = targetSpecItem.idl[blockIndex];
-      const rewritten = webidl2.write(block);
-      if (originalIdl !== rewritten) {
-        const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
-        const indentSize = getFirstLineIndentation(innerHTML);
-        const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
-        const blockIndentation = previousSibling ?
-          previousSibling.textContent.match(/[ \t]*$/)[0]
-          : ""
-        const reformed =
-          indent(rewritten, indentSize, tabOrSpace)
-          + "\n" + blockIndentation;
-        if (localName === "pre") {
-          diffs.push([innerHTML, reformed]);
-        } else {
-          diffs.push([innerHTML, `\n${reformed}`]);
-        }
+    if (blocksIncludeHTML(targetSpecItem.blocks)) {
+      console.log(`${targetSpecItem.shortName} includes rich elements`)
+      if (!manualHtmlAllowList.includes(targetSpecItem.shortName)) {
+        console.log("Not allowlisted, skipping")
+        continue;
       }
     }
+    const diffs = replaceBlocksInSpec(spec, targetSpecItem);
     if (diffs.length) {
       let { text } = targetSpecItem;
       for (const diff of diffs) {
@@ -178,3 +176,33 @@ function conditionalBracketEscape(detector, target) {
   });
   process.exit(1);
 })
+
+/** @param {Element[]} blocks */
+function blocksIncludeHTML(blocks) {
+  return blocks.some(block => !!block.children.length);
+}
+
+function replaceBlocksInSpec(spec, targetSpecItem) {
+  const diffs = [];
+  for (const [blockIndex, block] of Object.entries(spec)) {
+    const originalIdl = targetSpecItem.idl[blockIndex];
+    const rewritten = webidl2.write(block);
+    if (originalIdl !== rewritten) {
+      const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
+      const indentSize = getFirstLineIndentation(innerHTML);
+      const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
+      const blockIndentation = previousSibling ?
+        previousSibling.textContent.match(/[ \t]*$/)[0]
+        : ""
+      const reformed =
+        indent(rewritten, indentSize, tabOrSpace)
+        + "\n" + blockIndentation;
+      if (localName === "pre") {
+        diffs.push([innerHTML, reformed]);
+      } else {
+        diffs.push([innerHTML, `\n${reformed}`]);
+      }
+    }
+  }
+  return diffs;
+}
