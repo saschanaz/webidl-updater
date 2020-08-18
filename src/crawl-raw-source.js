@@ -3,20 +3,12 @@
  */
 
 const fs = require("fs").promises;
+const { parse: parsePath } = require("path");
 const { JSDOM } = require("jsdom");
 const fetch = require("node-fetch").default;
 const { fetchText } = require("./utils.js");
 
-/**
- * Should include `w3cApiKey` field for W3C API request
- */
-const config = require("../config.json");
-
-/** @type {string[]} */
-const specUrls = require("reffy/src/specs/specs-idl.json");
-const specSources = require("../spec-sources.json");
-
-const { completeWithShortName, completeWithInfoFromW3CApi } = require("reffy/src/lib/util.js");
+const specUrls = require("browser-specs");
 
 /**
  * @param {string} url
@@ -24,7 +16,7 @@ const { completeWithShortName, completeWithInfoFromW3CApi } = require("reffy/src
 async function checkIfExists(url) {
   const res = await fetch(url, { method: "HEAD" });
   if (res.ok) {
-    return url;
+    return res.url; // can be redirected
   }
 }
 
@@ -39,47 +31,30 @@ async function guessIfEditLinkExists(url) {
   };
 }
 
-/**
- * @param {string} url
- */
-async function guessForDraftsOrgSpecs(url) {
-  const regex = /https:\/\/drafts\.([-\w]+)\.org\/([^/]+)\//;
-  const match = url.match(regex);
+async function guessForDraftsOrgSpecs(specInfo) {
+  const regex = /https:\/\/drafts\.[-\w]+\.org\/([^/]+)\//;
+  const match = specInfo.nightly.url.match(regex);
   if (!match) {
     return;
   }
 
-  const [, subOrgName, shortName] = match;
-  const branchUrl = `https://github.com/w3c/${subOrgName}-drafts/blob/master`;
-  const gitDir = `${branchUrl}/${shortName}/`;
-  const guessed = await checkIfExists(gitDir + "Overview.bs") ||
-    await checkIfExists(gitDir + "Overview.src.html");
-  if (guessed) {
-    return {
-      shortName,
-      url: guessed
-    };
+  const branchUrl = `${specInfo.nightly.repository}/blob/master`;
+  const candidates = new Set([specInfo.shortname, specInfo.series.shortname]);
+  candidates.add(match[1]); // e.g. CSS2
+  if (!match[1].endsWith("-1")) {
+    candidates.add(match[1] + "-1"); // e.g. css-style-attr
   }
-
-  const withoutHyphen = shortName.replace(/-1$/, "");
-  if (shortName !== withoutHyphen) {
-    const gitDir = `${branchUrl}/${withoutHyphen}/`;
-    return {
-      shortName: withoutHyphen,
-      url: await checkIfExists(gitDir + "Overview.bs") ||
-        await checkIfExists(gitDir + "Overview.src.html")
-    };
+  for (const shortname of candidates) {
+    const gitDir = `${branchUrl}/${shortname}/`;
+    const guessed = await checkIfExists(gitDir + "Overview.bs") ||
+      await checkIfExists(gitDir + "Overview.src.html");
+    if (guessed) {
+      return {
+        url: guessed
+      };
+    }
   }
-
-  if (!shortName.endsWith("-1")) {
-    const withHyphen = shortName + "-1";
-    const gitDir = `${branchUrl}/${withHyphen}/`;
-    return {
-      shortName: withHyphen,
-      url: await checkIfExists(gitDir + "Overview.bs") ||
-        await checkIfExists(gitDir + "Overview.src.html")
-    };
-  }
+  throw new Error([...candidates]);
 }
 
 /**
@@ -95,7 +70,6 @@ async function guessForWHATWGSpecs(url) {
   const [, shortName] = match;
   const gitDir = `https://github.com/whatwg/${shortName}/blob/master/`;
   return {
-    shortName,
     url: await checkIfExists(gitDir + "index.bs") ||
       await checkIfExists(gitDir + `${shortName}.bs`) ||
       await checkIfExists(gitDir + "source") ||
@@ -117,69 +91,20 @@ async function guessForKhronosSpecs(url) {
   const [, shortName, path] = match;
   const rawgit = `https://github.com/KhronosGroup/${shortName}/blob/master/${path}/index.html`;
   return {
-    shortName,
     url: await checkIfExists(rawgit)
   };
 }
 
-/**
- * @param {string} url
- */
-async function guessForCDN(url) {
-  const list = [
-    "https://cdn.staticaly.com/gh/",
-    "https://rawgit.com/"
-  ];
-  let path;
-  for (const cdn of list) {
-    if (url.startsWith(cdn)) {
-      path = url.slice(cdn.length);
-      break;
-    }
-  }
-
-  if (!path) {
-    return;
-  }
-  const [, orgName, shortName, subpath] = path.match(/^(\w+)\/([-\w]+)\/(.+)/);
-  const filePath = subpath.endsWith("/") ? (subpath + "index.html") : subpath;
-
-  const rawgit = `https://github.com/${orgName}/${shortName}/blob/${filePath}`;
-  return {
-    shortName,
-    url: await checkIfExists(rawgit)
-  };
-}
-
-/**
- * @param {string} url
- */
-async function guessForW3CTR(url) {
-  const regex = /https:\/\/www\.w3\.org\/TR\/([^/]+)\//;
-  const match = url.match(regex);
-  if (!match) {
-    return;
-  }
-
-  const [, shortName] = match;
-  const rawgit = `https://github.com/w3c/${shortName}/blob/gh-pages/index.html`;
-  return {
-    shortName,
-    url: await checkIfExists(rawgit)
-  };
-}
-
-/**
- * @param {string} url
- */
-async function guessForGeneralGitHubSpecs(url) {
+async function guessForGeneralGitHubSpecs(specInfo) {
+  const { url } = specInfo.nightly;
   const regex = /https?:\/\/([-\w]+)\.github\.io\/([^/]+)\/(.*)/;
   const match = url.match(regex);
   if (!match) {
     return;
   }
-  const [, orgName, shortName, path] = match;
-  const repoUrl = `https://github.com/${orgName}/${shortName}/blob`;
+  const [,, shortName, path] = match;
+  const repoUrl = `${specInfo.nightly.repository}/blob`;
+  const mainBranch = `${repoUrl}/main/`;
   const masterBranch = `${repoUrl}/master/`;
   const ghPagesBranch = `${repoUrl}/gh-pages/`;
   if (path) {
@@ -190,25 +115,37 @@ async function guessForGeneralGitHubSpecs(url) {
         shortName: shortNameWithPath + "index",
         url: await checkIfExists(masterBranch + "document/" + path + "index.bs") || // WebAssembly
           await checkIfExists(masterBranch + path + "index.bs") ||
+          await checkIfExists(masterBranch + "spec/index.bs") || // trusted-types
           await checkIfExists(masterBranch + path + "index.html") ||
           await checkIfExists(ghPagesBranch + path + "index.bs") ||
           await checkIfExists(ghPagesBranch + path + "index.html")
       };
     }
 
+    const name = parsePath(path).name;
     return {
-      shortName: shortNameWithPath,
-      url: await checkIfExists(masterBranch + path) ||
+      url: await checkIfExists(masterBranch + `${name}.bs`) || // text-detection-api
+        await checkIfExists(masterBranch + path) ||
         await checkIfExists(ghPagesBranch + path)
     };
+  }
+
+  if (shortName === "layers") {
+    return {
+      // too special
+      url: await checkIfExists(masterBranch + "webxrlayers-1.bs")
+    }
   }
 
   // Used by paint-timing
   const customName = shortName.toLowerCase().replace(/-/g, "") + ".bs";
   return {
-    shortName,
-    url: await checkIfExists(masterBranch + "index.bs") ||
+    url: await checkIfExists(mainBranch + "index.bs") ||
+      await checkIfExists(mainBranch + "spec/index.bs") || // gpuweb
+      await checkIfExists(mainBranch + `${shortName}.bs`) || // storage-access
+      await checkIfExists(masterBranch + "index.bs") ||
       await checkIfExists(masterBranch + "Overview.bs") ||
+      await checkIfExists(masterBranch + "spec.bs") || // page-lifecycle
       await checkIfExists(masterBranch + customName) ||
       await checkIfExists(masterBranch + shortName + "-respec.html") || // encrypted-media
       await checkIfExists(masterBranch + "index.src.html") ||
@@ -221,16 +158,18 @@ async function guessForGeneralGitHubSpecs(url) {
   };
 }
 
-async function detectURLAndShortName(url) {
+async function detectURLAndShortName(specInfo) {
+  const url = specInfo.nightly.url;
   console.log(`${url} ...`)
-  const guessed = await guessForDraftsOrgSpecs(url) ||
+  const guessed = await guessForDraftsOrgSpecs(specInfo) ||
     await guessForWHATWGSpecs(url) ||
     await guessForKhronosSpecs(url) ||
-    await guessForGeneralGitHubSpecs(url) ||
-    await guessForCDN(url) ||
-    await guessForW3CTR(url);
+    await guessForGeneralGitHubSpecs(specInfo);
   if (!guessed || !guessed.url) {
+    console.warn("Couldn't guess the source path, parsing the page to find one");
     return await guessIfEditLinkExists(url);
+  } else {
+    console.log(`-> ${guessed.url}`);
   }
   return guessed;
 }
@@ -246,46 +185,30 @@ function getGitHubInfo(url) {
 }
 
 async function addMissingSpecSources(specInfoList) {
-  for (const { edDraft, url, shortname } of specInfoList) {
-    const item = specSources[url] || {};
-    if (!item || !item.source || !item.shortName) {
-      const latestPublishedUrl = edDraft || url;
-      const detected = await detectURLAndShortName(latestPublishedUrl);
-      item.shortName =
-        shortname ? shortname :
-        detected ? detected.shortName :
-        null;
-      item.url = latestPublishedUrl;
-      item.source = detected ? detected.url : null;
-      if (detected && detected.url.includes("github.com")) {
-        item.github = getGitHubInfo(detected.url);
-      } else {
-        item.github = null;
-      }
-      specSources[url] = item;
+  // Somehow this must be sequential or it will fail
+  const specSources = {};
+  for (const specInfo of specInfoList) {
+    if (specInfo.shortname !== specInfo.series.currentSpecification) {
+      // Cannot take care of old snapshots
+      continue;
+    }
+    const { url } = specInfo.nightly;
+    const item = specSources[url] = {};
+    const detected = await detectURLAndShortName(specInfo);
+    item.shortName = specInfo.shortname;
+    item.url = url;
+    item.source = detected ? detected.url : null;
+    if (detected && detected.url.includes("github.com")) {
+      item.github = getGitHubInfo(detected.url);
+    } else {
+      item.github = null;
     }
   }
-}
-
-async function getSpecInfo(url) {
-  const specObject = completeWithShortName({ url });
-  return await completeWithInfoFromW3CApi(specObject, config.w3cApiKey);
-}
-
-async function tryReadSpecInfoList() {
-  try {
-    return require("../spec-info.json");
-  } catch {
-    const specinfo = await Promise.all(specUrls.map(getSpecInfo))
-    await fs.writeFile("spec-info.json", JSON.stringify(specinfo, null, 2) + "\n");
-    return specinfo;
-  }
+  return specSources;
 }
 
 (async () => {
-  const specInfoList = await tryReadSpecInfoList();
-
-  await addMissingSpecSources(specInfoList);
+  const specSources = await addMissingSpecSources(specUrls);
 
   await fs.writeFile("spec-sources.json", JSON.stringify(specSources, null, 2) + "\n");
 })().catch(e => {
