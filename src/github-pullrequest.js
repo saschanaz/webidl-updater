@@ -79,37 +79,7 @@ ${validations}
 
   await ensureHeadExists(head);
 
-  const pullsResponse = await octokit.pulls.list({
-    owner,
-    repo,
-    state: "open",
-    head: forkHead
-  });
-
-  if (pullsResponse.data.length) {
-    // check if the existing PR is mergeable
-    const pullResponse = await octokit.pulls.get({
-      owner,
-      repo,
-      pull_number: pullsResponse.data[0].number
-    });
-    if (pullResponse.data.mergeable === true) {
-      await mergeFromMaster();
-    } else if (pullResponse.data.mergeable === false) { // null means it's being recomputed
-      await forceUpdateToLatestCommit();
-    }
-  } else {
-    // check if the branch is based on the latest commit
-    const compareResponse = await octokit.repos.compareCommits({
-      owner,
-      repo,
-      base: latestCommitSha,
-      head: forkHead
-    });
-    if (compareResponse.data.status === "diverged") {
-      await forceUpdateToLatestCommit();
-    }
-  }
+  await ensureBranchIsLatest();
 
   await updateFileOnBranch(forkBranch);
 
@@ -130,6 +100,41 @@ ${validations}
       title: message,
       body
     });
+  }
+
+  async function ensureBranchIsLatest() {
+    const pullsResponse = await octokit.pulls.list({
+      owner,
+      repo,
+      state: "open",
+      head: forkHead
+    });
+
+    if (!pullsResponse.data.length) {
+      await forceUpdateToLatestCommit();
+      return;
+    }
+
+    // check if the existing PR is mergeable
+    const pullResponse = await octokit.pulls.get({
+      owner,
+      repo,
+      pull_number: pullsResponse.data[0].number
+    });
+
+    if (pullResponse.data.base.label !== `${owner}:${branch}`){
+      await octokit.pulls.update({
+        owner,
+        repo,
+        pull_number: pullResponse.data.number,
+        base: branch
+      })
+      await forceUpdateToLatestCommit();
+    } else if (pullResponse.data.mergeable === true) {
+      await mergeFromMaster();
+    } else if (pullResponse.data.mergeable === false) { // null means it's being recomputed
+      await forceUpdateToLatestCommit();
+    }
   }
 
   async function updateFileOnBranch(branch) {
