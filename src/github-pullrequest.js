@@ -133,7 +133,7 @@ ${validations}
   }
 
   async function updateFileOnBranch(branch) {
-    const fileResponse = await octokit.repos.getContents({
+    const fileResponse = await octokit.repos.getContent({
       owner: forkOwner,
       repo,
       path,
@@ -143,7 +143,7 @@ ${validations}
     const content = btoa(updated);
 
     if (fileResponse.data.content.split(/\s/g).join("") !== content) {
-      await octokit.repos.createOrUpdateFile({
+      await octokit.repos.createOrUpdateFileContents({
         owner: forkOwner,
         repo,
         branch,
