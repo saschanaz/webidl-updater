@@ -210,7 +210,7 @@ async function addMissingSpecSources(specInfoList) {
 (async () => {
   const specSources = await addMissingSpecSources(specUrls);
 
-  await fs.writeFile("spec-sources.json", JSON.stringify(specSources, null, 2) + "\n");
+  await fs.writeFile("spec-sources.browsers.generated.json", JSON.stringify(specSources, null, 2) + "\n");
 })().catch(e => {
   process.on("exit", () => {
     console.error(e);

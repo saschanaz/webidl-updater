@@ -1,6 +1,6 @@
 const { Octokit } = require("@octokit/rest");
 const config = require("../config.json");
-const specSources = require("../spec-sources.json");
+const specSources = require("./spec-sources.js");
 const fs = require("fs").promises;
 
 const octokit = new Octokit({

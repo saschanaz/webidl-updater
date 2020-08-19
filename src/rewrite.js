@@ -7,7 +7,7 @@ const { similarReplace } = require("./similar-replace.js");
 
 const extract = require("reffy/builds/extract-webidl.js");
 
-const specRawSources = require("../spec-sources.json");
+const specRawSources = require("./spec-sources.js");
 
 const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
