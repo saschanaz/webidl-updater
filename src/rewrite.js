@@ -110,6 +110,49 @@ function conditionalBracketEscape(detector, target) {
   return target;
 }
 
+/** @param {Element[]} blocks */
+function blocksIncludeHTML(blocks) {
+  return blocks.some(block => !!block.children.length);
+}
+
+function replaceBlocksInSpec(spec, targetSpecItem) {
+  const diffs = [];
+  for (const [blockIndex, block] of Object.entries(spec)) {
+    const originalIdl = targetSpecItem.idl[blockIndex];
+    const rewritten = webidl2.write(block);
+    if (originalIdl !== rewritten) {
+      const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
+      const indentSize = getFirstLineIndentation(innerHTML);
+      const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
+      const blockIndentation = previousSibling ?
+        previousSibling.textContent.match(/[ \t]*$/)[0]
+        : ""
+      const reformed =
+        indent(rewritten, indentSize, tabOrSpace)
+        + "\n" + blockIndentation;
+      if (localName === "pre") {
+        diffs.push([innerHTML, reformed]);
+      } else {
+        diffs.push([innerHTML, `\n${reformed}`]);
+      }
+    }
+  }
+  return diffs;
+}
+
+function getTargetSpecs() {
+  const specSourceList = mapToArray(specRawSources);
+
+  const filter = process.argv.slice(2).filter(a => !a.startsWith("-"));
+
+  if (filter.length) {
+    console.log(`Rewriting ${filter}...`);
+    return specSourceList.filter(s => filter.includes(s.shortName));
+  }
+  console.log("Rewriting all specs...");
+  return specSourceList;
+}
+
 (async () => {
   try {
     await fs.mkdir("rewritten");
@@ -119,9 +162,7 @@ function conditionalBracketEscape(detector, target) {
   }
   const disableDiff = process.argv.includes("--no-diff");
 
-  const specSourceList = mapToArray(specRawSources);
-
-  const results = await extractOneByOne(specSourceList);
+  const results = await extractOneByOne(getTargetSpecs());
   const astArray = results.map(r => {
     return r.idl.map((idl, i) => webidl2.parse(idl, {
       concrete: true,
@@ -175,34 +216,4 @@ function conditionalBracketEscape(detector, target) {
     console.error(e);
   });
   process.exit(1);
-})
-
-/** @param {Element[]} blocks */
-function blocksIncludeHTML(blocks) {
-  return blocks.some(block => !!block.children.length);
-}
-
-function replaceBlocksInSpec(spec, targetSpecItem) {
-  const diffs = [];
-  for (const [blockIndex, block] of Object.entries(spec)) {
-    const originalIdl = targetSpecItem.idl[blockIndex];
-    const rewritten = webidl2.write(block);
-    if (originalIdl !== rewritten) {
-      const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
-      const indentSize = getFirstLineIndentation(innerHTML);
-      const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
-      const blockIndentation = previousSibling ?
-        previousSibling.textContent.match(/[ \t]*$/)[0]
-        : ""
-      const reformed =
-        indent(rewritten, indentSize, tabOrSpace)
-        + "\n" + blockIndentation;
-      if (localName === "pre") {
-        diffs.push([innerHTML, reformed]);
-      } else {
-        diffs.push([innerHTML, `\n${reformed}`]);
-      }
-    }
-  }
-  return diffs;
-}
+});
