@@ -1119,11 +1119,11 @@
   "https://w3c.github.io/accname/": {
     "shortName": "accname-1.2",
     "url": "https://w3c.github.io/accname/",
-    "source": "https://github.com/w3c/accname/blob/master/index.html",
+    "source": "https://github.com/w3c/accname/blob/main/index.html",
     "github": {
       "owner": "w3c",
       "repo": "accname",
-      "branch": "master",
+      "branch": "main",
       "path": "index.html"
     }
   },
@@ -2802,12 +2802,12 @@
   "https://w3c.github.io/ServiceWorker/": {
     "shortName": "service-workers-1",
     "url": "https://w3c.github.io/ServiceWorker/",
-    "source": "https://github.com/w3c/ServiceWorker/blob/gh-pages/index.bs",
+    "source": "https://github.com/w3c/ServiceWorker/blob/master/docs/index.bs",
     "github": {
       "owner": "w3c",
       "repo": "ServiceWorker",
-      "branch": "gh-pages",
-      "path": "index.bs"
+      "branch": "master",
+      "path": "docs/index.bs"
     }
   },
   "https://w3c.github.io/webappsec-subresource-integrity/": {
