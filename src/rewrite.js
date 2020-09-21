@@ -11,6 +11,8 @@ const specRawSources = require("./spec-sources.js");
 
 const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
+  // https://github.com/immersive-web/layers/pull/200
+  "https://immersive-web.github.io/layers/",
   "https://svgwg.org/specs/paths/",
   "https://svgwg.org/specs/animations/",
 ];

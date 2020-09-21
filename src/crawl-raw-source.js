@@ -17,6 +17,8 @@ async function checkIfExists(url) {
   const res = await fetch(url, { method: "HEAD" });
   if (res.ok) {
     return res.url; // can be redirected
+  } else if (res.status !== 404) {
+    console.error(`${res.url} threw ${res.status} ${res.statusText}`)
   }
 }
 
@@ -144,6 +146,7 @@ async function guessForGeneralGitHubSpecs(specInfo) {
       await checkIfExists(mainBranch + "spec/index.bs") || // gpuweb
       await checkIfExists(mainBranch + `${shortName}.bs`) || // storage-access
       await checkIfExists(masterBranch + "index.bs") ||
+      await checkIfExists(masterBranch + "docs/index.bs") || // service-workers
       await checkIfExists(masterBranch + "Overview.bs") ||
       await checkIfExists(masterBranch + "spec.bs") || // page-lifecycle
       await checkIfExists(masterBranch + customName) ||
@@ -185,7 +188,8 @@ function getGitHubInfo(url) {
 }
 
 async function addMissingSpecSources(specInfoList) {
-  // Somehow this must be sequential or it will fail
+  // This needs to be sequential as requesting everything in once causes
+  // HTTP 429 too many requests error.
   const specSources = {};
   for (const specInfo of specInfoList) {
     if (specInfo.shortname !== specInfo.series.currentSpecification) {
