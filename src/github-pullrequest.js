@@ -49,20 +49,7 @@ ${validations}
 \`\`\``;
 
   const user = await octokit.users.getAuthenticated();
-  const forks = await octokit.repos.listForks({
-    owner,
-    repo
-  });
-  const hasFork = forks.data.find(
-    fork => fork.owner.login === user.data.login
-  );
-
-  if (!hasFork) {
-    await octokit.repos.createFork({
-      owner,
-      repo
-    });
-  }
+  const fork = await maybeCreateFork();
 
   const forkOwner = "autokagami";
 
@@ -100,6 +87,24 @@ ${validations}
       title: message,
       body
     });
+  }
+
+  async function maybeCreateFork() {
+    const forks = await octokit.repos.listForks({
+      owner,
+      repo
+    });
+    const fork = forks.data.find(
+      fork => fork.owner.login === user.data.login
+    );
+    if (fork) {
+      return fork;
+    }
+    const create = await octokit.repos.createFork({
+      owner,
+      repo
+    });
+    return create.data;
   }
 
   async function ensureBranchIsLatest() {
@@ -140,7 +145,7 @@ ${validations}
   async function updateFileOnBranch(branch) {
     const fileResponse = await octokit.repos.getContent({
       owner: forkOwner,
-      repo,
+      repo: fork.name,
       path,
       ref: `refs/heads/${branch}`
     });
@@ -150,7 +155,7 @@ ${validations}
     if (fileResponse.data.content.split(/\s/g).join("") !== content) {
       await octokit.repos.createOrUpdateFileContents({
         owner: forkOwner,
-        repo,
+        repo: fork.name,
         branch,
         path,
         message,
@@ -165,14 +170,14 @@ ${validations}
     try {
       refInfoResponse = await octokit.git.getRef({
         owner: forkOwner,
-        repo,
+        repo: fork.name,
         ref: head
       });
     } catch {};
     if (!refInfoResponse) {
       await octokit.git.createRef({
         owner: forkOwner,
-        repo,
+        repo: fork.name,
         sha: latestCommitSha,
         ref: `refs/${head}`
       });
@@ -182,7 +187,7 @@ ${validations}
   async function forceUpdateToLatestCommit() {
     await octokit.git.updateRef({
       owner: forkOwner,
-      repo,
+      repo: fork.name,
       sha: latestCommitSha,
       ref: head,
       force: true
@@ -192,7 +197,7 @@ ${validations}
   async function mergeFromMaster() {
     await octokit.repos.merge({
       owner: forkOwner,
-      repo,
+      repo: fork.name,
       base: forkBranch,
       head: latestCommitSha
     });
