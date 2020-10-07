@@ -492,10 +492,10 @@
   "https://wicg.github.io/change-password-url/": {
     "shortName": "change-password-url",
     "url": "https://wicg.github.io/change-password-url/",
-    "source": "https://github.com/WICG/change-password-url/blob/main/change-password-url.bs",
+    "source": "https://github.com/w3c/webappsec-change-password-url/blob/main/change-password-url.bs",
     "github": {
-      "owner": "WICG",
-      "repo": "change-password-url",
+      "owner": "w3c",
+      "repo": "webappsec-change-password-url",
       "branch": "main",
       "path": "change-password-url.bs"
     }
@@ -800,10 +800,10 @@
   "https://wicg.github.io/native-file-system/": {
     "shortName": "native-file-system",
     "url": "https://wicg.github.io/native-file-system/",
-    "source": "https://github.com/WICG/native-file-system/blob/master/index.bs",
+    "source": "https://github.com/WICG/file-system-access/blob/master/index.bs",
     "github": {
       "owner": "WICG",
-      "repo": "native-file-system",
+      "repo": "file-system-access",
       "branch": "master",
       "path": "index.bs"
     }
@@ -1042,10 +1042,10 @@
   "https://wicg.github.io/web-transport/": {
     "shortName": "web-transport",
     "url": "https://wicg.github.io/web-transport/",
-    "source": "https://github.com/WICG/web-transport/blob/master/index.bs",
+    "source": "https://github.com/w3c/webtransport/blob/master/index.bs",
     "github": {
-      "owner": "WICG",
-      "repo": "web-transport",
+      "owner": "w3c",
+      "repo": "webtransport",
       "branch": "master",
       "path": "index.bs"
     }
