@@ -51,7 +51,7 @@ ${validations}
   const user = await octokit.users.getAuthenticated();
   const fork = await maybeCreateFork();
 
-  const forkOwner = "autokagami";
+  const forkOwner = user.data.login;
 
   const forkBranch = shortName;
   const head = `heads/${forkBranch}`;
