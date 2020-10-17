@@ -208,6 +208,17 @@
       "path": "webxrlayers-1.bs"
     }
   },
+  "https://immersive-web.github.io/webxr-hand-input/": {
+    "shortName": "webxr-hand-input",
+    "url": "https://immersive-web.github.io/webxr-hand-input/",
+    "source": "https://github.com/immersive-web/webxr-hand-input/blob/master/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-hand-input",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://infra.spec.whatwg.org/": {
     "shortName": "infra",
     "url": "https://infra.spec.whatwg.org/",
@@ -379,6 +390,17 @@
       "path": "index.html"
     }
   },
+  "https://w3c.github.io/mediacapture-automation/": {
+    "shortName": "mediacapture-automation",
+    "url": "https://w3c.github.io/mediacapture-automation/",
+    "source": "https://github.com/w3c/mediacapture-automation/blob/master/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "mediacapture-automation",
+      "branch": "master",
+      "path": "index.html"
+    }
+  },
   "https://w3c.github.io/screen-fold/": {
     "shortName": "screen-fold",
     "url": "https://w3c.github.io/screen-fold/",
@@ -409,6 +431,17 @@
       "owner": "w3c",
       "repo": "web-share-target",
       "branch": "master",
+      "path": "index.html"
+    }
+  },
+  "https://w3c.github.io/webappsec-change-password-url/": {
+    "shortName": "change-password-url",
+    "url": "https://w3c.github.io/webappsec-change-password-url/",
+    "source": "https://github.com/w3c/webappsec-change-password-url/blob/gh-pages/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "webappsec-change-password-url",
+      "branch": "gh-pages",
       "path": "index.html"
     }
   },
@@ -456,6 +489,17 @@
       "path": "index.bs"
     }
   },
+  "https://w3c.github.io/webtransport/": {
+    "shortName": "webtransport",
+    "url": "https://w3c.github.io/webtransport/",
+    "source": "https://github.com/w3c/webtransport/blob/master/index.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "webtransport",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://webbluetoothcg.github.io/web-bluetooth/": {
     "shortName": "web-bluetooth",
     "url": "https://webbluetoothcg.github.io/web-bluetooth/",
@@ -487,17 +531,6 @@
       "repo": "background-sync",
       "branch": "master",
       "path": "spec/index.bs"
-    }
-  },
-  "https://wicg.github.io/change-password-url/": {
-    "shortName": "change-password-url",
-    "url": "https://wicg.github.io/change-password-url/",
-    "source": "https://github.com/w3c/webappsec-change-password-url/blob/main/change-password-url.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "webappsec-change-password-url",
-      "branch": "main",
-      "path": "change-password-url.bs"
     }
   },
   "https://wicg.github.io/client-hints-infrastructure/": {
@@ -654,6 +687,17 @@
       "path": "index.bs"
     }
   },
+  "https://wicg.github.io/file-system-access/": {
+    "shortName": "file-system-access",
+    "url": "https://wicg.github.io/file-system-access/",
+    "source": "https://github.com/WICG/file-system-access/blob/master/index.bs",
+    "github": {
+      "owner": "WICG",
+      "repo": "file-system-access",
+      "branch": "master",
+      "path": "index.bs"
+    }
+  },
   "https://wicg.github.io/frame-timing/": {
     "shortName": "frame-timing",
     "url": "https://wicg.github.io/frame-timing/",
@@ -795,17 +839,6 @@
       "repo": "media-feeds",
       "branch": "master",
       "path": "index.html"
-    }
-  },
-  "https://wicg.github.io/native-file-system/": {
-    "shortName": "native-file-system",
-    "url": "https://wicg.github.io/native-file-system/",
-    "source": "https://github.com/WICG/file-system-access/blob/master/index.bs",
-    "github": {
-      "owner": "WICG",
-      "repo": "file-system-access",
-      "branch": "master",
-      "path": "index.bs"
     }
   },
   "https://wicg.github.io/netinfo/": {
@@ -1039,17 +1072,6 @@
       "path": "index.bs"
     }
   },
-  "https://wicg.github.io/web-transport/": {
-    "shortName": "web-transport",
-    "url": "https://wicg.github.io/web-transport/",
-    "source": "https://github.com/w3c/webtransport/blob/master/index.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "webtransport",
-      "branch": "master",
-      "path": "index.bs"
-    }
-  },
   "https://wicg.github.io/webhid/": {
     "shortName": "webhid",
     "url": "https://wicg.github.io/webhid/",
@@ -1082,6 +1104,252 @@
       "branch": "master",
       "path": "index.bs"
     }
+  },
+  "https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/": {
+    "shortName": "ANGLE_instanced_arrays",
+    "url": "https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/": {
+    "shortName": "EXT_blend_minmax",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_clip_cull_distance/": {
+    "shortName": "EXT_clip_cull_distance",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_clip_cull_distance/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/": {
+    "shortName": "EXT_color_buffer_float",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_half_float/": {
+    "shortName": "EXT_color_buffer_half_float",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_half_float/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query_webgl2/": {
+    "shortName": "EXT_disjoint_timer_query_webgl2",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query_webgl2/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/": {
+    "shortName": "EXT_disjoint_timer_query",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_float_blend/": {
+    "shortName": "EXT_float_blend",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_float_blend/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/": {
+    "shortName": "EXT_frag_depth",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_shader_texture_lod/": {
+    "shortName": "EXT_shader_texture_lod",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_shader_texture_lod/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_sRGB/": {
+    "shortName": "EXT_sRGB",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_sRGB/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_bptc/": {
+    "shortName": "EXT_texture_compression_bptc",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_bptc/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_rgtc/": {
+    "shortName": "EXT_texture_compression_rgtc",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_rgtc/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_texture_filter_anisotropic/": {
+    "shortName": "EXT_texture_filter_anisotropic",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_filter_anisotropic/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/EXT_texture_norm16/": {
+    "shortName": "EXT_texture_norm16",
+    "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_norm16/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/KHR_parallel_shader_compile/": {
+    "shortName": "KHR_parallel_shader_compile",
+    "url": "https://www.khronos.org/registry/webgl/extensions/KHR_parallel_shader_compile/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_draw_buffers_indexed/": {
+    "shortName": "OES_draw_buffers_indexed",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_draw_buffers_indexed/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_element_index_uint/": {
+    "shortName": "OES_element_index_uint",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_element_index_uint/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_fbo_render_mipmap/": {
+    "shortName": "OES_fbo_render_mipmap",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_fbo_render_mipmap/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/": {
+    "shortName": "OES_standard_derivatives",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_texture_float_linear/": {
+    "shortName": "OES_texture_float_linear",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_float_linear/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_texture_float/": {
+    "shortName": "OES_texture_float",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_float/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float_linear/": {
+    "shortName": "OES_texture_half_float_linear",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float_linear/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float/": {
+    "shortName": "OES_texture_half_float",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/": {
+    "shortName": "OES_vertex_array_object",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/": {
+    "shortName": "OVR_multiview2",
+    "url": "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_blend_equation_advanced_coherent/": {
+    "shortName": "WEBGL_blend_equation_advanced_coherent",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_blend_equation_advanced_coherent/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_color_buffer_float/": {
+    "shortName": "WEBGL_color_buffer_float",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_color_buffer_float/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/": {
+    "shortName": "WEBGL_compressed_texture_astc",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_etc1/": {
+    "shortName": "WEBGL_compressed_texture_etc1",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_etc1/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_pvrtc/": {
+    "shortName": "WEBGL_compressed_texture_pvrtc",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_pvrtc/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/": {
+    "shortName": "WEBGL_compressed_texture_s3tc_srgb",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc/": {
+    "shortName": "WEBGL_compressed_texture_s3tc",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_renderer_info/": {
+    "shortName": "WEBGL_debug_renderer_info",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_renderer_info/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_shaders/": {
+    "shortName": "WEBGL_debug_shaders",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_shaders/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/": {
+    "shortName": "WEBGL_depth_texture",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/": {
+    "shortName": "WEBGL_draw_buffers",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_instanced_base_vertex_base_instance/": {
+    "shortName": "WEBGL_draw_instanced_base_vertex_base_instance",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_instanced_base_vertex_base_instance/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/": {
+    "shortName": "WEBGL_lose_context",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/": {
+    "shortName": "WEBGL_multi_draw_instanced_base_vertex_base_instance",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/",
+    "source": null,
+    "github": null
+  },
+  "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw/": {
+    "shortName": "WEBGL_multi_draw",
+    "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw/",
+    "source": null,
+    "github": null
   },
   "https://www.khronos.org/registry/webgl/specs/latest/1.0/": {
     "shortName": "webgl1",
@@ -1290,6 +1558,17 @@
       "repo": "csswg-drafts",
       "branch": "master",
       "path": "css-backgrounds-3/Overview.bs"
+    }
+  },
+  "https://drafts.csswg.org/css-box-3/": {
+    "shortName": "css-box-3",
+    "url": "https://drafts.csswg.org/css-box-3/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/master/css-box-3/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "branch": "master",
+      "path": "css-box-3/Overview.bs"
     }
   },
   "https://drafts.csswg.org/css-box-4/": {
@@ -2744,6 +3023,17 @@
       "path": "index.html"
     }
   },
+  "https://w3c.github.io/screen-wake-lock/": {
+    "shortName": "wake-lock",
+    "url": "https://w3c.github.io/screen-wake-lock/",
+    "source": "https://github.com/w3c/screen-wake-lock/blob/gh-pages/index.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "screen-wake-lock",
+      "branch": "gh-pages",
+      "path": "index.html"
+    }
+  },
   "https://w3c.github.io/webappsec-secure-contexts/": {
     "shortName": "secure-contexts",
     "url": "https://w3c.github.io/webappsec-secure-contexts/",
@@ -2972,17 +3262,6 @@
       "path": "index.html"
     }
   },
-  "https://w3c.github.io/screen-wake-lock/": {
-    "shortName": "wake-lock",
-    "url": "https://w3c.github.io/screen-wake-lock/",
-    "source": "https://github.com/w3c/screen-wake-lock/blob/gh-pages/index.html",
-    "github": {
-      "owner": "w3c",
-      "repo": "screen-wake-lock",
-      "branch": "gh-pages",
-      "path": "index.html"
-    }
-  },
   "https://webassembly.github.io/spec/core/bikeshed/": {
     "shortName": "wasm-core-1",
     "url": "https://webassembly.github.io/spec/core/bikeshed/",
@@ -3060,15 +3339,15 @@
       "path": "index.bs"
     }
   },
-  "https://w3c.github.io/webcrypto/Overview.html": {
+  "https://w3c.github.io/webcrypto/": {
     "shortName": "WebCryptoAPI",
-    "url": "https://w3c.github.io/webcrypto/Overview.html",
-    "source": "https://github.com/w3c/webcrypto/blob/gh-pages/Overview.html",
+    "url": "https://w3c.github.io/webcrypto/",
+    "source": "https://github.com/w3c/webcrypto/blob/master/spec/Overview.html",
     "github": {
       "owner": "w3c",
       "repo": "webcrypto",
-      "branch": "gh-pages",
-      "path": "Overview.html"
+      "branch": "master",
+      "path": "spec/Overview.html"
     }
   },
   "https://w3c.github.io/webdriver/": {
