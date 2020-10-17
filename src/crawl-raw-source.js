@@ -140,6 +140,7 @@ async function guessForGeneralGitHubSpecs(specInfo) {
     await checkIfExists(masterBranch + "docs/index.bs") || // service-workers
     await checkIfExists(masterBranch + "Overview.bs") ||
     await checkIfExists(masterBranch + "spec.bs") || // page-lifecycle
+    await checkIfExists(masterBranch + "spec/Overview.html") || // webcrypto
     await checkIfExists(masterBranch + customName) ||
     await checkIfExists(masterBranch + shortName + "-respec.html") || // encrypted-media
     await checkIfExists(masterBranch + "index.src.html") ||
