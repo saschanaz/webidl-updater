@@ -10,6 +10,10 @@ const { fetchText } = require("./utils.js");
 
 const specUrls = require("browser-specs");
 
+function until(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 /**
  * @param {string} url
  */
@@ -17,7 +21,11 @@ async function checkIfExists(url) {
   const res = await fetch(url, { method: "HEAD" });
   if (res.ok) {
     return res.url; // can be redirected
-  } else if (res.status !== 404) {
+  } else if (res.status === 429) {
+    console.log(`Got HTTP 429 TOO MANY REQUESTS, waiting for 5 seconds to try again...`);
+    await until(5000);
+    return await checkIfExists(url);
+  } if (res.status !== 404) {
     console.error(`${res.url} threw ${res.status} ${res.statusText}`)
   }
 }
