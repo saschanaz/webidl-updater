@@ -8,7 +8,8 @@ const { JSDOM } = require("jsdom");
 const fetch = require("node-fetch").default;
 const { fetchText } = require("./utils.js");
 
-const specUrls = require("browser-specs");
+const specs = require("browser-specs");
+const cached = require("../spec-sources.browsers.generated.json");
 
 function until(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -176,34 +177,74 @@ function getGitHubInfo(url) {
   return { owner, repo, branch, path };
 }
 
-async function addMissingSpecSources(specInfoList) {
+function maybeGetGitHubInfo(url) {
+  if (url?.includes("github.com")) {
+    return getGitHubInfo(url);
+  }
+  return null;
+}
+
+/** @param {Map<string, any>} */
+async function importCachedSpecSources(map) {
+  for (const value of Object.values(cached)) {
+    console.log(`Verifying cache for ${value.url}`);
+    const source = value.source && await checkIfExists(value.source);
+    if (source && map.has(value.url)) {
+      console.log(`-> ${source}`);
+      map.set(value.url, {
+        ...value,
+        source,
+        github: maybeGetGitHubInfo(source)
+      });
+    } else {
+      console.log(source ? "-> (Invalid spec item)" : "-> (Invalid source URL)");
+    }
+  }
+}
+
+async function addMissingSpecSources(map) {
   // This needs to be sequential as requesting everything in once causes
   // HTTP 429 too many requests error.
-  const specSources = {};
-  for (const specInfo of specInfoList) {
+  for (const specInfo of specs) {
     if (specInfo.shortname !== specInfo.series.currentSpecification) {
       // Cannot take care of old snapshots
       continue;
     }
     const { url } = specInfo.nightly;
-    const item = specSources[url] = {};
+    if (map.get(url)?.source) {
+      continue;
+    }
+    const item = {};
     const detected = await detectURLAndShortName(specInfo);
     item.shortName = specInfo.shortname;
     item.url = url;
     item.source = detected || null;
-    if (detected?.includes("github.com")) {
-      item.github = getGitHubInfo(detected);
-    } else {
-      item.github = null;
-    }
+    item.github = maybeGetGitHubInfo(detected);
+    map.set(url, item);
   }
-  return specSources;
+}
+
+/**
+ * @template K, V
+ * @param {Map<K, V>} map
+ */
+function mapToJson(map) {
+  /** @type {Record<K, V>} */
+  const json = {};
+  for (const [key, value] of map) {
+    json[key] = value;
+  }
+  return json;
 }
 
 (async () => {
-  const specSources = await addMissingSpecSources(specUrls);
+  const map = new Map(specs.map(spec => [spec.nightly.url, undefined]))
+  if (!process.argv.includes("--nocache")) {
+    await importCachedSpecSources(map);
+  }
+  await addMissingSpecSources(map);
 
-  await fs.writeFile("spec-sources.browsers.generated.json", JSON.stringify(specSources, null, 2) + "\n");
+  await fs.writeFile("spec-sources.browsers.generated.json", JSON.stringify(mapToJson(map), null, 2) + "\n");
 })().catch(e => {
   process.on("exit", () => {
     console.error(e);
