@@ -51,9 +51,8 @@ async function extractOneByOne(specSourceList) {
     };
   }));
   for (const { shortName, text } of fetchedList) {
-    let { window } = new JSDOM(text);
     results.push({
-      ...await extract(window.document),
+      ...await extract(JSDOM.fragment(text)),
       text,
       shortName
     });
