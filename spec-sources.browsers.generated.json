@@ -1008,248 +1008,412 @@
   "https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/": {
     "shortName": "ANGLE_instanced_arrays",
     "url": "https://www.khronos.org/registry/webgl/extensions/ANGLE_instanced_arrays/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/ANGLE_instanced_arrays/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/ANGLE_instanced_arrays/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/": {
     "shortName": "EXT_blend_minmax",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_blend_minmax/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_blend_minmax/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_blend_minmax/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_clip_cull_distance/": {
     "shortName": "EXT_clip_cull_distance",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_clip_cull_distance/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_clip_cull_distance/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_clip_cull_distance/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/": {
     "shortName": "EXT_color_buffer_float",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_float/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_color_buffer_float/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_color_buffer_float/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_half_float/": {
     "shortName": "EXT_color_buffer_half_float",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_color_buffer_half_float/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_color_buffer_half_float/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_color_buffer_half_float/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query_webgl2/": {
     "shortName": "EXT_disjoint_timer_query_webgl2",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query_webgl2/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_disjoint_timer_query_webgl2/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_disjoint_timer_query_webgl2/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/": {
     "shortName": "EXT_disjoint_timer_query",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_disjoint_timer_query/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_disjoint_timer_query/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_disjoint_timer_query/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_float_blend/": {
     "shortName": "EXT_float_blend",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_float_blend/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_float_blend/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_float_blend/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/": {
     "shortName": "EXT_frag_depth",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_frag_depth/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_frag_depth/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_frag_depth/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_shader_texture_lod/": {
     "shortName": "EXT_shader_texture_lod",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_shader_texture_lod/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_shader_texture_lod/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_shader_texture_lod/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_sRGB/": {
     "shortName": "EXT_sRGB",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_sRGB/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_sRGB/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_sRGB/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_bptc/": {
     "shortName": "EXT_texture_compression_bptc",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_bptc/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_texture_compression_bptc/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_texture_compression_bptc/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_rgtc/": {
     "shortName": "EXT_texture_compression_rgtc",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_compression_rgtc/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_texture_compression_rgtc/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_texture_compression_rgtc/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_texture_filter_anisotropic/": {
     "shortName": "EXT_texture_filter_anisotropic",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_filter_anisotropic/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_texture_filter_anisotropic/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_texture_filter_anisotropic/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/EXT_texture_norm16/": {
     "shortName": "EXT_texture_norm16",
     "url": "https://www.khronos.org/registry/webgl/extensions/EXT_texture_norm16/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/EXT_texture_norm16/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/EXT_texture_norm16/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/KHR_parallel_shader_compile/": {
     "shortName": "KHR_parallel_shader_compile",
     "url": "https://www.khronos.org/registry/webgl/extensions/KHR_parallel_shader_compile/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/KHR_parallel_shader_compile/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/KHR_parallel_shader_compile/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_draw_buffers_indexed/": {
     "shortName": "OES_draw_buffers_indexed",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_draw_buffers_indexed/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_draw_buffers_indexed/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_draw_buffers_indexed/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_element_index_uint/": {
     "shortName": "OES_element_index_uint",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_element_index_uint/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_element_index_uint/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_element_index_uint/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_fbo_render_mipmap/": {
     "shortName": "OES_fbo_render_mipmap",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_fbo_render_mipmap/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_fbo_render_mipmap/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_fbo_render_mipmap/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/": {
     "shortName": "OES_standard_derivatives",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_standard_derivatives/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_standard_derivatives/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_standard_derivatives/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_texture_float_linear/": {
     "shortName": "OES_texture_float_linear",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_float_linear/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_texture_float_linear/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_texture_float_linear/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_texture_float/": {
     "shortName": "OES_texture_float",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_float/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_texture_float/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_texture_float/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float_linear/": {
     "shortName": "OES_texture_half_float_linear",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float_linear/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_texture_half_float_linear/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_texture_half_float_linear/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float/": {
     "shortName": "OES_texture_half_float",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_texture_half_float/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_texture_half_float/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_texture_half_float/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/": {
     "shortName": "OES_vertex_array_object",
     "url": "https://www.khronos.org/registry/webgl/extensions/OES_vertex_array_object/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OES_vertex_array_object/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OES_vertex_array_object/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/": {
     "shortName": "OVR_multiview2",
     "url": "https://www.khronos.org/registry/webgl/extensions/OVR_multiview2/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/OVR_multiview2/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/OVR_multiview2/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_blend_equation_advanced_coherent/": {
     "shortName": "WEBGL_blend_equation_advanced_coherent",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_blend_equation_advanced_coherent/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_blend_equation_advanced_coherent/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_blend_equation_advanced_coherent/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_color_buffer_float/": {
     "shortName": "WEBGL_color_buffer_float",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_color_buffer_float/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_color_buffer_float/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_color_buffer_float/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/": {
     "shortName": "WEBGL_compressed_texture_astc",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_astc/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_compressed_texture_astc/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_compressed_texture_astc/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_etc1/": {
     "shortName": "WEBGL_compressed_texture_etc1",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_etc1/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_compressed_texture_etc1/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_compressed_texture_etc1/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_pvrtc/": {
     "shortName": "WEBGL_compressed_texture_pvrtc",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_pvrtc/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_compressed_texture_pvrtc/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_compressed_texture_pvrtc/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/": {
     "shortName": "WEBGL_compressed_texture_s3tc_srgb",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc_srgb/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_compressed_texture_s3tc_srgb/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_compressed_texture_s3tc_srgb/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc/": {
     "shortName": "WEBGL_compressed_texture_s3tc",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_compressed_texture_s3tc/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_compressed_texture_s3tc/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_compressed_texture_s3tc/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_renderer_info/": {
     "shortName": "WEBGL_debug_renderer_info",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_renderer_info/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_debug_renderer_info/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_debug_renderer_info/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_shaders/": {
     "shortName": "WEBGL_debug_shaders",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_debug_shaders/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_debug_shaders/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_debug_shaders/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/": {
     "shortName": "WEBGL_depth_texture",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_depth_texture/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_depth_texture/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/": {
     "shortName": "WEBGL_draw_buffers",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_buffers/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_draw_buffers/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_draw_buffers/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_instanced_base_vertex_base_instance/": {
     "shortName": "WEBGL_draw_instanced_base_vertex_base_instance",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_draw_instanced_base_vertex_base_instance/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_draw_instanced_base_vertex_base_instance/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_draw_instanced_base_vertex_base_instance/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/": {
     "shortName": "WEBGL_lose_context",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_lose_context/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_lose_context/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_lose_context/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/": {
     "shortName": "WEBGL_multi_draw_instanced_base_vertex_base_instance",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_multi_draw_instanced_base_vertex_base_instance/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw/": {
     "shortName": "WEBGL_multi_draw",
     "url": "https://www.khronos.org/registry/webgl/extensions/WEBGL_multi_draw/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/KhronosGroup/WebGL/blob/HEAD/extensions/WEBGL_multi_draw/extension.xml",
+    "github": {
+      "owner": "KhronosGroup",
+      "repo": "WebGL",
+      "path": "extensions/WEBGL_multi_draw/extension.xml"
+    }
   },
   "https://www.khronos.org/registry/webgl/specs/latest/1.0/": {
     "shortName": "webgl1",

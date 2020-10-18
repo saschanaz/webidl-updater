@@ -19,6 +19,10 @@ function exists(array, ...items) {
   }
 }
 
+/**
+ * For csswg.org and css-houdini.org
+ * @param {string[]} paths
+ */
 function guessForDraftsOrgSpecs(paths, specInfo) {
   const regex = /https:\/\/drafts\.[-\w]+\.org\/([^/]+)\//;
   const match = specInfo.nightly.url.match(regex);
@@ -41,7 +45,7 @@ function guessForDraftsOrgSpecs(paths, specInfo) {
 }
 
 /**
- * @param {string} url
+ * @param {string[]} paths
  */
 function guessForWHATWGSpecs(paths, specInfo) {
   const { url } = specInfo.nightly;
@@ -56,19 +60,19 @@ function guessForWHATWGSpecs(paths, specInfo) {
 }
 
 /**
- * @param {string} url
+ * @param {string[]} paths
  */
 function guessForKhronosSpecs(paths, specInfo) {
   const { url } = specInfo.nightly;
-  // https://www.khronos.org/registry/
-  const regex = /https:\/\/www\.khronos\.org\/registry\/(\w+)\/(.+)\//;
+  // https://www.khronos.org/registry/webgl/
+  const regex = /https:\/\/www\.khronos\.org\/registry\/webgl\/(.+)\//;
   const match = url.match(regex);
   if (!match) {
     return;
   }
 
-  const [,, path] = match;
-  return exists(paths, `${path}/index.html`);
+  const [, dir] = match;
+  return exists(paths, `${dir}/index.html`, `${dir}/extension.xml`);
 }
 
 function guessForGeneralGitHubSpecs(paths, specInfo) {
