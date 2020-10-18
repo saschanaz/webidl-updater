@@ -8,7 +8,7 @@
   "main": "src/rewrite.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "crawl-raw-source": "node src/crawl-raw-source.js",
+    "find-source-path": "node src/find-source-path.js",
     "rewrite": "node src/rewrite.js",
     "submit-pullrequest": "node src/github-pullrequest.js",
     "clean": "node src/clean.js"
@@ -22,5 +22,6 @@
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
     "webidl2": "^23.13.0"
-  }
+  },
+  "private": true
 }
