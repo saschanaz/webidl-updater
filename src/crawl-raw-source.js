@@ -4,59 +4,35 @@
 
 const fs = require("fs").promises;
 const { parse: parsePath } = require("path");
-const { JSDOM } = require("jsdom");
-const fetch = require("node-fetch").default;
-const { fetchText } = require("./utils.js");
-
 const specs = require("browser-specs");
-const cached = require("../spec-sources.browsers.generated.json");
+const { Octokit } = require("@octokit/rest");
 
-function until(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const config = require("../config.json");
+const octokit = new Octokit({ auth: config.botAuth });
 
-/**
- * @param {string} url
- */
-async function checkIfExists(url) {
-  const res = await fetch(url, { method: "HEAD" });
-  if (res.ok) {
-    return res.url; // can be redirected
-  } else if (res.status === 429) {
-    console.log(`Got HTTP 429 TOO MANY REQUESTS, waiting for 5 seconds to try again...`);
-    await until(5000);
-    return await checkIfExists(url);
-  } if (res.status !== 404) {
-    console.error(`${res.url} threw ${res.status} ${res.statusText}`)
+
+function exists(array, ...items) {
+  for (const item of items) {
+    if (array.includes(item)) {
+      return item;
+    }
   }
 }
 
-async function guessIfEditLinkExists(url) {
-  let { window } = new JSDOM(await fetchText(url));
-  const sourceAnchor = window.document.querySelector("a[href$=\\.bs][href*=github]");
-  if (!sourceAnchor) {
-    return;
-  }
-  return await checkIfExists(sourceAnchor.href);
-}
-
-async function guessForDraftsOrgSpecs(specInfo) {
+function guessForDraftsOrgSpecs(paths, specInfo) {
   const regex = /https:\/\/drafts\.[-\w]+\.org\/([^/]+)\//;
   const match = specInfo.nightly.url.match(regex);
   if (!match) {
     return;
   }
 
-  const branchUrl = `${specInfo.nightly.repository}/blob/master`;
   const candidates = new Set([specInfo.shortname, specInfo.series.shortname]);
   candidates.add(match[1]); // e.g. CSS2
   if (!match[1].endsWith("-1")) {
     candidates.add(match[1] + "-1"); // e.g. css-style-attr
   }
   for (const shortname of candidates) {
-    const gitDir = `${branchUrl}/${shortname}/`;
-    const guessed = await checkIfExists(gitDir + "Overview.bs") ||
-      await checkIfExists(gitDir + "Overview.src.html");
+    const guessed = exists(paths, `${shortname}/Overview.bs`, `${shortname}/Overview.src.html`);
     if (guessed) {
       return guessed;
     }
@@ -67,7 +43,8 @@ async function guessForDraftsOrgSpecs(specInfo) {
 /**
  * @param {string} url
  */
-async function guessForWHATWGSpecs(url) {
+function guessForWHATWGSpecs(paths, specInfo) {
+  const { url } = specInfo.nightly;
   const regex = /https:\/\/(\w+)\.spec\.whatwg\.org\//;
   const match = url.match(regex);
   if (!match) {
@@ -75,17 +52,14 @@ async function guessForWHATWGSpecs(url) {
   }
 
   const [, shortName] = match;
-  const gitDir = `https://github.com/whatwg/${shortName}/blob/master/`;
-  return await checkIfExists(gitDir + "index.bs") ||
-    await checkIfExists(gitDir + `${shortName}.bs`) ||
-    await checkIfExists(gitDir + "source") ||
-    await checkIfExists(gitDir + `compatibility.bs`);
+  return exists(paths, "index.bs", `${shortName}.bs`, "source", `compatibility.bs`);
 }
 
 /**
  * @param {string} url
  */
-async function guessForKhronosSpecs(url) {
+function guessForKhronosSpecs(paths, specInfo) {
+  const { url } = specInfo.nightly;
   // https://www.khronos.org/registry/
   const regex = /https:\/\/www\.khronos\.org\/registry\/(\w+)\/(.+)\//;
   const match = url.match(regex);
@@ -93,159 +67,125 @@ async function guessForKhronosSpecs(url) {
     return;
   }
 
-  const [, shortName, path] = match;
-  const rawgit = `https://github.com/KhronosGroup/${shortName}/blob/master/${path}/index.html`;
-  return await checkIfExists(rawgit);
+  const [,, path] = match;
+  return exists(paths, `${path}/index.html`);
 }
 
-async function guessForGeneralGitHubSpecs(specInfo) {
+function guessForGeneralGitHubSpecs(paths, specInfo) {
   const { url } = specInfo.nightly;
-  const regex = /https?:\/\/([-\w]+)\.github\.io\/([^/]+)\/(.*)/;
+  const regex = /https?:\/\/[-\w]+\.github\.io\/[^/]+\/(.*)/;
   const match = url.match(regex);
   if (!match) {
     return;
   }
-  const [,, shortName, path] = match;
-  const repoUrl = `${specInfo.nightly.repository}/blob`;
-  const mainBranch = `${repoUrl}/main/`;
-  const masterBranch = `${repoUrl}/master/`;
-  const ghPagesBranch = `${repoUrl}/gh-pages/`;
+  const [, path] = match;
   if (path) {
     if (path.endsWith("/")) {
-      return await checkIfExists(masterBranch + "document/" + path + "index.bs") || // WebAssembly
-        await checkIfExists(masterBranch + path + "index.bs") ||
-        await checkIfExists(masterBranch + "spec/index.bs") || // trusted-types
-        await checkIfExists(masterBranch + path + "index.html") ||
-        await checkIfExists(ghPagesBranch + path + "index.bs") ||
-        await checkIfExists(ghPagesBranch + path + "index.html");
+      return exists(
+        paths,
+        `document/core/index.bs`, // WebAssembly
+        path + "index.bs",
+        "spec/index.bs", // trusted-types
+        path + "index.html",
+      );
     }
 
     const name = parsePath(path).name;
-    return await checkIfExists(masterBranch + `${name}.bs`) || // text-detection-api
-      await checkIfExists(masterBranch + path) ||
-      await checkIfExists(ghPagesBranch + path);
+    return exists(
+      paths,
+      `${name}.bs`, // text-detection-api
+      path
+    );
   }
 
-  if (shortName === "layers") {
-    // too special
-    return await checkIfExists(masterBranch + "webxrlayers-1.bs");
+  const { shortname } = specInfo;
+
+  // too special
+  const specials = {
+    "layers": "webxrlayers-1.bs",
+    "mediastream-recording": "MediaRecorder.bs"
+  }
+  if (specials[shortname]) {
+    return exists(paths, specials[shortname]);
   }
 
   // Used by paint-timing
-  const customName = shortName.toLowerCase().replace(/-/g, "") + ".bs";
-  return await checkIfExists(mainBranch + "index.bs") ||
-    await checkIfExists(mainBranch + "spec/index.bs") || // gpuweb
-    await checkIfExists(mainBranch + `${shortName}.bs`) || // storage-access
-    await checkIfExists(masterBranch + "index.bs") ||
-    await checkIfExists(masterBranch + "docs/index.bs") || // service-workers
-    await checkIfExists(masterBranch + "Overview.bs") ||
-    await checkIfExists(masterBranch + "spec.bs") || // page-lifecycle
-    await checkIfExists(masterBranch + "spec/Overview.html") || // webcrypto
-    await checkIfExists(masterBranch + customName) ||
-    await checkIfExists(masterBranch + shortName + "-respec.html") || // encrypted-media
-    await checkIfExists(masterBranch + "index.src.html") ||
-    await checkIfExists(masterBranch + "index.html") ||
-    await checkIfExists(ghPagesBranch + shortName + "-respec.html") || // media-source
-    await checkIfExists(ghPagesBranch + "index.bs") ||
-    await checkIfExists(ghPagesBranch + "index.html") ||
-    await checkIfExists(masterBranch + "spec/index.bs") ||
-    await checkIfExists(masterBranch + "spec/index.html");
+  const customName = shortname.toLowerCase().replace(/-/g, "") + ".bs";
+  return exists(
+    paths,
+    "index.bs",
+    "spec/index.bs", // gpuweb
+    `${shortname}.bs`, // storage-access
+    "docs/index.bs", // service-workers
+    "Overview.bs",
+    "spec.bs", // page-lifecycle
+    "spec/Overview.html", // webcrypto
+    customName,
+    shortname + "-respec.html", // encrypted-media, media-source
+    "index.src.html",
+    "index.html",
+    "spec/index.html"
+  );
 }
 
 async function detectURLAndShortName(specInfo) {
   const url = specInfo.nightly.url;
   console.log(`${url} ...`)
-  const guessed = await guessForDraftsOrgSpecs(specInfo) ||
-    await guessForWHATWGSpecs(url) ||
-    await guessForKhronosSpecs(url) ||
-    await guessForGeneralGitHubSpecs(specInfo);
+  const { owner, repo } = getGitHubInfo(specInfo.nightly.repository);
+  const { data } = await octokit.git.getTree({ owner, repo, tree_sha: "HEAD", recursive: true });
+  const paths = data.tree.map(entry => entry.path);
+
+  const guessed = guessForDraftsOrgSpecs(paths, specInfo) ||
+    guessForWHATWGSpecs(paths, specInfo) ||
+    guessForKhronosSpecs(paths, specInfo) ||
+    guessForGeneralGitHubSpecs(paths, specInfo);
   if (!guessed) {
-    console.warn("Couldn't guess the source path, parsing the page to find one");
-    return await guessIfEditLinkExists(url);
-  } else {
-    console.log(`-> ${guessed}`);
+    console.warn("Couldn't guess the source path");
+    return;
   }
-  return guessed;
+  const fullUrl = `https://github.com/${owner}/${repo}/blob/HEAD/${guessed}`;
+  console.log(`-> ${fullUrl}`);
+  return fullUrl;
 }
 
 function getGitHubInfo(url) {
-  const regex = /^https?:\/\/github\.com\/([^/]+)\/([^/]+)\/blob\/([^/]+)\/(.+)/;
+  const regex = /^https?:\/\/github\.com\/([^/]+)\/([^/]+)(?:\/blob\/([^/]+)\/(.+))?$/;
   const match = url.match(regex);
   if (!match) {
-    throw new Error("No way!!");
+    throw new Error("No way!! " + url);
   }
-  const [, owner, repo, branch, path] = match;
-  return { owner, repo, branch, path };
+  const [, owner, repo,, path] = match;
+  return { owner, repo, path };
 }
 
-function maybeGetGitHubInfo(url) {
-  if (url?.includes("github.com")) {
-    return getGitHubInfo(url);
-  }
-  return null;
-}
-
-/** @param {Map<string, any>} */
-async function importCachedSpecSources(map) {
-  for (const value of Object.values(cached)) {
-    console.log(`Verifying cache for ${value.url}`);
-    const source = value.source && await checkIfExists(value.source);
-    if (source && map.has(value.url)) {
-      console.log(`-> ${source}`);
-      map.set(value.url, {
-        ...value,
-        source,
-        github: maybeGetGitHubInfo(source)
-      });
-    } else {
-      console.log(source ? "-> (Invalid spec item)" : "-> (Invalid source URL)");
-    }
-  }
-}
-
-async function addMissingSpecSources(map) {
+async function addMissingSpecSources() {
   // This needs to be sequential as requesting everything in once causes
   // HTTP 429 too many requests error.
+  const specSources = {};
   for (const specInfo of specs) {
     if (specInfo.shortname !== specInfo.series.currentSpecification) {
       // Cannot take care of old snapshots
       continue;
     }
     const { url } = specInfo.nightly;
-    if (map.get(url)?.source) {
-      continue;
-    }
-    const item = {};
+    const item = specSources[url] = {};
     const detected = await detectURLAndShortName(specInfo);
     item.shortName = specInfo.shortname;
     item.url = url;
     item.source = detected || null;
-    item.github = maybeGetGitHubInfo(detected);
-    map.set(url, item);
+    if (detected?.includes("github.com")) {
+      item.github = getGitHubInfo(detected);
+    } else {
+      item.github = null;
+    }
   }
-}
-
-/**
- * @template K, V
- * @param {Map<K, V>} map
- */
-function mapToJson(map) {
-  /** @type {Record<K, V>} */
-  const json = {};
-  for (const [key, value] of map) {
-    json[key] = value;
-  }
-  return json;
+  return specSources;
 }
 
 (async () => {
-  const map = new Map(specs.map(spec => [spec.nightly.url, undefined]))
-  if (!process.argv.includes("--nocache")) {
-    await importCachedSpecSources(map);
-  }
-  await addMissingSpecSources(map);
+  const specSources = await addMissingSpecSources();
 
-  await fs.writeFile("spec-sources.browsers.generated.json", JSON.stringify(mapToJson(map), null, 2) + "\n");
+  await fs.writeFile("spec-sources.browsers.generated.json", JSON.stringify(specSources, null, 2) + "\n");
 })().catch(e => {
   process.on("exit", () => {
     console.error(e);
