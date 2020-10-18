@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "crawl-raw-source": "node src/crawl-raw-source.js",
     "rewrite": "node src/rewrite.js",
-    "create-pullrequest": "node src/github-pullrequest.js",
+    "submit-pullrequest": "node src/github-pullrequest.js",
     "clean": "node src/clean.js"
   },
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
