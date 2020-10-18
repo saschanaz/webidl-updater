@@ -21,7 +21,6 @@
     "diff": "^4.0.2",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
-    "reffy": "github:saschanaz/reffy#each-autofix",
     "webidl2": "^23.13.0"
   }
 }

@@ -5,7 +5,7 @@ const { JSDOM } = require("jsdom");
 const { fetchText } = require("./utils.js");
 const { similarReplace } = require("./similar-replace.js");
 
-const extract = require("reffy/builds/extract-webidl.js");
+const extract = require("./utils/extract-webidl.js");
 
 const specRawSources = require("./spec-sources.js");
 
@@ -51,11 +51,7 @@ async function extractOneByOne(specSourceList) {
     };
   }));
   for (const { shortName, text } of fetchedList) {
-    // Passing url or html to extract() will process everything,
-    // so just skip it by passing jsdom object with script disabled.
     let { window } = new JSDOM(text);
-    // eval is used for generater check, just skip it
-    window.eval = () => {};
     results.push({
       ...await extract(window.document),
       text,
@@ -71,31 +67,6 @@ function mapToArray(object) {
     result.push(value);
   }
   return result;
-}
-
-/**
- * @param {string} str
- */
-function getFirstLineIndentation(str) {
-  const lines = str.split("\n");
-  for (const line of lines) {
-    if (line.trim()) {
-      const match = line.match(/^\s*/);
-      return match[0].length;
-    }
-  }
-  return 0;
-}
-
-/**
- * @param {string} str
- * @param {number} by
- * @param {string} chr character to be used as indentation. Typically " "
- */
-function indent(str, by, chr) {
-  const prefix = chr.repeat(by);
-  const lines = str.split("\n");
-  return lines.map(line => line.trim() ? prefix + line : line).join("\n");
 }
 
 /**
@@ -123,20 +94,8 @@ function replaceBlocksInSpec(spec, targetSpecItem) {
     const originalIdl = targetSpecItem.idl[blockIndex];
     const rewritten = webidl2.write(block);
     if (originalIdl !== rewritten) {
-      const { innerHTML, localName, previousSibling } = targetSpecItem.blocks[blockIndex];
-      const indentSize = getFirstLineIndentation(innerHTML);
-      const tabOrSpace = innerHTML.includes("\t") ? "\t" : " ";
-      const blockIndentation = previousSibling ?
-        previousSibling.textContent.match(/[ \t]*$/)[0]
-        : ""
-      const reformed =
-        indent(rewritten, indentSize, tabOrSpace)
-        + "\n" + blockIndentation;
-      if (localName === "pre") {
-        diffs.push([innerHTML, reformed]);
-      } else {
-        diffs.push([innerHTML, `\n${reformed}`]);
-      }
+      const { innerHTML } = targetSpecItem.blocks[blockIndex];
+      diffs.push([innerHTML, rewritten]);
     }
   }
   return diffs;
