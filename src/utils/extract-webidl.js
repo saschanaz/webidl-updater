@@ -40,6 +40,7 @@ function extractIdl(document) {
         .filter(el => !el.previousElementSibling || el.previousElementSibling.id !== 'idl-index')
         .filter((el, idx, self) => self.indexOf(el) === idx)
         .filter(el => !el.closest(nonNormativeSelector))
+        .map(el => el.cloneNode(true))
         .map(el => {
             const header = el.querySelector('.idlHeader');
             if (header) {
