@@ -12,9 +12,10 @@ Find and rewrite specs with autofixable invalid IDL codes.
 ### GitHub Authentication
 
 `npm run crawl-raw-source` and `npm run submit-pullrequest` require
-`config.json` with `auth` field, which is a GitHub access token. See
-[the Octokit documentation](https://octokit.github.io/rest.js/v18#authentication)
-for more information.
+`config.json` with `auth` field, which is a
+[GitHub access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
+You can alternatively set `GH_TOKEN` environment variable. `config.json` will
+be preferred when both exist.
 
 ## How to add your own spec
 
