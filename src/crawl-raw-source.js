@@ -148,12 +148,30 @@ function guessForGeneralGitHubSpecs(paths, specInfo) {
   );
 }
 
+/** @type {Map<string, string[]>} */
+const repoPathCache = new Map();
+/**
+ * Also caches the paths for multiple specs sharing a single repo
+ * @param {string} owner
+ * @param {string} repo
+ */
+async function getRepositoryPaths(owner, repo) {
+  const cacheKey = `${owner}/${repo}`;
+  if (repoPathCache.has(cacheKey)) {
+    return repoPathCache.get(cacheKey);
+  }
+
+  const { data } = await octokit.git.getTree({ owner, repo, tree_sha: "HEAD", recursive: true });
+  const paths = data.tree.map(entry => entry.path);
+  repoPathCache.set(cacheKey, paths);
+  return paths;
+}
+
 async function detectURLAndShortName(specInfo) {
   const url = specInfo.nightly.url;
   console.log(`${url} ...`)
   const { owner, repo } = getGitHubInfo(specInfo.nightly.repository);
-  const { data } = await octokit.git.getTree({ owner, repo, tree_sha: "HEAD", recursive: true });
-  const paths = data.tree.map(entry => entry.path);
+  const paths = await getRepositoryPaths(owner, repo);
 
   const guessed = guessForDraftsOrgSpecs(paths, specInfo) ||
     guessForWHATWGSpecs(paths, specInfo) ||
