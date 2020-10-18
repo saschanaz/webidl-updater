@@ -1,9 +1,5 @@
-name: Update CODEOWNERs
+name: Rewrite Web IDL and submit the results
 
-# For testing
-# on: push
-
-# For production
 on:
   schedule:
     # https://crontab.guru/#5_8_*_*_1
