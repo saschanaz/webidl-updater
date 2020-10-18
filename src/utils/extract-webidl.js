@@ -27,7 +27,8 @@ function extractIdl(document) {
         'pre:not(.exclude):not(.extract) > code.idl-code:not(.exclude):not(.extract)',
         'pre:not(.exclude):not(.extract) > code.idl:not(.exclude):not(.extract)',
         'div.idl-code:not(.exclude):not(.extract) > pre:not(.exclude):not(.extract)',
-        'pre.widl:not(.exclude):not(.extract)'
+        'pre.widl:not(.exclude):not(.extract)',
+        'idl[xml:space="preserve"]' // WebGL extensions
     ];
     queries = queries.concat(queries.map(q => q.replace(/pre/g, "xmp")));
 
