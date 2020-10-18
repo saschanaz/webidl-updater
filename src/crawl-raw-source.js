@@ -7,9 +7,9 @@ const { parse: parsePath } = require("path");
 const specs = require("browser-specs");
 const { Octokit } = require("@octokit/rest");
 
-const config = require("../config.json");
-const octokit = new Octokit({ auth: config.botAuth });
-
+const octokit = new Octokit({
+  auth: require("../config.json")?.auth || process.env.GH_TOKEN
+});
 
 function exists(array, ...items) {
   for (const item of items) {

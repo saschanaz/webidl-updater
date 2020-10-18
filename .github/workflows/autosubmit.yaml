@@ -1,0 +1,24 @@
+name: Update CODEOWNERs
+
+# For testing
+# on: push
+
+# For production
+on:
+  schedule:
+    # https://crontab.guru/#5_8_*_*_1
+    - cron: "5 8 * * 1"
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+
+      - run: npm install
+      - run: npm run rewrite
+      - run: npm run create-pullrequest
+        env:
+            GH_TOKEN: ${{ secrets.GH_TOKEN }}

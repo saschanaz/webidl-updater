@@ -1,11 +1,9 @@
 const { Octokit } = require("@octokit/rest");
-const config = require("../config.json");
 const specSources = require("./spec-sources.js");
 const fs = require("fs").promises;
 
 const octokit = new Octokit({
-  auth: config.botAuth
-  // ?? authentication, based on config.json
+  auth: require("../config.json")?.auth || process.env.GH_TOKEN
 });
 
 function btoa(str) {
