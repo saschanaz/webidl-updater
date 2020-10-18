@@ -1,7 +1,7 @@
 name: Rewrite Web IDL and submit the results
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   schedule:
     # https://crontab.guru/#5_8_*_*_1
     - cron: "5 8 * * 1"
