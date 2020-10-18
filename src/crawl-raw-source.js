@@ -75,6 +75,22 @@ function guessForKhronosSpecs(paths, specInfo) {
   return exists(paths, `${dir}/index.html`, `${dir}/extension.xml`);
 }
 
+/**
+ * @param {string[]} paths
+ */
+function guessForSvgwgSpecs(paths, specInfo) {
+  const { url } = specInfo.nightly;
+  // https://svgwg.org/specs/
+  const regex = /https:\/\/svgwg\.org\/specs\/(\w+)/;
+  const match = url.match(regex);
+  if (!match) {
+    return;
+  }
+
+  const [, dir] = match;
+  return exists(paths, `specs/${dir}/master/Overview.html`);
+}
+
 function guessForGeneralGitHubSpecs(paths, specInfo) {
   const { url } = specInfo.nightly;
   const regex = /https?:\/\/[-\w]+\.github\.io\/[^/]+\/(.*)/;
@@ -142,6 +158,7 @@ async function detectURLAndShortName(specInfo) {
   const guessed = guessForDraftsOrgSpecs(paths, specInfo) ||
     guessForWHATWGSpecs(paths, specInfo) ||
     guessForKhronosSpecs(paths, specInfo) ||
+    guessForSvgwgSpecs(paths, specInfo) ||
     guessForGeneralGitHubSpecs(paths, specInfo);
   if (!guessed) {
     console.warn("Couldn't guess the source path");

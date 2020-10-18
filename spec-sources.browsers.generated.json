@@ -292,8 +292,12 @@
   "https://svgwg.org/specs/animations/": {
     "shortName": "svg-animations",
     "url": "https://svgwg.org/specs/animations/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/svgwg/blob/HEAD/specs/animations/master/Overview.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "svgwg",
+      "path": "specs/animations/master/Overview.html"
+    }
   },
   "https://url.spec.whatwg.org/": {
     "shortName": "url",
@@ -3018,26 +3022,42 @@
   "https://svgwg.org/specs/integration/": {
     "shortName": "svg-integration",
     "url": "https://svgwg.org/specs/integration/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/svgwg/blob/HEAD/specs/integration/master/Overview.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "svgwg",
+      "path": "specs/integration/master/Overview.html"
+    }
   },
   "https://svgwg.org/specs/markers/": {
     "shortName": "svg-markers",
     "url": "https://svgwg.org/specs/markers/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/svgwg/blob/HEAD/specs/markers/master/Overview.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "svgwg",
+      "path": "specs/markers/master/Overview.html"
+    }
   },
   "https://svgwg.org/specs/paths/": {
     "shortName": "svg-paths",
     "url": "https://svgwg.org/specs/paths/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/svgwg/blob/HEAD/specs/paths/master/Overview.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "svgwg",
+      "path": "specs/paths/master/Overview.html"
+    }
   },
   "https://svgwg.org/specs/strokes/": {
     "shortName": "svg-strokes",
     "url": "https://svgwg.org/specs/strokes/",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/svgwg/blob/HEAD/specs/strokes/master/Overview.html",
+    "github": {
+      "owner": "w3c",
+      "repo": "svgwg",
+      "path": "specs/strokes/master/Overview.html"
+    }
   },
   "https://svgwg.org/svg2-draft/": {
     "shortName": "SVG2",
