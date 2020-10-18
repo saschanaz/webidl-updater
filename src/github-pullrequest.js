@@ -32,7 +32,7 @@ function btoa(str) {
  * @param {string} githubInfo.branch
  * @param {string} githubInfo.path
  */
-async function createPullRequest(updated, validations, shortName, inMonoRepo, { owner, repo, branch, path }) {
+async function createPullRequest(updated, validations, shortName, inMonoRepo, { owner, repo, path }) {
   const message =
     inMonoRepo ? `[${shortName}] Align with Web IDL specification` :
     "Editorial: Align with Web IDL specification";
@@ -51,6 +51,7 @@ ${validations}
   const user = await octokit.users.getAuthenticated();
   const fork = await maybeCreateFork();
 
+  const branch = (await octokit.repos.get({ owner, repo })).data.default_branch;
   const forkOwner = user.data.login;
 
   const forkBranch = shortName;

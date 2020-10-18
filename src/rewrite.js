@@ -32,8 +32,8 @@ function getRawGit(githubInfo) {
   if (!githubInfo) {
     return null;
   }
-  const { owner, repo, branch, path } = githubInfo;
-  return `https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`;
+  const { owner, repo, path } = githubInfo;
+  return `https://raw.githubusercontent.com/${owner}/${repo}/HEAD/${path}`;
 }
 
 /**
