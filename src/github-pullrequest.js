@@ -3,7 +3,10 @@ const specSources = require("./spec-sources.js");
 const fs = require("fs").promises;
 
 const octokit = new Octokit({
-  auth: require("../config.json")?.auth || process.env.GH_TOKEN
+  auth: (() => {
+    try { return require("../config.json").auth }
+    catch { return process.env.GH_TOKEN }
+  })()
 });
 
 function btoa(str) {
