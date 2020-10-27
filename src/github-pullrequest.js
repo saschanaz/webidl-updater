@@ -30,7 +30,6 @@ function btoa(str) {
  * @param {object} githubInfo
  * @param {string} githubInfo.owner
  * @param {string} githubInfo.repo
- * @param {string} githubInfo.branch
  * @param {string} githubInfo.path
  */
 async function createPullRequest(updated, validations, shortName, inMonoRepo, { owner, repo, path }) {
