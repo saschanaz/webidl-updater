@@ -59,16 +59,6 @@
       "path": "css-extensions-1/Overview.bs"
     }
   },
-  "https://drafts.csswg.org/css-highlight-api-1/": {
-    "shortName": "css-highlight-api-1",
-    "url": "https://drafts.csswg.org/css-highlight-api-1/",
-    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-highlight-api-1/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "csswg-drafts",
-      "path": "css-highlight-api-1/Overview.bs"
-    }
-  },
   "https://drafts.csswg.org/css-nesting-1/": {
     "shortName": "css-nesting-1",
     "url": "https://drafts.csswg.org/css-nesting-1/",
@@ -187,16 +177,6 @@
       "owner": "immersive-web",
       "repo": "layers",
       "path": "webxrlayers-1.bs"
-    }
-  },
-  "https://immersive-web.github.io/webxr-hand-input/": {
-    "shortName": "webxr-hand-input",
-    "url": "https://immersive-web.github.io/webxr-hand-input/",
-    "source": "https://github.com/immersive-web/webxr-hand-input/blob/HEAD/index.bs",
-    "github": {
-      "owner": "immersive-web",
-      "repo": "webxr-hand-input",
-      "path": "index.bs"
     }
   },
   "https://infra.spec.whatwg.org/": {
@@ -1759,14 +1739,24 @@
       "path": "css-gcpm-3/Overview.bs"
     }
   },
-  "https://drafts.csswg.org/css-grid/": {
-    "shortName": "css-grid-1",
-    "url": "https://drafts.csswg.org/css-grid/",
-    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-grid-1/Overview.bs",
+  "https://drafts.csswg.org/css-grid-2/": {
+    "shortName": "css-grid-2",
+    "url": "https://drafts.csswg.org/css-grid-2/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-grid-2/Overview.bs",
     "github": {
       "owner": "w3c",
       "repo": "csswg-drafts",
-      "path": "css-grid-1/Overview.bs"
+      "path": "css-grid-2/Overview.bs"
+    }
+  },
+  "https://drafts.csswg.org/css-highlight-api-1/": {
+    "shortName": "css-highlight-api-1",
+    "url": "https://drafts.csswg.org/css-highlight-api-1/",
+    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-highlight-api-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "path": "css-highlight-api-1/Overview.bs"
     }
   },
   "https://drafts.csswg.org/css-images-4/": {
@@ -3355,6 +3345,16 @@
       "path": "index.bs"
     }
   },
+  "https://immersive-web.github.io/webxr-hand-input/": {
+    "shortName": "webxr-hand-input-1",
+    "url": "https://immersive-web.github.io/webxr-hand-input/",
+    "source": "https://github.com/immersive-web/webxr-hand-input/blob/HEAD/index.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "webxr-hand-input",
+      "path": "index.bs"
+    }
+  },
   "https://immersive-web.github.io/webxr/": {
     "shortName": "webxr",
     "url": "https://immersive-web.github.io/webxr/",
@@ -3373,16 +3373,6 @@
       "owner": "w3c",
       "repo": "woff",
       "path": "woff2/index.html"
-    }
-  },
-  "https://drafts.css-houdini.org/worklets/": {
-    "shortName": "worklets-1",
-    "url": "https://drafts.css-houdini.org/worklets/",
-    "source": "https://github.com/w3c/css-houdini-drafts/blob/HEAD/worklets/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "css-houdini-drafts",
-      "path": "worklets/Overview.bs"
     }
   },
   "https://xhr.spec.whatwg.org/": {
