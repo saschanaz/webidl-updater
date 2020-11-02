@@ -5,14 +5,7 @@
 const fs = require("fs").promises;
 const { parse: parsePath } = require("path");
 const specs = require("browser-specs");
-const { Octokit } = require("@octokit/rest");
-
-const octokit = new Octokit({
-  auth: (() => {
-    try { return require("../config.json").auth }
-    catch { return process.env.GH_TOKEN }
-  })()
-});
+const { octokit } = require("./utils/github.js");
 
 function exists(array, ...items) {
   for (const item of items) {

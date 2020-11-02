@@ -1,13 +1,6 @@
-const { Octokit } = require("@octokit/rest");
+const { octokit } = require("./utils/github.js");
 const specSources = require("./spec-sources.js");
 const fs = require("fs").promises;
-
-const octokit = new Octokit({
-  auth: (() => {
-    try { return require("../config.json").auth }
-    catch { return process.env.GH_TOKEN }
-  })()
-});
 
 function btoa(str) {
   return Buffer.from(str).toString('base64');
