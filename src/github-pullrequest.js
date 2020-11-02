@@ -1,10 +1,6 @@
-const { octokit } = require("./utils/github.js");
+const { octokit, GitHubRepoBranch } = require("./utils/github.js");
 const specSources = require("./spec-sources.js");
 const fs = require("fs").promises;
-
-function btoa(str) {
-  return Buffer.from(str).toString('base64');
-}
 
 // Returns a normal Octokit PR response
 // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
@@ -41,161 +37,20 @@ The following is the validation messages from webidl2.js, which may help underst
 ${validations}
 \`\`\``;
 
-  const user = await octokit.users.getAuthenticated();
-  const fork = await maybeCreateFork();
-
   const branch = (await octokit.repos.get({ owner, repo })).data.default_branch;
-  const forkOwner = user.data.login;
+  const upstream = new GitHubRepoBranch(owner, repo, branch);
 
-  const forkBranch = shortName;
-  const head = `heads/${forkBranch}`;
+  const user = await octokit.users.getAuthenticated();
+  const forkRepo = await upstream.maybeCreateFork(user.data.login);
+  const fork = new GitHubRepoBranch(forkRepo.owner.login, forkRepo.name, shortName);
 
-  const baseCommitResponse = await octokit.repos.getCommit({
-    owner,
-    repo,
-    ref: `refs/heads/${branch}`
-  });
-  const latestCommitSha = baseCommitResponse.data.sha;
-  const forkHead = `${forkOwner}:${forkBranch}`;
+  const commitResponse = await upstream.getLatestCommit();
+  const latestCommitSha = commitResponse.data.sha;
 
-  await ensureHeadExists(head);
-
-  await ensureBranchIsLatest();
-
-  await updateFileOnBranch(forkBranch);
-
-  // Currently existing PR can potentially be closed
-  const pullsResponse2 = await octokit.pulls.list({
-    owner,
-    repo,
-    state: "open",
-    head: forkHead
-  });
-
-  if (!pullsResponse2.data.length) {
-    await octokit.pulls.create({
-      owner,
-      repo,
-      head: forkHead,
-      base: branch,
-      title: message,
-      body
-    });
-  }
-
-  async function maybeCreateFork() {
-    const forks = await octokit.repos.listForks({
-      owner,
-      repo
-    });
-    const fork = forks.data.find(
-      fork => fork.owner.login === user.data.login
-    );
-    if (fork) {
-      return fork;
-    }
-    const create = await octokit.repos.createFork({
-      owner,
-      repo
-    });
-    return create.data;
-  }
-
-  async function ensureBranchIsLatest() {
-    const pullsResponse = await octokit.pulls.list({
-      owner,
-      repo,
-      state: "open",
-      head: forkHead
-    });
-
-    if (!pullsResponse.data.length) {
-      await forceUpdateToLatestCommit();
-      return;
-    }
-
-    // check if the existing PR is mergeable
-    const pullResponse = await octokit.pulls.get({
-      owner,
-      repo,
-      pull_number: pullsResponse.data[0].number
-    });
-
-    if (pullResponse.data.base.label !== `${owner}:${branch}`){
-      await octokit.pulls.update({
-        owner,
-        repo,
-        pull_number: pullResponse.data.number,
-        base: branch
-      })
-      await forceUpdateToLatestCommit();
-    } else if (pullResponse.data.mergeable === true) {
-      await mergeFromMaster();
-    } else if (pullResponse.data.mergeable === false) { // null means it's being recomputed
-      await forceUpdateToLatestCommit();
-    }
-  }
-
-  async function updateFileOnBranch(branch) {
-    const fileResponse = await octokit.repos.getContent({
-      owner: forkOwner,
-      repo: fork.name,
-      path,
-      ref: `refs/heads/${branch}`
-    });
-
-    const content = btoa(updated);
-
-    if (fileResponse.data.content.split(/\s/g).join("") !== content) {
-      await octokit.repos.createOrUpdateFileContents({
-        owner: forkOwner,
-        repo: fork.name,
-        branch,
-        path,
-        message,
-        content,
-        sha: fileResponse.data.sha
-      });
-    }
-  }
-
-  async function ensureHeadExists(head) {
-    let refInfoResponse;
-    try {
-      refInfoResponse = await octokit.git.getRef({
-        owner: forkOwner,
-        repo: fork.name,
-        ref: head
-      });
-    } catch {};
-    if (!refInfoResponse) {
-      await octokit.git.createRef({
-        owner: forkOwner,
-        repo: fork.name,
-        sha: latestCommitSha,
-        ref: `refs/${head}`
-      });
-    }
-  }
-
-  async function forceUpdateToLatestCommit() {
-    await octokit.git.updateRef({
-      owner: forkOwner,
-      repo: fork.name,
-      sha: latestCommitSha,
-      ref: head,
-      force: true
-    });
-  }
-
-  async function mergeFromMaster() {
-    await octokit.repos.merge({
-      owner: forkOwner,
-      repo: fork.name,
-      base: forkBranch,
-      head: latestCommitSha
-    });
-  }
+  await fork.ensureHeadExists(latestCommitSha);
+  await fork.ensureBranchIsLatest(upstream, latestCommitSha);
+  await fork.updateFileOnBranch(path, message, updated);
+  await fork.maybeCreatePullRequest(upstream, message, body);
 }
 
 const incompatible = [
