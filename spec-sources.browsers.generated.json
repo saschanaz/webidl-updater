@@ -639,6 +639,16 @@
       "path": "spec/index.bs"
     }
   },
+  "https://wicg.github.io/idle-detection/": {
+    "shortName": "idle-detection",
+    "url": "https://wicg.github.io/idle-detection/",
+    "source": "https://github.com/WICG/idle-detection/blob/HEAD/index.bs",
+    "github": {
+      "owner": "WICG",
+      "repo": "idle-detection",
+      "path": "index.bs"
+    }
+  },
   "https://wicg.github.io/import-maps/": {
     "shortName": "import-maps",
     "url": "https://wicg.github.io/import-maps/",
@@ -789,6 +799,16 @@
       "path": "spec.bs"
     }
   },
+  "https://wicg.github.io/performance-measure-memory/": {
+    "shortName": "performance-measure-memory",
+    "url": "https://wicg.github.io/performance-measure-memory/",
+    "source": "https://github.com/WICG/performance-measure-memory/blob/HEAD/index.src.html",
+    "github": {
+      "owner": "WICG",
+      "repo": "performance-measure-memory",
+      "path": "index.src.html"
+    }
+  },
   "https://wicg.github.io/periodic-background-sync/": {
     "shortName": "periodic-background-sync",
     "url": "https://wicg.github.io/periodic-background-sync/",
@@ -937,6 +957,16 @@
       "owner": "WICG",
       "repo": "visual-viewport",
       "path": "index.html"
+    }
+  },
+  "https://wicg.github.io/web-codecs/": {
+    "shortName": "web-codecs",
+    "url": "https://wicg.github.io/web-codecs/",
+    "source": "https://github.com/WICG/web-codecs/blob/HEAD/index.src.html",
+    "github": {
+      "owner": "WICG",
+      "repo": "web-codecs",
+      "path": "index.src.html"
     }
   },
   "https://wicg.github.io/web-locks/": {
