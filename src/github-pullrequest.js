@@ -27,15 +27,15 @@ async function createPullRequest(updated, validations, shortName, inMonoRepo, { 
     "Editorial: Align with Web IDL specification";
   const body = `This is an automated pull request to align the spec with the latest Web IDL specification.
 
-Currently the autofix might introduce some awkward code formatting, so please feel free to modify the formatting.
-
-Please file an issue on https://github.com/saschanaz/webidl-updater/issues/new if you think this PR is invalid or should be enhanced.
-
-The following is the validation messages from webidl2.js, which may help understanding this PR:
+The following is the Web IDL validation message, which may help understanding this PR:
 
 \`\`\`
 ${validations}
-\`\`\``;
+\`\`\`
+
+Currently this autofix might introduce awkward code formatting, and feel free to manually fix it whenever it happens.
+
+Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new if you think this PR is invalid or should be enhanced.`;
 
   const branch = (await octokit.repos.get({ owner, repo })).data.default_branch;
   const upstream = new GitHubRepoBranch(owner, repo, branch);
