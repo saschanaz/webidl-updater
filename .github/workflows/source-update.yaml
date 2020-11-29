@@ -1,0 +1,30 @@
+name: Update spec-sources when package.json updates
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+
+jobs:
+  source-update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - run: npm ci
+      - run: npm run find-source-path
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: "chore(spec-sources): update"
+          title: "chore(spec-sources): update"
+          branch: update-spec-sources

@@ -16,8 +16,10 @@ jobs:
         with:
           node-version: '14'
 
-      - run: npm install
+      - run: npm ci
       - run: npm run rewrite
       - run: npm run submit-pullrequest
         env:
-            GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          # Intentionally not using GITHUB_TOKEN.
+          # GH_TOKEN will use @autokagami for creating PRs.
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
