@@ -89,16 +89,6 @@
       "path": "scroll-animations-1/Overview.bs"
     }
   },
-  "https://drafts.fxtf.org/compositing-2/": {
-    "shortName": "compositing-2",
-    "url": "https://drafts.fxtf.org/compositing-2/",
-    "source": "https://github.com/w3c/fxtf-drafts/blob/HEAD/compositing-2/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "fxtf-drafts",
-      "path": "compositing-2/Overview.bs"
-    }
-  },
   "https://fetch.spec.whatwg.org/": {
     "shortName": "fetch",
     "url": "https://fetch.spec.whatwg.org/",
@@ -1537,6 +1527,16 @@
       "owner": "w3c",
       "repo": "clipboard-apis",
       "path": "index.bs"
+    }
+  },
+  "https://drafts.fxtf.org/compositing-1/": {
+    "shortName": "compositing-1",
+    "url": "https://drafts.fxtf.org/compositing-1/",
+    "source": "https://github.com/w3c/fxtf-drafts/blob/HEAD/compositing-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "fxtf-drafts",
+      "path": "compositing-1/Overview.bs"
     }
   },
   "https://w3c.github.io/core-aam/": {
