@@ -20,7 +20,7 @@ function exists(array, ...items) {
  * @param {string[]} paths
  */
 function guessForDraftsOrgSpecs(paths, specInfo) {
-  const regex = /https:\/\/drafts\.[-\w]+\.org\/([^/]+)\//;
+  const regex = /https:\/\/drafts\.[-\w]+\.org\/([^/]+)/;
   const match = specInfo.nightly.url.match(regex);
   if (!match) {
     return;

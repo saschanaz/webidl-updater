@@ -2076,8 +2076,12 @@
   "https://drafts.csswg.org/css-scroll-anchoring": {
     "shortName": "css-scroll-anchoring-1",
     "url": "https://drafts.csswg.org/css-scroll-anchoring",
-    "source": null,
-    "github": null
+    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-scroll-anchoring-1/Overview.bs",
+    "github": {
+      "owner": "w3c",
+      "repo": "csswg-drafts",
+      "path": "css-scroll-anchoring-1/Overview.bs"
+    }
   },
   "https://drafts.csswg.org/css-scroll-snap-1/": {
     "shortName": "css-scroll-snap-1",
