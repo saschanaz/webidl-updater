@@ -269,6 +269,60 @@
       "path": "specs/animations/master/Overview.html"
     }
   },
+  "https://tc39.es/ecma262/": {
+    "shortName": "ecmascript",
+    "url": "https://tc39.es/ecma262/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-atomics-wait-async/": {
+    "shortName": "tc39-atomics-wait-async",
+    "url": "https://tc39.es/proposal-atomics-wait-async/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-class-fields/": {
+    "shortName": "tc39-class-fields",
+    "url": "https://tc39.es/proposal-class-fields/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-import-assertions/": {
+    "shortName": "tc39-import-assertions",
+    "url": "https://tc39.es/proposal-import-assertions/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-private-methods/": {
+    "shortName": "tc39-private-methods",
+    "url": "https://tc39.es/proposal-private-methods/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-regexp-match-indices/": {
+    "shortName": "tc39-regexp-match-indices",
+    "url": "https://tc39.es/proposal-regexp-match-indices/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-relative-indexing-method/": {
+    "shortName": "tc39-relative-indexing-method",
+    "url": "https://tc39.es/proposal-relative-indexing-method/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-static-class-features/": {
+    "shortName": "tc39-static-class-features",
+    "url": "https://tc39.es/proposal-static-class-features/",
+    "source": null,
+    "github": null
+  },
+  "https://tc39.es/proposal-top-level-await/": {
+    "shortName": "tc39-top-level-await",
+    "url": "https://tc39.es/proposal-top-level-await/",
+    "source": null,
+    "github": null
+  },
   "https://url.spec.whatwg.org/": {
     "shortName": "url",
     "url": "https://url.spec.whatwg.org/",
@@ -2019,15 +2073,11 @@
       "path": "css-scoping-1/Overview.bs"
     }
   },
-  "https://drafts.csswg.org/css-scroll-anchoring/": {
+  "https://drafts.csswg.org/css-scroll-anchoring": {
     "shortName": "css-scroll-anchoring-1",
-    "url": "https://drafts.csswg.org/css-scroll-anchoring/",
-    "source": "https://github.com/w3c/csswg-drafts/blob/HEAD/css-scroll-anchoring-1/Overview.bs",
-    "github": {
-      "owner": "w3c",
-      "repo": "csswg-drafts",
-      "path": "css-scroll-anchoring-1/Overview.bs"
-    }
+    "url": "https://drafts.csswg.org/css-scroll-anchoring",
+    "source": null,
+    "github": null
   },
   "https://drafts.csswg.org/css-scroll-snap-1/": {
     "shortName": "css-scroll-snap-1",
