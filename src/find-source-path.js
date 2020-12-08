@@ -118,7 +118,6 @@ function guessForGeneralGitHubSpecs(paths, specInfo) {
 
   // too special
   const specials = {
-    "layers": "webxrlayers-1.bs",
     "mediastream-recording": "MediaRecorder.bs"
   }
   if (specials[shortname]) {
