@@ -159,16 +159,6 @@
       "path": "index.bs"
     }
   },
-  "https://immersive-web.github.io/layers/": {
-    "shortName": "layers",
-    "url": "https://immersive-web.github.io/layers/",
-    "source": "https://github.com/immersive-web/layers/blob/HEAD/webxrlayers-1.bs",
-    "github": {
-      "owner": "immersive-web",
-      "repo": "layers",
-      "path": "webxrlayers-1.bs"
-    }
-  },
   "https://infra.spec.whatwg.org/": {
     "shortName": "infra",
     "url": "https://infra.spec.whatwg.org/",
@@ -3447,6 +3437,16 @@
       "owner": "immersive-web",
       "repo": "webxr",
       "path": "index.bs"
+    }
+  },
+  "https://immersive-web.github.io/layers/": {
+    "shortName": "webxrlayers-1",
+    "url": "https://immersive-web.github.io/layers/",
+    "source": "https://github.com/immersive-web/layers/blob/HEAD/webxrlayers-1.bs",
+    "github": {
+      "owner": "immersive-web",
+      "repo": "layers",
+      "path": "webxrlayers-1.bs"
     }
   },
   "https://w3c.github.io/woff/woff2/": {
