@@ -113,7 +113,7 @@ function getTargetSpecs() {
   return specSourceList;
 }
 
-(async () => {
+async function main() {
   try {
     await fs.mkdir("rewritten");
   } catch {}
@@ -171,9 +171,6 @@ function getTargetSpecs() {
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
     }
   }
-})().catch(e => {
-  process.on("exit", () => {
-    console.error(e);
-  });
-  process.exit(1);
-});
+}
+
+await main();
