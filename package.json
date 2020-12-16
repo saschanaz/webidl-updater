@@ -8,7 +8,6 @@
   "main": "src/rewrite.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "find-source-path": "node src/find-source-path.js",
     "rewrite": "node src/rewrite.js",
     "submit-pullrequest": "node src/github-pullrequest.js",
     "clean": "node src/clean.js"
@@ -17,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^18.0.12",
-    "browser-specs": "^1.23.2",
+    "browser-specs": "^1.24.0",
     "diff": "^5.0.0",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
