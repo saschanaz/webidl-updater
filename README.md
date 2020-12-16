@@ -3,16 +3,13 @@ Find and rewrite specs with autofixable invalid IDL codes.
 
 ## NPM Commands
 
-* `find-source-path`: Try finding raw source paths for specs and update
-`spec-sources.browsers.generated.json`.
 * `rewrite`: Download and rewrite the specs into a directory named
 `rewritten/`, only for specs which include autofixable IDL problems.
 * `submit-pullrequest`: Submits the rewritten specs.
 
 ### GitHub Authentication
 
-`npm run find-source-path` and `npm run submit-pullrequest` require
-`config.json` with `auth` field, which is a
+`npm run submit-pullrequest` require `config.json` with `auth` field, which is a
 [GitHub access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token).
 You can alternatively set `GH_TOKEN` environment variable. `config.json` will
 be preferred when both exist.
