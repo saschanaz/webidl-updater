@@ -113,67 +113,60 @@ function getTargetSpecs() {
   return specSourceList;
 }
 
-(async () => {
-  try {
-    await fs.mkdir("rewritten");
-  } catch {}
-  for (const file of await fs.readdir("rewritten")) {
-    await fs.unlink(`rewritten/${file}`);
-  }
-  const disableDiff = process.argv.includes("--no-diff");
+try {
+  await fs.mkdir("rewritten");
+} catch {}
+for (const file of await fs.readdir("rewritten")) {
+  await fs.unlink(`rewritten/${file}`);
+}
+const disableDiff = process.argv.includes("--no-diff");
 
-  const results = await extractOneByOne(getTargetSpecs());
-  const astArray = results.map(r => {
-    return r.idl.map((idl, i) => webidl2.parse(idl, {
-      concrete: true,
-      sourceName: [r.shortName, i]
-    }));
-  });
-  const validations = webidl2.validate(astArray.flat());
-  for (const v of validations) {
-    if (v.autofix) {
-      v.autofix();
-    }
-  }
-  const rewrittenSpecs = [];
-  for (const [specIndex, spec] of Object.entries(astArray)) {
-    const targetSpecItem = results[specIndex];
-    if (blocksIncludeHTML(targetSpecItem.blocks)) {
-      console.log(`${targetSpecItem.shortName} includes rich elements`)
-      if (!manualHtmlAllowList.includes(targetSpecItem.shortName)) {
-        console.log("Not allowlisted, skipping")
-        continue;
-      }
-    }
-    const diffs = replaceBlocksInSpec(spec, targetSpecItem);
-    if (diffs.length) {
-      let { text } = targetSpecItem;
-      for (const diff of diffs) {
-        text = similarReplace(text, diff[0], match => {
-          return conditionalBracketEscape(match, diff[1]);
-        });
-      }
-      rewrittenSpecs.push({
-        title: targetSpecItem.shortName,
-        html: text,
-        original: targetSpecItem.text
-      })
-    }
-  }
-  for (const spec of rewrittenSpecs) {
-    await fs.writeFile(`rewritten/${spec.title}`, spec.html);
-    await fs.writeFile(
-      `rewritten/${spec.title}.validations.txt`,
-      validations.filter(v => v.sourceName[0] === spec.title).map(v => v.message).join("\n\n")
-    );
-    if (!disableDiff) {
-      const diffText = diff.createPatch(spec.title, spec.original, spec.html);
-      await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
-    }
-  }
-})().catch(e => {
-  process.on("exit", () => {
-    console.error(e);
-  });
-  process.exit(1);
+const results = await extractOneByOne(getTargetSpecs());
+const astArray = results.map(r => {
+  return r.idl.map((idl, i) => webidl2.parse(idl, {
+    concrete: true,
+    sourceName: [r.shortName, i]
+  }));
 });
+const validations = webidl2.validate(astArray.flat());
+for (const v of validations) {
+  if (v.autofix) {
+    v.autofix();
+  }
+}
+const rewrittenSpecs = [];
+for (const [specIndex, spec] of Object.entries(astArray)) {
+  const targetSpecItem = results[specIndex];
+  if (blocksIncludeHTML(targetSpecItem.blocks)) {
+    console.log(`${targetSpecItem.shortName} includes rich elements`)
+    if (!manualHtmlAllowList.includes(targetSpecItem.shortName)) {
+      console.log("Not allowlisted, skipping")
+      continue;
+    }
+  }
+  const diffs = replaceBlocksInSpec(spec, targetSpecItem);
+  if (diffs.length) {
+    let { text } = targetSpecItem;
+    for (const diff of diffs) {
+      text = similarReplace(text, diff[0], match => {
+        return conditionalBracketEscape(match, diff[1]);
+      });
+    }
+    rewrittenSpecs.push({
+      title: targetSpecItem.shortName,
+      html: text,
+      original: targetSpecItem.text
+    })
+  }
+}
+for (const spec of rewrittenSpecs) {
+  await fs.writeFile(`rewritten/${spec.title}`, spec.html);
+  await fs.writeFile(
+    `rewritten/${spec.title}.validations.txt`,
+    validations.filter(v => v.sourceName[0] === spec.title).map(v => v.message).join("\n\n")
+  );
+  if (!disableDiff) {
+    const diffText = diff.createPatch(spec.title, spec.original, spec.html);
+    await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
+  }
+}
