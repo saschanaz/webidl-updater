@@ -69,7 +69,7 @@ function stringSplice(input, index, length, dest) {
  * @param {string} orig
  * @param {(match: string) => string} replacer
  */
-function similarReplace(input, orig, replacer) {
+export function similarReplace(input, orig, replacer) {
   const match = similarSearch(input, orig);
   if (match) {
     const dest = replacer(input.slice(match.index, match.index + match.length));
@@ -79,4 +79,3 @@ function similarReplace(input, orig, replacer) {
     throw new Error(`Couldn't find a match to replace:\n${orig}`);
   }
 }
-module.exports.similarReplace = similarReplace;

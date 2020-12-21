@@ -1,13 +1,13 @@
-const fs = require("fs").promises;
-const webidl2 = require("webidl2");
-const diff = require("diff");
-const { JSDOM } = require("jsdom");
-const { fetchText } = require("./utils.js");
-const { similarReplace } = require("./similar-replace.js");
+import { promises as fs } from "fs";
+import webidl2 from "webidl2";
+import { createPatch } from "diff";
+import { JSDOM } from "jsdom";
+import { fetchText } from "./utils.js";
+import { similarReplace } from "./similar-replace.js";
 
-const extract = require("./utils/extract-webidl.js");
+import extract from "./utils/extract-webidl.js";
 
-const specRawSources = require("./spec-sources.js");
+import specRawSources from "./spec-sources.js";
 
 const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
@@ -15,6 +15,8 @@ const brokenSpecs = [
   "https://immersive-web.github.io/layers/",
   "https://svgwg.org/specs/paths/",
   "https://svgwg.org/specs/animations/",
+  // https://github.com/w3c/css-houdini-drafts/pull/1016
+  "https://drafts.css-houdini.org/css-typed-om-1/",
 ];
 
 // includes some manual HTML inside IDL but shouldn't be hard to restore them
@@ -167,7 +169,7 @@ async function main() {
       validations.filter(v => v.sourceName[0] === spec.title).map(v => v.message).join("\n\n")
     );
     if (!disableDiff) {
-      const diffText = diff.createPatch(spec.title, spec.original, spec.html);
+      const diffText = createPatch(spec.title, spec.original, spec.html);
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
     }
   }

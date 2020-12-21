@@ -1,3 +1,3 @@
-const fs = require("fs");
+import { unlink } from "fs/promises";
 
-fs.unlinkSync(__dirname + "/../spec-sources.browsers.generated.json");
+unlink(__dirname + "/../spec-sources.browsers.generated.json");

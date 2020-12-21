@@ -1,6 +1,6 @@
-const { octokit, GitHubRepoBranch } = require("./utils/github.js");
-const specSources = require("./spec-sources.js");
-const fs = require("fs").promises;
+import { octokit, GitHubRepoBranch } from "./utils/github.js";
+import specSources from "./spec-sources.js";
+import { promises as fs } from "fs";
 
 // Returns a normal Octokit PR response
 // See https://octokit.github.io/rest.js/#octokit-routes-pulls-create

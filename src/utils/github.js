@@ -1,17 +1,21 @@
-const { Octokit } = require("@octokit/rest");
+import { Octokit } from "@octokit/rest";
+
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
 
 function btoa(str) {
   return Buffer.from(str).toString('base64');
 }
 
-const octokit = new Octokit({
+export const octokit = new Octokit({
   auth: (() => {
     try { return require("../../config.json").auth }
     catch { return process.env.GH_TOKEN }
   })()
 });
 
-class GitHubRepoBranch {
+export class GitHubRepoBranch {
   /**
    * @param {string} owner
    * @param {string} repo
@@ -191,8 +195,3 @@ class GitHubRepoBranch {
     }
   }
 }
-
-module.exports = {
-  octokit,
-  GitHubRepoBranch
-};

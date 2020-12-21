@@ -8,7 +8,7 @@
  * The function tries all known patterns used to define IDL content, making
  * sure that it only extracts elements once.
  */
-function extractIdl(document) {
+export default function extractIdl(document) {
     // IDL filter voluntarily similar to that defined in Respec to exclude
     // IDL defined with an `exclude` class:
     // https://github.com/w3c/respec/blob/develop/src/core/utils.js#L69
@@ -55,5 +55,3 @@ function extractIdl(document) {
     let idl = blocks.map(el => el.textContent)
     return { blocks, idl };
 }
-
-module.exports = extractIdl;

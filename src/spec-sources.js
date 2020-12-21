@@ -1,3 +1,7 @@
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+
 const browserSpecs = require("browser-specs");
 const manualSources = require("../spec-sources.manual.json");
 
@@ -11,8 +15,9 @@ function getGitHubInfo(url) {
   return { owner, repo, path };
 }
 
+let exports;
 if (process.env.WEBIDL_UPDATER_TEST) {
-  module.exports = {
+  exports = {
     "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html": {
       "shortName": "test-spec",
       "url": "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html",
@@ -36,5 +41,7 @@ if (process.env.WEBIDL_UPDATER_TEST) {
       github: getGitHubInfo(source)
     };
   }
-  module.exports = { ...browserSources, ...manualSources };
+  exports = { ...browserSources, ...manualSources };
 }
+
+export default exports;

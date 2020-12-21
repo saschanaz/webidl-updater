@@ -6,6 +6,7 @@
     "node": ">=14.0.0"
   },
   "main": "src/rewrite.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "rewrite": "node src/rewrite.js",
