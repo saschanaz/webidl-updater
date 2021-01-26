@@ -17,7 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^18.0.14",
-    "browser-specs": "^1.26.0",
+    "browser-specs": "^1.27.0",
     "diff": "^5.0.0",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
