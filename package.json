@@ -21,7 +21,7 @@
     "diff": "^5.0.0",
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
-    "webidl2": "^23.13.0"
+    "webidl2": "^23.13.1"
   },
   "private": true
 }
