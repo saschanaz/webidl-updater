@@ -13,8 +13,6 @@ const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
   "https://svgwg.org/specs/paths/",
   "https://svgwg.org/specs/animations/",
-  // https://github.com/w3c/css-houdini-drafts/pull/1016
-  "https://drafts.css-houdini.org/css-typed-om-1/",
 ];
 
 // includes some manual HTML inside IDL but shouldn't be hard to restore them
