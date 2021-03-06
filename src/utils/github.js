@@ -12,7 +12,8 @@ export const octokit = new Octokit({
   auth: (() => {
     try { return require("../../config.json").auth }
     catch { return process.env.GH_TOKEN }
-  })()
+  })(),
+  log: console,
 });
 
 export class GitHubRepoBranch {
