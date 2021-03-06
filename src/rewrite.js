@@ -13,6 +13,7 @@ const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
   // https://github.com/w3c/webrtc-insertable-streams/pull/70
   "https://w3c.github.io/webrtc-insertable-streams/",
+  // Unmaintained: https://github.com/w3c/svgwg/issues/818
   "https://svgwg.org/specs/paths/",
 ];
 
