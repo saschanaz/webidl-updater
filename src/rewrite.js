@@ -14,7 +14,6 @@ const brokenSpecs = [
   // https://github.com/w3c/webrtc-insertable-streams/pull/70
   "https://w3c.github.io/webrtc-insertable-streams/",
   "https://svgwg.org/specs/paths/",
-  "https://svgwg.org/specs/animations/",
 ];
 
 // includes some manual HTML inside IDL but shouldn't be hard to restore them
