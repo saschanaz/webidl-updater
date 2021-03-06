@@ -11,6 +11,8 @@ import specRawSources from "./spec-sources.js";
 
 const brokenSpecs = [
   "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
+  // https://github.com/w3c/webrtc-insertable-streams/pull/70
+  "https://w3c.github.io/webrtc-insertable-streams/",
   "https://svgwg.org/specs/paths/",
   "https://svgwg.org/specs/animations/",
 ];
