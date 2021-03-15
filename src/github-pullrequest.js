@@ -25,7 +25,7 @@ async function createPullRequest(updated, validations, shortName, inMonoRepo, { 
   const message =
     inMonoRepo ? `[${shortName}] Align with Web IDL specification` :
     "Editorial: Align with Web IDL specification";
-  const body = `This is an automated pull request to align the spec with the latest Web IDL specification.
+  const body = `🤖 This is an automated pull request to align the spec with the latest Web IDL specification. 🤖
 
 The following is the Web IDL validation message, which may help understanding this PR:
 
