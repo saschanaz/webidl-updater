@@ -19,7 +19,7 @@
     "@octokit/rest": "^18.5.0",
     "browser-specs": "^1.33.0",
     "diff": "^5.0.0",
-    "jsdom": "^16.5.1",
+    "jsdom": "^16.5.2",
     "node-fetch": "^2.6.1",
     "webidl2": "^23.13.1"
   },
