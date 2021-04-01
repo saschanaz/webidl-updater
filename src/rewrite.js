@@ -9,12 +9,6 @@ import extract from "./utils/extract-webidl.js";
 
 import specRawSources from "./spec-sources.js";
 
-const brokenSpecs = [
-  "https://w3c.github.io/webappsec-trusted-types/dist/spec/",
-  // https://github.com/w3c/webrtc-insertable-streams/pull/70
-  "https://w3c.github.io/webrtc-insertable-streams/",
-];
-
 // includes some manual HTML inside IDL but shouldn't be hard to restore them
 const manualHtmlAllowList = [
   "is-input-pending",
@@ -40,14 +34,15 @@ function getRawGit(githubInfo) {
  */
 async function extractOneByOne(specSourceList) {
   const results = [];
-  const targetSpecs = specSourceList.filter(item => !brokenSpecs.includes(item.url));
-  const fetchedList = await Promise.all(targetSpecs.map(async item => {
-    const text = await fetchText(getRawGit(item.github) || item.url);
-    return {
-      shortName: item.shortName,
-      text
-    };
-  }));
+  const fetchedList = await Promise.all(
+    specSourceList.map(async (item) => {
+      const text = await fetchText(getRawGit(item.github) || item.url);
+      return {
+        shortName: item.shortName,
+        text,
+      };
+    })
+  );
   for (const { shortName, text } of fetchedList) {
     results.push({
       ...await extract(JSDOM.fragment(text)),
@@ -111,6 +106,31 @@ function getTargetSpecs() {
   return specSourceList;
 }
 
+function tryParse(extracts) {
+  const astArray = [];
+  const errorArray = [];
+  for (const extract of extracts) {
+    try {
+      astArray.push(
+        extract.idl.map((idl, i) =>
+          webidl2.parse(idl, {
+            concrete: true,
+            sourceName: [extract.shortName, i],
+          })
+        )
+      );
+    } catch (err) {
+      astArray.push([]);
+      if (err.context) {
+        errorArray.push(err);
+      } else {
+        throw err;
+      }
+    }
+  }
+  return { astArray, errorArray };
+}
+
 async function main() {
   try {
     await fs.mkdir("rewritten");
@@ -121,12 +141,7 @@ async function main() {
   const disableDiff = process.argv.includes("--no-diff");
 
   const results = await extractOneByOne(getTargetSpecs());
-  const astArray = results.map(r => {
-    return r.idl.map((idl, i) => webidl2.parse(idl, {
-      concrete: true,
-      sourceName: [r.shortName, i]
-    }));
-  });
+  const { astArray, errorArray } = tryParse(results);
   const validations = webidl2.validate(astArray.flat());
   for (const v of validations) {
     if (v.autofix) {
@@ -168,6 +183,9 @@ async function main() {
       const diffText = createPatch(spec.title, spec.original, spec.html);
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
     }
+  }
+  for (const error of errorArray) {
+    await fs.writeFile(`rewritten/${error.sourceName[0]}.error.txt`, error.context);
   }
 }
 
