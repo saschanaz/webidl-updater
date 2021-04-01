@@ -31,6 +31,7 @@ export default function extractIdl(document) {
         'idl[xml:space="preserve"]' // WebGL extensions
     ];
     queries = queries.concat(queries.map(q => q.replace(/pre/g, "xmp")));
+    queries.push("script[type=idl]"); // https://tabatkins.github.io/bikeshed/#idl
 
     /** @type {Element[]} */
     const blocks = queries
