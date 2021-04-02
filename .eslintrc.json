@@ -8,5 +8,9 @@
   "parserOptions": {
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"]
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "rules": {
+    "no-constant-condition": ["error", { "checkLoops": false }],
+    "no-empty": ["error", { "allowEmptyCatch": true }]
+  }
 }

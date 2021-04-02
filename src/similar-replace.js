@@ -75,7 +75,6 @@ export function similarReplace(input, orig, replacer) {
     const dest = replacer(input.slice(match.index, match.index + match.length));
     return stringSplice(input, match.index, match.length, dest);
   } else {
-    debugger;
     throw new Error(`Couldn't find a match to replace:\n${orig}`);
   }
 }
