@@ -2,8 +2,8 @@ const similarDict = {
   "\n": "\r\n",
   "&lt;": "<",
   "&gt;": ">",
-  "=\"\"": "",
-  "\"": "'"
+  '=""': "",
+  '"': "'",
 };
 
 /**
@@ -52,9 +52,9 @@ function similarSearch(input, target) {
     if (matchedLength) {
       return {
         index,
-        length: matchedLength
+        length: matchedLength,
       };
-    };
+    }
   }
 }
 

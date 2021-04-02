@@ -21,10 +21,16 @@ import { promises as fs } from "fs";
  * @param {string} githubInfo.repo
  * @param {string} githubInfo.path
  */
-async function createPullRequest(updated, validations, shortName, inMonoRepo, { owner, repo, path }) {
-  const message =
-    inMonoRepo ? `[${shortName}] Align with Web IDL specification` :
-    "Editorial: Align with Web IDL specification";
+async function createPullRequest(
+  updated,
+  validations,
+  shortName,
+  inMonoRepo,
+  { owner, repo, path }
+) {
+  const message = inMonoRepo
+    ? `[${shortName}] Align with Web IDL specification`
+    : "Editorial: Align with Web IDL specification";
   const body = `🤖 This is an automated pull request to align the spec with the latest Web IDL specification. 🤖
 
 The following is the Web IDL validation message, which may help understanding this PR:
@@ -42,7 +48,11 @@ Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new i
 
   const user = await octokit.users.getAuthenticated();
   const forkRepo = await upstream.maybeCreateFork(user.data.login);
-  const fork = new GitHubRepoBranch(forkRepo.owner.login, forkRepo.name, shortName);
+  const fork = new GitHubRepoBranch(
+    forkRepo.owner.login,
+    forkRepo.name,
+    shortName
+  );
 
   const commitResponse = await upstream.getLatestCommit();
   const latestCommitSha = commitResponse.data.sha;
@@ -62,7 +72,7 @@ const incompatible = [
 function createRepoMap() {
   /** @type {Map<string, object[]>} */
   const map = new Map();
-  const sources = Object.values(specSources).filter(source => source.github)
+  const sources = Object.values(specSources).filter((source) => source.github);
   for (const source of sources) {
     const repo = `${source.github.owner}/${source.github.repo}`;
     if (map.has(repo)) {
@@ -72,9 +82,9 @@ function createRepoMap() {
     }
   }
   return new WeakMap(
-    sources.map(source => [
+    sources.map((source) => [
       source,
-      map.get(`${source.github.owner}/${source.github.repo}`).length
+      map.get(`${source.github.owner}/${source.github.repo}`).length,
     ])
   );
 }
@@ -82,21 +92,34 @@ function createRepoMap() {
 async function main() {
   const repoMap = createRepoMap();
 
-  const sources = Object.values(specSources).filter(value => !incompatible.includes(value.shortName));
-  await Promise.all(sources.map(async value => {
-    let file;
-    let validations;
-    try {
-      file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
-      validations = await fs.readFile(`rewritten/${value.shortName}.validations.txt`, "utf-8");
-    } catch {
-      return;
-    }
-    if (!value.github) {
-      return;
-    }
-    await createPullRequest(file, validations, value.shortName, repoMap.get(value) > 1, value.github);
-  }));
+  const sources = Object.values(specSources).filter(
+    (value) => !incompatible.includes(value.shortName)
+  );
+  await Promise.all(
+    sources.map(async (value) => {
+      let file;
+      let validations;
+      try {
+        file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
+        validations = await fs.readFile(
+          `rewritten/${value.shortName}.validations.txt`,
+          "utf-8"
+        );
+      } catch {
+        return;
+      }
+      if (!value.github) {
+        return;
+      }
+      await createPullRequest(
+        file,
+        validations,
+        value.shortName,
+        repoMap.get(value) > 1,
+        value.github
+      );
+    })
+  );
 }
 
 await main();

@@ -17,7 +17,7 @@ const manualHtmlAllowList = [
   "webgl2",
   "generic-sensor",
   "media-capabilities",
-  "mst-content-hint"
+  "mst-content-hint",
 ];
 
 function getRawGit(githubInfo) {
@@ -45,9 +45,9 @@ async function extractOneByOne(specSourceList) {
   );
   for (const { shortName, text } of fetchedList) {
     results.push({
-      ...await extract(JSDOM.fragment(text)),
+      ...(await extract(JSDOM.fragment(text))),
       text,
-      shortName
+      shortName,
     });
   }
   return results;
@@ -77,7 +77,7 @@ function conditionalBracketEscape(detector, target) {
 
 /** @param {Element[]} blocks */
 function blocksIncludeHTML(blocks) {
-  return blocks.some(block => !!block.children.length);
+  return blocks.some((block) => !!block.children.length);
 }
 
 function replaceBlocksInSpec(spec, targetSpecItem) {
@@ -96,11 +96,11 @@ function replaceBlocksInSpec(spec, targetSpecItem) {
 function getTargetSpecs() {
   const specSourceList = mapToArray(specRawSources);
 
-  const filter = process.argv.slice(2).filter(a => !a.startsWith("-"));
+  const filter = process.argv.slice(2).filter((a) => !a.startsWith("-"));
 
   if (filter.length) {
     console.log(`Rewriting ${filter}...`);
-    return specSourceList.filter(s => filter.includes(s.shortName));
+    return specSourceList.filter((s) => filter.includes(s.shortName));
   }
   console.log("Rewriting all specs...");
   return specSourceList;
@@ -152,9 +152,9 @@ async function main() {
   for (const [specIndex, spec] of Object.entries(astArray)) {
     const targetSpecItem = results[specIndex];
     if (blocksIncludeHTML(targetSpecItem.blocks)) {
-      console.log(`${targetSpecItem.shortName} includes rich elements`)
+      console.log(`${targetSpecItem.shortName} includes rich elements`);
       if (!manualHtmlAllowList.includes(targetSpecItem.shortName)) {
-        console.log("Not allowlisted, skipping")
+        console.log("Not allowlisted, skipping");
         continue;
       }
     }
@@ -162,22 +162,25 @@ async function main() {
     if (diffs.length) {
       let { text } = targetSpecItem;
       for (const diff of diffs) {
-        text = similarReplace(text, diff[0], match => {
+        text = similarReplace(text, diff[0], (match) => {
           return conditionalBracketEscape(match, diff[1]);
         });
       }
       rewrittenSpecs.push({
         title: targetSpecItem.shortName,
         html: text,
-        original: targetSpecItem.text
-      })
+        original: targetSpecItem.text,
+      });
     }
   }
   for (const spec of rewrittenSpecs) {
     await fs.writeFile(`rewritten/${spec.title}`, spec.html);
     await fs.writeFile(
       `rewritten/${spec.title}.validations.txt`,
-      validations.filter(v => v.sourceName[0] === spec.title).map(v => v.message).join("\n\n")
+      validations
+        .filter((v) => v.sourceName[0] === spec.title)
+        .map((v) => v.message)
+        .join("\n\n")
     );
     if (!disableDiff) {
       const diffText = createPatch(spec.title, spec.original, spec.html);
@@ -185,7 +188,10 @@ async function main() {
     }
   }
   for (const error of errorArray) {
-    await fs.writeFile(`rewritten/${error.sourceName[0]}.error.txt`, error.context);
+    await fs.writeFile(
+      `rewritten/${error.sourceName[0]}.error.txt`,
+      error.context
+    );
   }
 }
 

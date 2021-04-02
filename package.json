@@ -8,7 +8,8 @@
   "main": "src/rewrite.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run lint",
+    "lint": "eslint --max-warnings 0 src",
     "rewrite": "node src/rewrite.js",
     "submit-pullrequest": "node src/github-pullrequest.js",
     "clean": "node src/clean.js"
@@ -16,11 +17,18 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.13.14",
+    "@babel/eslint-parser": "^7.13.14",
+    "@babel/plugin-syntax-top-level-await": "^7.12.13",
     "@octokit/rest": "^18.5.2",
     "browser-specs": "^1.34.0",
     "diff": "^5.0.0",
+    "eslint": "^7.23.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
     "jsdom": "^16.5.2",
     "node-fetch": "^2.6.1",
+    "prettier": "^2.2.1",
     "webidl2": "^23.13.1"
   },
   "private": true

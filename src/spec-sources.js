@@ -11,7 +11,7 @@ function getGitHubInfo(url) {
   if (!match) {
     throw new Error("No way!! " + url);
   }
-  const [, owner, repo,, path] = match;
+  const [, owner, repo, , path] = match;
   return { owner, repo, path };
 }
 
@@ -19,16 +19,17 @@ let exports;
 if (process.env.WEBIDL_UPDATER_TEST) {
   exports = {
     "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html": {
-      "shortName": "test-spec",
-      "url": "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html",
-      "source": "https://github.com/saschanaz/test-spec/blob/HEAD/index.html",
-      "github": {
-        "owner": "saschanaz",
-        "repo": "test-spec",
-        "path": "index.html"
-      }
-    }
-  }
+      shortName: "test-spec",
+      url:
+        "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html",
+      source: "https://github.com/saschanaz/test-spec/blob/HEAD/index.html",
+      github: {
+        owner: "saschanaz",
+        repo: "test-spec",
+        path: "index.html",
+      },
+    },
+  };
 } else {
   const browserSources = {};
   for (const spec of browserSpecs) {
@@ -38,7 +39,7 @@ if (process.env.WEBIDL_UPDATER_TEST) {
       shortName: spec.shortname,
       url: nightly.url,
       source,
-      github: getGitHubInfo(source)
+      github: getGitHubInfo(source),
     };
   }
   exports = { ...browserSources, ...manualSources };
