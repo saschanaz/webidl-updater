@@ -7,10 +7,9 @@ import { promises as fs } from "fs";
 
 /**
  * This function:
- * - creates a local clone of the target spec
+ * - forks the target spec
  * - creates a branch based on the target branch
- * - applies our autofixed source
- * - pushes it to the bot account
+ * - push our autofixed source
  * - and opens a pull request
  * @param {string} updated updated file content
  * @param {string} validations IDL validation messages
