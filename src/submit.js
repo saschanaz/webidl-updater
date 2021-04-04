@@ -16,6 +16,34 @@ function getSyntaxErrorTitle(inMonoRepo, shortName) {
   return getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
 }
 
+function markdownError(error) {
+  return `\`\`\`
+${error.context}
+\`\`\`
+
+> WebIDLParseError: ${error.bareMessage}`;
+}
+
+/**
+ * @param {string[]} items
+ */
+function markdownWrapAsList(items) {
+  /**
+   * @param {string} item
+   */
+  function wrapAsListItem(item) {
+    return (
+      "*" +
+      item
+        .split("\n")
+        .map((line) => "  " + line)
+        .join("\n")
+        .slice(1)
+    );
+  }
+  return items.map(wrapAsListItem).join("\n");
+}
+
 /**
  * This function:
  * - forks the target spec
@@ -23,7 +51,7 @@ function getSyntaxErrorTitle(inMonoRepo, shortName) {
  * - push our autofixed source
  * - and opens a pull request
  * @param {string} updated updated file content
- * @param {string} validations IDL validation messages
+ * @param {object[]} validations IDL validation error objects
  * @param {string} shortName
  * @param {boolean} inMonoRepo
  * @param {object} githubInfo
@@ -43,11 +71,9 @@ async function createPullRequest(
     "Align with Web IDL specification";
   const body = `🤖 This is an automated pull request to align the spec with the latest Web IDL specification. 🤖
 
-The following is the Web IDL validation message, which may help understanding this PR:
+The followings are the Web IDL validation messages, which may help understanding this PR:
 
-\`\`\`
-${validations}
-\`\`\`
+${markdownWrapAsList(validations.map(markdownError))}
 
 Currently this autofix might introduce awkward code formatting, and feel free to manually fix it whenever it happens.
 
@@ -90,11 +116,7 @@ async function createIssueForSyntaxError(
 
 [webidl2.js](https://github.com/w3c/webidl2.js) says:
 
-\`\`\`
-${error.context}
-\`\`\`
-
-> WebIDLParseError: ${error.bareMessage}
+${markdownError(error)}
 
 ${pleaseFileAnIssueText}
 `;
@@ -200,7 +222,7 @@ async function main() {
         }
         await createPullRequest(
           file,
-          report.validations.map((v) => v.message).join("\n\n"),
+          report.validations,
           value.shortName,
           inMonoRepo,
           value.github
