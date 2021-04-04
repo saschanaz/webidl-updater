@@ -81,6 +81,23 @@ export class GitHubRepoBranch {
   }
 
   /**
+   * @param {number} pullNumber
+   */
+  async pollMergeability(pullNumber) {
+    while (true) {
+      const pullResponse = await octokit.pulls.get({
+        owner: this.owner,
+        repo: this.repo,
+        pull_number: pullNumber,
+      });
+      if (pullResponse.data.mergeable !== null) {
+        return pullResponse.data;
+      }
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+    }
+  }
+
+  /**
    * @param {GitHubRepoBranch} upstream
    * @param {string} latestCommitSha
    */
@@ -98,26 +115,20 @@ export class GitHubRepoBranch {
     }
 
     // check if the existing PR is mergeable
-    const pullResponse = await octokit.pulls.get({
-      owner: upstream.owner,
-      repo: upstream.repo,
-      pull_number: pullsResponse.data[0].number,
-    });
+    const pr = await upstream.pollMergeability(pullsResponse.data[0].number);
 
-    if (
-      pullResponse.data.base.label !== `${upstream.owner}:${upstream.branch}`
-    ) {
+    if (pr.base.label !== `${upstream.owner}:${upstream.branch}`) {
       await octokit.pulls.update({
         owner: upstream.owner,
         repo: upstream.repo,
-        pull_number: pullResponse.data.number,
+        pull_number: pr.number,
         base: upstream.branch,
       });
       await this.forceUpdateBranch(latestCommitSha);
-    } else if (pullResponse.data.mergeable === true) {
+    } else if (pr.mergeable) {
       await this.mergeBranch(latestCommitSha);
-    } else if (pullResponse.data.mergeable === false) {
-      // null means it's being recomputed
+    } else {
+      // unmergeable
       await this.forceUpdateBranch(latestCommitSha);
     }
   }
