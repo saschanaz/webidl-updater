@@ -62,12 +62,6 @@ Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new i
   await fork.maybeCreatePullRequest(upstream, message, body);
 }
 
-const incompatible = [
-  // Specs that mixes IDL and HTML elements
-  "html",
-  "webgl",
-];
-
 function createRepoMap() {
   /** @type {Map<string, object[]>} */
   const map = new Map();
@@ -88,22 +82,38 @@ function createRepoMap() {
   );
 }
 
+/**
+ * @typedef {object} Report
+ * @property {object[]=} validations
+ * @property {object=} parser
+ * @property {boolean=} includesHTML
+ *
+ * @param {string} specName
+ * @returns {Promise<Report>}
+ */
+async function getReport(specName) {
+  let file;
+  try {
+    file = await fs.readFile(`rewritten/${specName}.report.json`, "utf-8");
+  } catch {
+    return;
+  }
+  return JSON.parse(file);
+}
+
 async function main() {
   const repoMap = createRepoMap();
 
-  const sources = Object.values(specSources).filter(
-    (value) => !incompatible.includes(value.shortName)
-  );
+  const sources = Object.values(specSources);
   await Promise.all(
     sources.map(async (value) => {
+      const report = await getReport(value.shortName);
+      if (!report?.validations || report?.includesHTML) {
+        return;
+      }
       let file;
-      let validations;
       try {
         file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
-        validations = await fs.readFile(
-          `rewritten/${value.shortName}.validations.txt`,
-          "utf-8"
-        );
       } catch {
         return;
       }
@@ -112,7 +122,7 @@ async function main() {
       }
       await createPullRequest(
         file,
-        validations,
+        report.validations.map((v) => v.message).join("\n\n"),
         value.shortName,
         repoMap.get(value) > 1,
         value.github

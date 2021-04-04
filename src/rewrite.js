@@ -9,17 +9,6 @@ import extract from "./utils/extract-webidl.js";
 
 import specRawSources from "./spec-sources.js";
 
-// includes some manual HTML inside IDL but shouldn't be hard to restore them
-const manualHtmlAllowList = [
-  "is-input-pending",
-  "css-counter-styles-3",
-  "webgl1",
-  "webgl2",
-  "generic-sensor",
-  "media-capabilities",
-  "mst-content-hint",
-];
-
 function getRawGit(githubInfo) {
   if (!githubInfo) {
     return null;
@@ -131,6 +120,14 @@ function tryParse(extracts) {
   return { astArray, errorArray };
 }
 
+/**
+ * @param {string} path
+ * @param {*} data
+ */
+function writeAsJson(path, data) {
+  return fs.writeFile(path, JSON.stringify(data, null, 2));
+}
+
 async function main() {
   try {
     await fs.mkdir("rewritten");
@@ -151,13 +148,7 @@ async function main() {
   const rewrittenSpecs = [];
   for (const [specIndex, spec] of Object.entries(astArray)) {
     const targetSpecItem = results[specIndex];
-    if (blocksIncludeHTML(targetSpecItem.blocks)) {
-      console.log(`${targetSpecItem.shortName} includes rich elements`);
-      if (!manualHtmlAllowList.includes(targetSpecItem.shortName)) {
-        console.log("Not allowlisted, skipping");
-        continue;
-      }
-    }
+    const includesHTML = blocksIncludeHTML(targetSpecItem.blocks);
     const diffs = replaceBlocksInSpec(spec, targetSpecItem);
     if (diffs.length) {
       let { text } = targetSpecItem;
@@ -170,28 +161,25 @@ async function main() {
         title: targetSpecItem.shortName,
         html: text,
         original: targetSpecItem.text,
+        includesHTML,
       });
     }
   }
   for (const spec of rewrittenSpecs) {
     await fs.writeFile(`rewritten/${spec.title}`, spec.html);
-    await fs.writeFile(
-      `rewritten/${spec.title}.validations.txt`,
-      validations
-        .filter((v) => v.sourceName[0] === spec.title)
-        .map((v) => v.message)
-        .join("\n\n")
-    );
+    await writeAsJson(`rewritten/${spec.title}.report.json`, {
+      validations: validations.filter((v) => v.sourceName[0] === spec.title),
+      includesHTML: spec.includesHTML,
+    });
     if (!disableDiff) {
       const diffText = createPatch(spec.title, spec.original, spec.html);
       await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
     }
   }
   for (const error of errorArray) {
-    await fs.writeFile(
-      `rewritten/${error.sourceName[0]}.error.txt`,
-      error.context
-    );
+    await writeAsJson(`rewritten/${error.sourceName[0]}.report.json`, {
+      parser: error,
+    });
   }
 }
 
