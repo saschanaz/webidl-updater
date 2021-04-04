@@ -199,4 +199,46 @@ export class GitHubRepoBranch {
       });
     }
   }
+
+  /**
+   * @param {string | RegExp} matcher
+   * @param {string} creator
+   */
+  async findIssue(matcher, creator) {
+    const issues = await octokit.issues.listForRepo({
+      owner: this.owner,
+      repo: this.repo,
+      state: "open",
+      creator,
+    });
+    return issues.data.find((issue) => issue.title.match(matcher));
+  }
+
+  /**
+   * @param {number} issueNumber
+   * @param {string} newBody
+   */
+  async updateIssue(issueNumber, newBody) {
+    const { data } = await octokit.issues.update({
+      owner: this.owner,
+      repo: this.repo,
+      issue_number: issueNumber,
+      body: newBody,
+    });
+    return data;
+  }
+
+  /**
+   * @param {string} title
+   * @param {string} body
+   */
+  async createIssue(title, body) {
+    const { data } = await octokit.issues.create({
+      owner: this.owner,
+      repo: this.repo,
+      title,
+      body,
+    });
+    return data;
+  }
 }

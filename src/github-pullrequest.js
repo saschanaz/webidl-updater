@@ -2,8 +2,15 @@ import { octokit, GitHubRepoBranch } from "./utils/github.js";
 import specSources from "./spec-sources.js";
 import { promises as fs } from "fs";
 
-// Returns a normal Octokit PR response
-// See https://octokit.github.io/rest.js/#octokit-routes-pulls-create
+const pleaseFileAnIssueText = `Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new if you think this is invalid or should be enhanced.`;
+
+/**
+ * @param {boolean} inMonoRepo
+ * @param {string} shortName
+ */
+function getTitlePrefix(inMonoRepo, shortName) {
+  return inMonoRepo ? `[${shortName}] ` : "";
+}
 
 /**
  * This function:
@@ -27,9 +34,9 @@ async function createPullRequest(
   inMonoRepo,
   { owner, repo, path }
 ) {
-  const message = inMonoRepo
-    ? `[${shortName}] Align with Web IDL specification`
-    : "Editorial: Align with Web IDL specification";
+  const message =
+    (getTitlePrefix(inMonoRepo, shortName) || "Editorial: ") +
+    "Align with Web IDL specification";
   const body = `🤖 This is an automated pull request to align the spec with the latest Web IDL specification. 🤖
 
 The following is the Web IDL validation message, which may help understanding this PR:
@@ -40,7 +47,7 @@ ${validations}
 
 Currently this autofix might introduce awkward code formatting, and feel free to manually fix it whenever it happens.
 
-Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new if you think this PR is invalid or should be enhanced.`;
+${pleaseFileAnIssueText}`;
 
   const branch = (await octokit.repos.get({ owner, repo })).data.default_branch;
   const upstream = new GitHubRepoBranch(owner, repo, branch);
@@ -60,6 +67,45 @@ Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new i
   await fork.ensureBranchIsLatest(upstream, latestCommitSha);
   await fork.updateFileOnBranch(path, message, updated);
   await fork.maybeCreatePullRequest(upstream, message, body);
+}
+
+/**
+ * @param {object} error
+ * @param {string} shortName
+ * @param {boolean} inMonoRepo
+ * @param {object} githubInfo
+ */
+async function createIssueForParserError(
+  error,
+  shortName,
+  inMonoRepo,
+  { owner, repo }
+) {
+  const title = getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
+  const content = `🤖 This is an automatic issue report for Web IDL syntax issue. 🤖
+
+[webidl2.js](https://github.com/w3c/webidl2.js) reports the following error:
+
+\`\`\`
+${error.context}
+\`\`\`
+
+> WebIDLParseError: ${error.bareMessage}
+
+${pleaseFileAnIssueText}
+`;
+
+  const upstream = new GitHubRepoBranch(owner, repo);
+  const user = await octokit.users.getAuthenticated();
+
+  const issue = await upstream.findIssue(title, user.data.login);
+  if (!issue) {
+    return await upstream.createIssue(title, content);
+  }
+  if (issue.content !== content) {
+    return await upstream.updateIssue(issue.number, content);
+  }
+  return issue;
 }
 
 function createRepoMap() {
@@ -107,25 +153,41 @@ async function main() {
   const sources = Object.values(specSources);
   for (const value of sources) {
     const report = await getReport(value.shortName);
-    if (!report?.validations || report?.includesHTML) {
-      return;
+    const inMonoRepo = repoMap.get(value) > 1;
+    if (report.validations) {
+      // TODO: no parser error, should close the issue if exists
+      if (!report.includesHTML) {
+        let file;
+        try {
+          file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
+        } catch {
+          continue;
+        }
+        if (!value.github) {
+          continue;
+        }
+        await createPullRequest(
+          file,
+          report.validations.map((v) => v.message).join("\n\n"),
+          value.shortName,
+          inMonoRepo,
+          value.github
+        );
+      } else {
+        // TODO: if includes HTML
+      }
+    } else if (report.parser) {
+      await createIssueForParserError(
+        report.parser,
+        value.shortName,
+        inMonoRepo,
+        value.github
+      );
+    } else {
+      throw new Error(
+        `No \`validations\` nor \`parser\` field in ${value.shortName}`
+      );
     }
-    let file;
-    try {
-      file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
-    } catch {
-      return;
-    }
-    if (!value.github) {
-      return;
-    }
-    await createPullRequest(
-      file,
-      report.validations.map((v) => v.message).join("\n\n"),
-      value.shortName,
-      repoMap.get(value) > 1,
-      value.github
-    );
   }
 }
 
