@@ -75,7 +75,7 @@ ${pleaseFileAnIssueText}`;
  * @param {boolean} inMonoRepo
  * @param {object} githubInfo
  */
-async function createIssueForParserError(
+async function createIssueForSyntaxError(
   error,
   shortName,
   inMonoRepo,
@@ -131,7 +131,7 @@ function createRepoMap() {
 /**
  * @typedef {object} Report
  * @property {object[]=} validations
- * @property {object=} parser
+ * @property {object=} syntax
  * @property {boolean=} includesHTML
  *
  * @param {string} specName
@@ -179,9 +179,9 @@ async function main() {
       } else {
         // TODO: if includes HTML
       }
-    } else if (report.parser) {
-      await createIssueForParserError(
-        report.parser,
+    } else if (report.syntax) {
+      await createIssueForSyntaxError(
+        report.syntax,
         value.shortName,
         inMonoRepo,
         value.github

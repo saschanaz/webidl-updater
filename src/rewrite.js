@@ -178,7 +178,7 @@ async function main() {
   }
   for (const error of errorArray) {
     await writeAsJson(`rewritten/${error.sourceName[0]}.report.json`, {
-      parser: error,
+      syntax: error,
     });
   }
 }
