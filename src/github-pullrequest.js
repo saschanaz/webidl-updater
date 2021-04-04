@@ -105,30 +105,28 @@ async function main() {
   const repoMap = createRepoMap();
 
   const sources = Object.values(specSources);
-  await Promise.all(
-    sources.map(async (value) => {
-      const report = await getReport(value.shortName);
-      if (!report?.validations || report?.includesHTML) {
-        return;
-      }
-      let file;
-      try {
-        file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
-      } catch {
-        return;
-      }
-      if (!value.github) {
-        return;
-      }
-      await createPullRequest(
-        file,
-        report.validations.map((v) => v.message).join("\n\n"),
-        value.shortName,
-        repoMap.get(value) > 1,
-        value.github
-      );
-    })
-  );
+  for (const value of sources) {
+    const report = await getReport(value.shortName);
+    if (!report?.validations || report?.includesHTML) {
+      return;
+    }
+    let file;
+    try {
+      file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
+    } catch {
+      return;
+    }
+    if (!value.github) {
+      return;
+    }
+    await createPullRequest(
+      file,
+      report.validations.map((v) => v.message).join("\n\n"),
+      value.shortName,
+      repoMap.get(value) > 1,
+      value.github
+    );
+  }
 }
 
 await main();
