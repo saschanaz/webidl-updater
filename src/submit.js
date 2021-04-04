@@ -154,13 +154,13 @@ function createRepoMap() {
  * @property {object=} syntax
  * @property {boolean=} includesHTML
  *
- * @param {string} specName
+ * @param {string} shortName
  * @returns {Promise<Report>}
  */
-async function getReport(specName) {
+async function getReport(shortName) {
   let file;
   try {
-    file = await fs.readFile(`rewritten/${specName}.report.json`, "utf-8");
+    file = await fs.readFile(`rewritten/${shortName}.report.json`, "utf-8");
   } catch {
     return;
   }
