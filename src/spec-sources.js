@@ -5,6 +5,9 @@ const require = createRequire(import.meta.url);
 const browserSpecs = require("browser-specs");
 const manualSources = require("../spec-sources.manual.json");
 
+/**
+ * @param {string} url
+ */
 function getGitHubInfo(url) {
   const regex = /^https?:\/\/github\.com\/([^/]+)\/([^/]+)(?:\/blob\/([^/]+)\/(.+))?$/;
   const match = url.match(regex);
@@ -15,6 +18,15 @@ function getGitHubInfo(url) {
   return { owner, repo, path };
 }
 
+/**
+ * @type {Record<string, SpecSource>}
+ *
+ * @typedef {object} SpecSource
+ * @property {string} shortName
+ * @property {string} url
+ * @property {string} source
+ * @property {ReturnType<typeof getGitHubInfo>} github
+ */
 let exports;
 if (process.env.WEBIDL_UPDATER_TEST) {
   exports = {
