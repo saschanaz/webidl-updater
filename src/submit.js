@@ -12,7 +12,7 @@ function getTitlePrefix(inMonoRepo, shortName) {
   return inMonoRepo ? `[${shortName}] ` : "";
 }
 
-function getSyntaxErrorTitle(inMonoRepo, shortName) {
+function getSyntaxErrorIssueTitle(inMonoRepo, shortName) {
   return getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
 }
 
@@ -111,7 +111,7 @@ async function createIssueForSyntaxError(
   inMonoRepo,
   { owner, repo }
 ) {
-  const title = getSyntaxErrorTitle(inMonoRepo, shortName);
+  const title = getSyntaxErrorIssueTitle(inMonoRepo, shortName);
   const content = `🤖 This is an automatic issue report for Web IDL syntax error. 🤖
 
 [webidl2.js](https://github.com/w3c/webidl2.js) says:
@@ -139,7 +139,7 @@ async function maybeCloseIssueForSyntaxError(
   inMonoRepo,
   { owner, repo }
 ) {
-  const title = getSyntaxErrorTitle(inMonoRepo, shortName);
+  const title = getSyntaxErrorIssueTitle(inMonoRepo, shortName);
 
   const upstream = new GitHubRepoBranch(owner, repo);
   const user = await octokit.users.getAuthenticated();
