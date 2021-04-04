@@ -16,6 +16,10 @@ function getSyntaxErrorIssueTitle(inMonoRepo, shortName) {
   return getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
 }
 
+function getValidationIssueTitle(inMonoRepo, shortName) {
+  return getTitlePrefix(inMonoRepo, shortName) + "Web IDL validation error";
+}
+
 function markdownError(error) {
   return `\`\`\`
 ${error.context}
@@ -100,6 +104,26 @@ ${pleaseFileAnIssueText}`;
 }
 
 /**
+ * @param {string} owner
+ * @param {string} repo
+ * @param {string} title
+ * @param {string} content
+ */
+async function createOrUpdateIssue(owner, repo, title, content) {
+  const upstream = new GitHubRepoBranch(owner, repo);
+  const user = await octokit.users.getAuthenticated();
+
+  const issue = await upstream.findIssue(title, user.data.login);
+  if (!issue) {
+    return await upstream.createIssue(title, content);
+  }
+  if (issue.content !== content) {
+    return await upstream.updateIssue(issue.number, content);
+  }
+  return issue;
+}
+
+/**
  * @param {object} error
  * @param {string} shortName
  * @param {boolean} inMonoRepo
@@ -121,17 +145,32 @@ ${markdownError(error)}
 ${pleaseFileAnIssueText}
 `;
 
-  const upstream = new GitHubRepoBranch(owner, repo);
-  const user = await octokit.users.getAuthenticated();
+  return await createOrUpdateIssue(owner, repo, title, content);
+}
 
-  const issue = await upstream.findIssue(title, user.data.login);
-  if (!issue) {
-    return await upstream.createIssue(title, content);
-  }
-  if (issue.content !== content) {
-    return await upstream.updateIssue(issue.number, content);
-  }
-  return issue;
+/**
+ * @param {object[]} error
+ * @param {string} shortName
+ * @param {boolean} inMonoRepo
+ * @param {object} githubInfo
+ */
+async function createIssueForValidations(
+  errors,
+  shortName,
+  inMonoRepo,
+  { owner, repo }
+) {
+  const title = getValidationIssueTitle(inMonoRepo, shortName);
+  const content = `🤖 This is an automatic issue report for Web IDL validation error. 🤖
+
+The following are the validation messages:
+
+${markdownWrapAsList(errors.map(markdownError))}
+
+${pleaseFileAnIssueText}
+`;
+
+  return await createOrUpdateIssue(owner, repo, title, content);
 }
 
 async function maybeCloseIssueForSyntaxError(
@@ -228,7 +267,14 @@ async function main() {
           value.github
         );
       } else {
-        // TODO: if includes HTML
+        // IDL blocks can't be autofixed because of included HTML
+        // Let's just file an issue so that maintainers can manually fix them
+        await createIssueForValidations(
+          report.validations,
+          value.shortName,
+          inMonoRepo,
+          value.github
+        );
       }
     } else if (report.syntax) {
       await createIssueForSyntaxError(
