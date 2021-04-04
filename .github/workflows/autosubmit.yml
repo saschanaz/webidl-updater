@@ -18,7 +18,7 @@ jobs:
 
       - run: npm ci
       - run: npm run rewrite
-      - run: npm run submit-pullrequest
+      - run: npm run submit
         env:
           # Intentionally not using GITHUB_TOKEN.
           # GH_TOKEN will use @autokagami for creating PRs.
