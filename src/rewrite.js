@@ -2,12 +2,12 @@ import { promises as fs } from "fs";
 import webidl2 from "webidl2";
 import { createPatch } from "diff";
 import { JSDOM } from "jsdom";
-import { fetchText } from "./utils.js";
-import { similarReplace } from "./similar-replace.js";
+import fetchText from "./utils/fetch-text.js";
+import { similarReplace } from "./utils/similar-replace.js";
 
 import extract from "./utils/extract-webidl.js";
 
-import specRawSources from "./spec-sources.js";
+import specRawSources from "./utils/spec-sources.js";
 
 function getRawGit(githubInfo) {
   if (!githubInfo) {

@@ -3,7 +3,7 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 
 const browserSpecs = require("browser-specs");
-const manualSources = require("../spec-sources.manual.json");
+const manualSources = require("../../spec-sources.manual.json");
 
 /**
  * @param {string} url

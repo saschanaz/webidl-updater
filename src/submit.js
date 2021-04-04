@@ -1,5 +1,5 @@
 import { octokit, GitHubRepoBranch } from "./utils/github.js";
-import specSources from "./spec-sources.js";
+import specSources from "./utils/spec-sources.js";
 import { promises as fs } from "fs";
 
 const pleaseFileAnIssueText = `Please file an issue at https://github.com/saschanaz/webidl-updater/issues/new if you think this is invalid or should be enhanced.`;
