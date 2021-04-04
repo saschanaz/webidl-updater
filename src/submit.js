@@ -191,9 +191,6 @@ async function main() {
         } catch {
           continue;
         }
-        if (!value.github) {
-          continue;
-        }
         await createPullRequest(
           file,
           report.validations.map((v) => v.message).join("\n\n"),
