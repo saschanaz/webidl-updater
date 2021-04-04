@@ -241,4 +241,13 @@ export class GitHubRepoBranch {
     });
     return data;
   }
+
+  async closeIssue(issueNumber) {
+    await octokit.issues.update({
+      owner: this.owner,
+      repo: this.repo,
+      issue_number: issueNumber,
+      state: "closed",
+    });
+  }
 }

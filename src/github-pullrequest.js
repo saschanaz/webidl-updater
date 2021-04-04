@@ -12,6 +12,10 @@ function getTitlePrefix(inMonoRepo, shortName) {
   return inMonoRepo ? `[${shortName}] ` : "";
 }
 
+function getSyntaxErrorTitle(inMonoRepo, shortName) {
+  return getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
+}
+
 /**
  * This function:
  * - forks the target spec
@@ -81,7 +85,7 @@ async function createIssueForSyntaxError(
   inMonoRepo,
   { owner, repo }
 ) {
-  const title = getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
+  const title = getSyntaxErrorTitle(inMonoRepo, shortName);
   const content = `🤖 This is an automatic issue report for Web IDL syntax error. 🤖
 
 [webidl2.js](https://github.com/w3c/webidl2.js) says:
@@ -106,6 +110,22 @@ ${pleaseFileAnIssueText}
     return await upstream.updateIssue(issue.number, content);
   }
   return issue;
+}
+
+async function maybeCloseIssueForSyntaxError(
+  shortName,
+  inMonoRepo,
+  { owner, repo }
+) {
+  const title = getSyntaxErrorTitle(inMonoRepo, shortName);
+
+  const upstream = new GitHubRepoBranch(owner, repo);
+  const user = await octokit.users.getAuthenticated();
+
+  const issue = await upstream.findIssue(title, user.data.login);
+  if (issue) {
+    await upstream.closeIssue(issue.number);
+  }
 }
 
 function createRepoMap() {
@@ -158,7 +178,12 @@ async function main() {
     }
     const inMonoRepo = repoMap.get(value) > 1;
     if (report.validations) {
-      // TODO: no parser error, should close the issue if exists
+      // No parser error, should close the issue if exists
+      await maybeCloseIssueForSyntaxError(
+        value.shortName,
+        inMonoRepo,
+        value.github
+      );
       if (!report.includesHTML) {
         let file;
         try {
