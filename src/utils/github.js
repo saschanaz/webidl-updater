@@ -197,6 +197,18 @@ export class GitHubRepoBranch {
         title,
         body,
       });
+      return;
+    }
+
+    const pr = pullsResponse2.data[0];
+    // Bots may add more text to the body, so === must not be used
+    if (!pr.body.includes(body)) {
+      await octokit.pulls.update({
+        owner: upstream.owner,
+        repo: upstream.repo,
+        pull_number: pr.number,
+        body,
+      });
     }
   }
 
