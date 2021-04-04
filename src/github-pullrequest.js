@@ -82,9 +82,9 @@ async function createIssueForParserError(
   { owner, repo }
 ) {
   const title = getTitlePrefix(inMonoRepo, shortName) + "Web IDL syntax error";
-  const content = `🤖 This is an automatic issue report for Web IDL syntax issue. 🤖
+  const content = `🤖 This is an automatic issue report for Web IDL syntax error. 🤖
 
-[webidl2.js](https://github.com/w3c/webidl2.js) reports the following error:
+[webidl2.js](https://github.com/w3c/webidl2.js) says:
 
 \`\`\`
 ${error.context}
@@ -153,6 +153,9 @@ async function main() {
   const sources = Object.values(specSources);
   for (const value of sources) {
     const report = await getReport(value.shortName);
+    if (!report) {
+      continue;
+    }
     const inMonoRepo = repoMap.get(value) > 1;
     if (report.validations) {
       // TODO: no parser error, should close the issue if exists
