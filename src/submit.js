@@ -17,7 +17,7 @@ function getSyntaxErrorIssueTitle(inMonoRepo, shortName) {
 }
 
 function getValidationIssueTitle(inMonoRepo, shortName) {
-  return getTitlePrefix(inMonoRepo, shortName) + "Web IDL validation error";
+  return getTitlePrefix(inMonoRepo, shortName) + "Web IDL validation errors";
 }
 
 function markdownError(error) {
@@ -25,7 +25,7 @@ function markdownError(error) {
 ${error.context}
 \`\`\`
 
-> WebIDLParseError: ${error.bareMessage}`;
+> Error: ${error.bareMessage}`;
 }
 
 /**
@@ -163,7 +163,7 @@ async function createIssueForValidations(
   const title = getValidationIssueTitle(inMonoRepo, shortName);
   const content = `🤖 This is an automatic issue report for Web IDL validation error. 🤖
 
-The following are the validation messages:
+The bot found validation errors but couldn't fix them automatically, since the IDL texts include HTML tags. Please check the following messages and fix them.
 
 ${markdownWrapAsList(errors.map(markdownError))}
 
