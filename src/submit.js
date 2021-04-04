@@ -167,6 +167,15 @@ async function getReport(specName) {
   return JSON.parse(file);
 }
 
+/**
+ * @param {string} shortName
+ */
+async function readRewrittenFile(shortName) {
+  try {
+    return await fs.readFile(`rewritten/${shortName}`, "utf-8");
+  } catch {}
+}
+
 async function main() {
   const repoMap = createRepoMap();
 
@@ -185,10 +194,8 @@ async function main() {
         value.github
       );
       if (!report.includesHTML) {
-        let file;
-        try {
-          file = await fs.readFile(`rewritten/${value.shortName}`, "utf-8");
-        } catch {
+        const file = await readRewrittenFile(value.shortName);
+        if (!file) {
           continue;
         }
         await createPullRequest(
