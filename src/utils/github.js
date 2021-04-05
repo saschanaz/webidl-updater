@@ -224,17 +224,18 @@ export class GitHubRepoBranch {
   }
 
   /**
-   * @param {string | RegExp} matcher
+   * @param {string} title
    * @param {string} creator
    */
-  async findIssue(matcher, creator) {
+  async findIssue(title, creator) {
     const issues = await octokit.issues.listForRepo({
       owner: this.owner,
       repo: this.repo,
       state: "open",
       creator,
     });
-    return issues.data.find((issue) => issue.title.match(matcher));
+    // .includes() so that a slight change can be permitted
+    return issues.data.find((issue) => issue.title.includes(title));
   }
 
   /**
