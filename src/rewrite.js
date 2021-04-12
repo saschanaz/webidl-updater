@@ -1,5 +1,5 @@
 import { promises as fs } from "fs";
-import webidl2 from "webidl2";
+import * as webidl2 from "webidl2";
 import { createPatch } from "diff";
 import { JSDOM } from "jsdom";
 import fetchText from "./utils/fetch-text.js";
