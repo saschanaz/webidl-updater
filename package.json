@@ -17,7 +17,7 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.13.16",
+    "@babel/core": "^7.14.0",
     "@babel/eslint-parser": "^7.13.14",
     "@babel/plugin-syntax-top-level-await": "^7.12.13",
     "@octokit/rest": "^18.5.3",
