@@ -9,7 +9,8 @@ const manualSources = require("../../spec-sources.manual.json");
  * @param {string} url
  */
 function getGitHubInfo(url) {
-  const regex = /^https?:\/\/github\.com\/([^/]+)\/([^/]+)(?:\/blob\/([^/]+)\/(.+))?$/;
+  const regex =
+    /^https?:\/\/github\.com\/([^/]+)\/([^/]+)(?:\/blob\/([^/]+)\/(.+))?$/;
   const match = url.match(regex);
   if (!match) {
     throw new Error("No way!! " + url);
@@ -32,8 +33,7 @@ if (process.env.WEBIDL_UPDATER_TEST) {
   exports = {
     "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html": {
       shortName: "test-spec",
-      url:
-        "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html",
+      url: "https://raw.githubusercontent.com/saschanaz/test-spec/master/index.html",
       source: "https://github.com/saschanaz/test-spec/blob/HEAD/index.html",
       github: {
         owner: "saschanaz",
