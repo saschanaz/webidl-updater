@@ -28,7 +28,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "jsdom": "^16.5.3",
     "node-fetch": "^2.6.1",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "webidl2": "^24.0.1"
   },
   "private": true
