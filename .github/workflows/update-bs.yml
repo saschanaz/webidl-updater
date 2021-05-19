@@ -1,0 +1,30 @@
+name: Update browser-specs
+on:
+  workflow_dispatch:
+  schedule:
+    # https://crontab.guru/#5_8_*_*_*
+    - cron: "5 8 * * *"
+
+# Conditional runs
+# https://stackoverflow.com/a/61832535/2460034
+jobs:
+  update-webref:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '15'
+
+      - run: npm ci
+      - run: npm i browser-specs@latest
+      - id: git-diff
+        run: git diff --quiet HEAD
+        continue-on-error: true
+      - uses: peter-evans/create-pull-request@v3
+        if: ${{ steps.git-diff.outcome == 'failure' }}
+        with:
+          commit-message: "chore(package): update browser-specs"
+          title: "chore(package): update browser-specs"
+          branch: update-bs
+
