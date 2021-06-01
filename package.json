@@ -20,7 +20,7 @@
     "@babel/core": "^7.14.3",
     "@babel/eslint-parser": "^7.14.3",
     "@babel/plugin-syntax-top-level-await": "^7.12.13",
-    "@octokit/rest": "^18.5.3",
+    "@octokit/rest": "^18.5.5",
     "browser-specs": "^1.38.1",
     "diff": "^5.0.0",
     "eslint": "^7.26.0",
