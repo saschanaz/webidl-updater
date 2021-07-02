@@ -17,19 +17,19 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "^7.14.3",
-    "@babel/eslint-parser": "^7.14.4",
-    "@babel/plugin-syntax-top-level-await": "^7.12.13",
-    "@octokit/rest": "^18.5.5",
-    "browser-specs": "^1.43.0",
+    "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
+    "@babel/plugin-syntax-top-level-await": "^7.14.5",
+    "@octokit/rest": "^18.6.6",
+    "browser-specs": "^1.44.0",
     "diff": "^5.0.0",
-    "eslint": "^7.27.0",
+    "eslint": "^7.29.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "jsdom": "^16.6.0",
     "node-fetch": "^2.6.1",
-    "prettier": "^2.3.0",
-    "webidl2": "^24.1.1"
+    "prettier": "^2.3.2",
+    "webidl2": "^24.1.2"
   },
   "private": true
 }
