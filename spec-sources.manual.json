@@ -2,7 +2,7 @@
   "https://w3c.github.io/wot-scripting-api/": {
     "shortName": "wot-scripting-api",
     "url": "https://w3c.github.io/wot-scripting-api/",
-    "source": "https://github.com/w3c/wot-scripting-api/blob/master/index.html",
+    "source": "https://github.com/w3c/wot-scripting-api/blob/main/index.html",
     "github": {
       "owner": "w3c",
       "repo": "wot-scripting-api",
