@@ -46,6 +46,9 @@ if (process.env.WEBIDL_UPDATER_TEST) {
   const browserSources = {};
   for (const spec of browserSpecs) {
     const { nightly } = spec;
+    if (!nightly.repository) {
+      continue;
+    }
     const source = `${nightly.repository}/blob/HEAD/${nightly.sourcePath}`;
     browserSources[nightly.url] = {
       shortName: spec.shortname,
