@@ -21,10 +21,11 @@ jobs:
       - id: git-diff
         run: git diff --quiet HEAD
         continue-on-error: true
-      - uses: peter-evans/create-pull-request@v3
-        if: ${{ steps.git-diff.outcome == 'failure' }}
-        with:
-          commit-message: "chore(package): update browser-specs"
-          title: "chore(package): update browser-specs"
-          branch: update-bs
+      - name: Commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "chore(package): update browser-specs"
+          git push
 
