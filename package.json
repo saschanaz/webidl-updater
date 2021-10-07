@@ -18,7 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^18.11.4",
-    "browser-specs": "^2.15.0",
+    "browser-specs": "^2.15.1",
     "diff": "^5.0.0",
     "eslint": "^8.0.0-rc.0",
     "eslint-config-prettier": "^8.3.0",
