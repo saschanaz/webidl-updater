@@ -158,12 +158,16 @@ async function createIssueForValidations(
   errors,
   shortName,
   inMonoRepo,
+  hasDiff,
   { owner, repo }
 ) {
   const title = getValidationIssueTitle(inMonoRepo, shortName);
+  const reason = hasDiff
+    ? "the IDL texts include HTML tags"
+    : "there is no proper autofix for them";
   const content = `🤖 This is an automatic issue report for Web IDL validation error. 🤖
 
-The bot found validation errors but couldn't fix them automatically, since the IDL texts include HTML tags. Please check the following messages and fix them.
+The bot found validation errors but couldn't fix them automatically, since ${reason}. Please check the following messages and fix them.
 
 ${markdownWrapAsList(errors.map(markdownError))}
 
@@ -273,6 +277,7 @@ async function main() {
           report.validations,
           value.shortName,
           inMonoRepo,
+          report.diff,
           value.github
         );
       }
