@@ -254,7 +254,7 @@ async function main() {
         inMonoRepo,
         value.github
       );
-      if (!report.includesHTML) {
+      if (report.diff && !report.includesHTML) {
         const file = await readRewrittenFile(value.shortName);
         if (!file) {
           continue;
@@ -267,7 +267,7 @@ async function main() {
           value.github
         );
       } else {
-        // IDL blocks can't be autofixed because of included HTML
+        // IDL blocks can't be autofixed either because of included HTML or no available autofix.
         // Let's just file an issue so that maintainers can manually fix them
         await createIssueForValidations(
           report.validations,

@@ -22,21 +22,23 @@ function getRawGit(githubInfo) {
  * @param {*[]} specSourceList
  */
 async function extractOneByOne(specSourceList) {
-  const results = [];
+  const results = new Map();
   const fetchedList = await Promise.all(
     specSourceList.map(async (item) => {
       const text = await fetchText(getRawGit(item.github) || item.url);
       return {
         shortName: item.shortName,
         text,
+        sourceUrl: item.source,
       };
     })
   );
-  for (const { shortName, text } of fetchedList) {
-    results.push({
+  for (const { shortName, text, sourceUrl } of fetchedList) {
+    results.set(shortName, {
       ...(await extract(JSDOM.fragment(text))),
       text,
       shortName,
+      sourceUrl,
     });
   }
   return results;
@@ -96,11 +98,12 @@ function getTargetSpecs() {
 }
 
 function tryParse(extracts) {
-  const astArray = [];
-  const errorArray = [];
-  for (const extract of extracts) {
+  const astMap = new Map();
+  const errorMap = new Map();
+  for (const [title, extract] of extracts) {
     try {
-      astArray.push(
+      astMap.set(
+        title,
         extract.idl.map((idl, i) =>
           webidl2.parse(idl, {
             concrete: true,
@@ -109,15 +112,15 @@ function tryParse(extracts) {
         )
       );
     } catch (err) {
-      astArray.push([]);
+      astMap.set(title, []);
       if (err.context) {
-        errorArray.push(err);
+        errorMap.set(title, err);
       } else {
         throw err;
       }
     }
   }
-  return { astArray, errorArray };
+  return { astMap, errorMap };
 }
 
 /**
@@ -126,6 +129,27 @@ function tryParse(extracts) {
  */
 function writeAsJson(path, data) {
   return fs.writeFile(path, JSON.stringify(data, null, 2));
+}
+
+const ignoredValidations = [
+  "no-duplicate", // Hard to find which spec should be warned about this
+];
+
+function filterValidation(v, results) {
+  if (ignoredValidations.includes(v.ruleName)) {
+    console.warn(`Ignoring validation "${v.ruleName}" from ${v.sourceName[0]}`);
+    return false;
+  }
+  const { sourceUrl } = results.get(v.sourceName[0]);
+  if (sourceUrl.includes("WebGL") && v.ruleName === "no-nointerfaceobject") {
+    // WebGL has no intent to remove [LegacyNoInterfaceObject] for now
+    // https://github.com/KhronosGroup/WebGL/issues/2504#issuecomment-410823542
+    console.warn(
+      `Ignoring LegacyNoInterfaceObject from a WebGL spec: ${v.sourceName[0]}`
+    );
+    return false;
+  }
+  return true;
 }
 
 async function main() {
@@ -138,18 +162,23 @@ async function main() {
   const disableDiff = process.argv.includes("--no-diff");
 
   const results = await extractOneByOne(getTargetSpecs());
-  const { astArray, errorArray } = tryParse(results);
-  const validations = webidl2.validate(astArray.flat());
+  const { astMap, errorMap } = tryParse(results);
+  const validations = webidl2
+    .validate([...astMap.values()].flat())
+    .filter((v) => filterValidation(v, results));
   for (const v of validations) {
     if (v.autofix) {
       v.autofix();
     }
   }
-  const rewrittenSpecs = [];
-  for (const [specIndex, spec] of Object.entries(astArray)) {
-    const targetSpecItem = results[specIndex];
+
+  const affectedSpecs = [
+    ...new Set(validations.map((v) => v.sourceName[0])),
+  ].map((title) => ({ title }));
+  for (const spec of affectedSpecs) {
+    const targetSpecItem = results.get(spec.title);
     const includesHTML = blocksIncludeHTML(targetSpecItem.blocks);
-    const diffs = replaceBlocksInSpec(spec, targetSpecItem);
+    const diffs = replaceBlocksInSpec(astMap.get(spec.title), targetSpecItem);
     if (diffs.length) {
       let { text } = targetSpecItem;
       for (const diff of diffs) {
@@ -157,27 +186,30 @@ async function main() {
           return conditionalBracketEscape(match, diff[1]);
         });
       }
-      rewrittenSpecs.push({
-        title: targetSpecItem.shortName,
-        html: text,
-        original: targetSpecItem.text,
-        includesHTML,
-      });
+      spec.diff = true;
+      spec.html = text;
+      spec.original = targetSpecItem.text;
+      spec.includesHTML = includesHTML;
     }
   }
-  for (const spec of rewrittenSpecs) {
-    await fs.writeFile(`rewritten/${spec.title}`, spec.html);
+  for (const spec of affectedSpecs) {
+    if (spec.diff) {
+      await fs.writeFile(`rewritten/${spec.title}`, spec.html);
+      if (!disableDiff) {
+        const diffText = createPatch(spec.title, spec.original, spec.html);
+        await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
+      }
+    }
+
     await writeAsJson(`rewritten/${spec.title}.report.json`, {
       validations: validations.filter((v) => v.sourceName[0] === spec.title),
+      diff: spec.diff,
       includesHTML: spec.includesHTML,
     });
-    if (!disableDiff) {
-      const diffText = createPatch(spec.title, spec.original, spec.html);
-      await fs.writeFile(`rewritten/${spec.title}.patch`, diffText);
-    }
   }
-  for (const error of errorArray) {
-    await writeAsJson(`rewritten/${error.sourceName[0]}.report.json`, {
+
+  for (const [title, error] of errorMap) {
+    await writeAsJson(`rewritten/${title}.report.json`, {
       syntax: error,
     });
   }
