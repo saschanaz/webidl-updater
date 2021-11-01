@@ -23,7 +23,7 @@
     "eslint": "^8.0.0-rc.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jsdom": "^17.0.0",
+    "jsdom": "^18.0.1",
     "node-fetch": "^3.0.0",
     "prettier": "^2.4.1",
     "webidl2": "^24.1.2"
