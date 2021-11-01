@@ -133,6 +133,7 @@ function writeAsJson(path, data) {
 
 const ignoredValidations = [
   "no-duplicate", // Hard to find which spec should be warned about this
+  "no-cross-overload", // Same as above
 ];
 
 function filterValidation(v, results) {
