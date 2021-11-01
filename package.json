@@ -20,7 +20,7 @@
     "@octokit/rest": "^18.11.4",
     "browser-specs": "^2.15.1",
     "diff": "^5.0.0",
-    "eslint": "^8.0.0-rc.0",
+    "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jsdom": "^17.0.0",
