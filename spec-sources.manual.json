@@ -8,5 +8,15 @@
       "repo": "wot-scripting-api",
       "path": "index.html"
     }
+  },
+  "https://testutils.spec.whatwg.org/": {
+    "shortName": "testutils",
+    "url": "https://testutils.spec.whatwg.org/",
+    "source": "https://github.com/whatwg/testutils/blob/main/index.bs",
+    "github": {
+      "owner": "whatwg",
+      "repo": "testutils",
+      "path": "index.bs"
+    }
   }
 }
