@@ -138,7 +138,9 @@ const ignoredValidations = [
 
 function filterValidation(v, results) {
   if (ignoredValidations.includes(v.ruleName)) {
-    console.warn(`Ignoring validation "${v.ruleName}" from ${v.sourceName[0]}`);
+    console.warn(
+      `Ignoring validation "${v.ruleName}" from ${v.sourceName[0]}. Details:\n${v.message}`
+    );
     return false;
   }
   const { sourceUrl } = results.get(v.sourceName[0]);
