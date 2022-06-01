@@ -19,14 +19,14 @@
   "dependencies": {
     "@octokit/rest": "^18.12.0",
     "browser-specs": "^3.11.1",
-    "diff": "^5.0.0",
-    "eslint": "^8.14.0",
+    "diff": "^5.1.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "jsdom": "^19.0.0",
     "node-fetch": "^3.2.4",
     "prettier": "^2.6.2",
-    "webidl2": "^24.2.1"
+    "webidl2": "^24.2.2"
   },
   "private": true
 }
