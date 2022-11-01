@@ -17,7 +17,7 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^19.0.4",
+    "@octokit/rest": "^19.0.5",
     "browser-specs": "^3.30.0",
     "diff": "^5.1.0",
     "eslint": "^8.24.0",
