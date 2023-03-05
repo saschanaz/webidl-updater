@@ -25,7 +25,13 @@ async function extractOneByOne(specSourceList) {
   const results = new Map();
   const fetchedList = await Promise.all(
     specSourceList.map(async (item) => {
-      const text = await fetchText(getRawGit(item.github) || item.url);
+      const destination = getRawGit(item.github) || item.url;
+      const text = await fetchText(getRawGit(item.github) || item.url).catch(
+        () => {
+          console.warn(`Failed to fetch ${destination}, skipping.`);
+          return "";
+        }
+      );
       return {
         shortName: item.shortName,
         text,

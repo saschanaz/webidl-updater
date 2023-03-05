@@ -20,12 +20,12 @@
     "@octokit/rest": "^19.0.7",
     "browser-specs": "^3.47.0",
     "diff": "^5.1.0",
-    "eslint": "^8.33.0",
+    "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jsdom": "^21.1.0",
     "node-fetch": "^3.3.0",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "webidl2": "^24.2.2"
   },
   "private": true
