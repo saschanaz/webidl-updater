@@ -68,7 +68,7 @@ async function createPullRequest(
   validations,
   shortName,
   inMonoRepo,
-  { owner, repo, path }
+  { owner, repo, path },
 ) {
   const message =
     (getTitlePrefix(inMonoRepo, shortName) || "Editorial: ") +
@@ -91,7 +91,7 @@ ${pleaseFileAnIssueText}`;
   const fork = new GitHubRepoBranch(
     forkRepo.owner.login,
     forkRepo.name,
-    shortName
+    shortName,
   );
 
   const commitResponse = await upstream.getLatestCommit();
@@ -133,7 +133,7 @@ async function createIssueForSyntaxError(
   error,
   shortName,
   inMonoRepo,
-  { owner, repo }
+  { owner, repo },
 ) {
   const title = getSyntaxErrorIssueTitle(inMonoRepo, shortName);
   const content = `🤖 This is an automatic issue report for Web IDL syntax error. 🤖
@@ -159,7 +159,7 @@ async function createIssueForValidations(
   shortName,
   inMonoRepo,
   hasDiff,
-  { owner, repo }
+  { owner, repo },
 ) {
   const title = getValidationIssueTitle(inMonoRepo, shortName);
   const reason = hasDiff
@@ -180,7 +180,7 @@ ${pleaseFileAnIssueText}
 async function maybeCloseIssueForSyntaxError(
   shortName,
   inMonoRepo,
-  { owner, repo }
+  { owner, repo },
 ) {
   const title = getSyntaxErrorIssueTitle(inMonoRepo, shortName);
 
@@ -209,7 +209,7 @@ function createRepoMap() {
     sources.map((source) => [
       source,
       map.get(`${source.github.owner}/${source.github.repo}`).length,
-    ])
+    ]),
   );
 }
 
@@ -256,7 +256,7 @@ async function main() {
       await maybeCloseIssueForSyntaxError(
         value.shortName,
         inMonoRepo,
-        value.github
+        value.github,
       );
       if (report.diff && !report.includesHTML) {
         const file = await readRewrittenFile(value.shortName);
@@ -268,7 +268,7 @@ async function main() {
           report.validations,
           value.shortName,
           inMonoRepo,
-          value.github
+          value.github,
         );
       } else {
         // IDL blocks can't be autofixed either because of included HTML or no available autofix.
@@ -278,7 +278,7 @@ async function main() {
           value.shortName,
           inMonoRepo,
           report.diff,
-          value.github
+          value.github,
         );
       }
     } else if (report.syntax) {
@@ -286,11 +286,11 @@ async function main() {
         report.syntax,
         value.shortName,
         inMonoRepo,
-        value.github
+        value.github,
       );
     } else {
       throw new Error(
-        `No \`validations\` nor \`parser\` field in ${value.shortName}`
+        `No \`validations\` nor \`parser\` field in ${value.shortName}`,
       );
     }
   }
