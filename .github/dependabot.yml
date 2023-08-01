@@ -11,3 +11,7 @@ updates:
     # Check the npm registry for updates every month
     schedule:
       interval: "monthly"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
