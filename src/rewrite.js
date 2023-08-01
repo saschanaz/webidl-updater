@@ -30,14 +30,14 @@ async function extractOneByOne(specSourceList) {
         () => {
           console.warn(`Failed to fetch ${destination}, skipping.`);
           return "";
-        }
+        },
       );
       return {
         shortName: item.shortName,
         text,
         sourceUrl: item.source,
       };
-    })
+    }),
   );
   for (const { shortName, text, sourceUrl } of fetchedList) {
     results.set(shortName, {
@@ -114,8 +114,8 @@ function tryParse(extracts) {
           webidl2.parse(idl, {
             concrete: true,
             sourceName: [extract.shortName, i],
-          })
-        )
+          }),
+        ),
       );
     } catch (err) {
       astMap.set(title, []);
@@ -145,7 +145,7 @@ const ignoredValidations = [
 function filterValidation(v, results) {
   if (ignoredValidations.includes(v.ruleName)) {
     console.warn(
-      `Ignoring validation "${v.ruleName}" from ${v.sourceName[0]}. Details:\n${v.message}`
+      `Ignoring validation "${v.ruleName}" from ${v.sourceName[0]}. Details:\n${v.message}`,
     );
     return false;
   }
@@ -154,7 +154,7 @@ function filterValidation(v, results) {
     // WebGL has no intent to remove [LegacyNoInterfaceObject] for now
     // https://github.com/KhronosGroup/WebGL/issues/2504#issuecomment-410823542
     console.warn(
-      `Ignoring LegacyNoInterfaceObject from a WebGL spec: ${v.sourceName[0]}`
+      `Ignoring LegacyNoInterfaceObject from a WebGL spec: ${v.sourceName[0]}`,
     );
     return false;
   }
