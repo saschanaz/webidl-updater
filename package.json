@@ -17,10 +17,10 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^20.0.1",
+    "@octokit/rest": "^20.0.2",
     "browser-specs": "^3.65.0",
     "diff": "^5.1.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "jsdom": "^22.1.0",
