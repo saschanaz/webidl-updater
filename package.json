@@ -17,15 +17,15 @@
   "author": "Kagami Sascha Rosylight <saschanaz@outlook.com>",
   "license": "ISC",
   "dependencies": {
-    "@octokit/rest": "^20.0.1",
+    "@octokit/rest": "^20.0.2",
     "browser-specs": "^3.70.0",
     "diff": "^5.1.0",
-    "eslint": "^8.48.0",
+    "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
     "jsdom": "^22.1.0",
     "node-fetch": "^3.3.2",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "webidl2": "^24.4.1"
   },
   "private": true
