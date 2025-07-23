@@ -23,7 +23,7 @@ export class GitHubRepoBranch {
   /**
    * @param {string} owner
    * @param {string} repo
-   * @param {string} branch
+   * @param {string} [branch]
    */
   constructor(owner, repo, branch) {
     this.owner = owner;
@@ -266,12 +266,28 @@ export class GitHubRepoBranch {
     return data;
   }
 
+  /**
+   * @param {number} issueNumber
+   */
   async closeIssue(issueNumber) {
     await octokit.issues.update({
       owner: this.owner,
       repo: this.repo,
       issue_number: issueNumber,
       state: "closed",
+    });
+  }
+
+  /**
+   * @param {number} issueNumber
+   * @param {string} body
+   */
+  async createComment(issueNumber, body) {
+    await octokit.issues.createComment({
+      owner: this.owner,
+      repo: this.repo,
+      issue_number: issueNumber,
+      body,
     });
   }
 }

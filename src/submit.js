@@ -149,9 +149,10 @@ ${pleaseFileAnIssueText}
 }
 
 /**
- * @param {object[]} error
+ * @param {object[]} errors
  * @param {string} shortName
  * @param {boolean} inMonoRepo
+ * @param {boolean} hasDiff
  * @param {object} githubInfo
  */
 async function createIssueForValidations(
@@ -193,6 +194,20 @@ async function maybeCloseIssueForSyntaxError(
   }
 }
 
+/**
+ * @param {string} owner
+ * @param {string} repo
+ * @param {number} issueNumber
+ */
+async function commentAndCloseIssue(owner, repo, issueNumber) {
+  const upstream = new GitHubRepoBranch(owner, repo);
+  await upstream.createComment(
+    issueNumber,
+    "No issue is found as of today, so closing. Thanks!",
+  );
+  await upstream.closeIssue(issueNumber);
+}
+
 function createRepoMap() {
   /** @type {Map<string, object[]>} */
   const map = new Map();
@@ -217,6 +232,7 @@ function createRepoMap() {
  * @typedef {object} Report
  * @property {object[]=} validations
  * @property {object=} syntax
+ * @property {boolean=} diff
  * @property {boolean=} includesHTML
  *
  * @param {string} shortName
@@ -242,15 +258,45 @@ async function readRewrittenFile(shortName) {
 }
 
 async function main() {
+  const {
+    data: { login },
+  } = await octokit.rest.users.getAuthenticated();
+  console.log(`Proceeding with the user @${login}.`);
+
+  const {
+    data: { items: existings },
+  } = await octokit.rest.search.issuesAndPullRequests({
+    q: `state:open author:${login}`,
+  });
+
   const repoMap = createRepoMap();
 
   const sources = Object.values(specSources);
   for (const value of sources) {
+    const inMonoRepo = repoMap.get(value) > 1;
     const report = await getReport(value.shortName);
     if (!report) {
+      const existingsForSource = existings.filter((item) => {
+        const forRepo = item.repository_url.startsWith(
+          `https://api.github.com/repos/${value.github.owner}/${value.github.repo}`,
+        );
+        if (!inMonoRepo) {
+          return forRepo;
+        }
+        return (
+          forRepo &&
+          item.title.startsWith(getTitlePrefix(inMonoRepo, value.shortName))
+        );
+      });
+      for (const existing of existingsForSource) {
+        await commentAndCloseIssue(
+          value.github.owner,
+          value.github.repo,
+          existing.number,
+        );
+      }
       continue;
     }
-    const inMonoRepo = repoMap.get(value) > 1;
     if (report.validations) {
       // No parser error, should close the issue if exists
       await maybeCloseIssueForSyntaxError(
