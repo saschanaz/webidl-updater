@@ -4,6 +4,7 @@ import { createPatch } from "diff";
 import { JSDOM } from "jsdom";
 import fetchText from "./utils/fetch-text.js";
 import { similarReplace } from "./utils/similar-replace.js";
+import { mergeAnnotatedHTML } from "./utils/merge.js";
 
 import extract from "./utils/extract-webidl.js";
 
@@ -196,7 +197,7 @@ async function main() {
         });
       }
       spec.diff = true;
-      spec.html = text;
+      spec.html = mergeAnnotatedHTML(targetSpecItem.text, text);
       spec.original = targetSpecItem.text;
       spec.includesHTML = includesHTML;
     }
