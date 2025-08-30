@@ -14,17 +14,27 @@ export function mergeAnnotatedHTML(originalHTML, validatedIDL) {
   // If no HTML tags are found, return the validatedIDL as it is
   if (!htmlMatches) return validatedIDL;
 
-  // Iterate over each match and replace corresponding parts in validatedIDL
-  htmlMatches.forEach((htmlMatch) => {
-    // Extract the text between the HTML tags (just for the sake of matching it in validatedIDL)
-    const innerText = htmlMatch.replace(/<\/?[^>]+>/g, "");
+  /**
+   * Escapes special characters in a string for use in a regular expression.
+   * @param {string} str - The string to escape.
+   * @returns {string} - The escaped string safe for use in RegExp.
+   */
+  function escapeRegExp(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
 
-    // Replace any matching innerText in validatedIDL with the full HTML tag
-    validatedIDL = validatedIDL.replace(
-      new RegExp(`(${innerText})`, "g"),
-      htmlMatch,
-    );
-  });
+  let result = validatedIDL;
 
-  return validatedIDL;
+  // Replace each match in order, one occurrence at a time
+  for (const htmlMatch of htmlMatches) {
+    const innerText = htmlMatch.replace(/<\/?[^>]+>/g, "").trim();
+    if (!innerText) continue;
+
+    const safeInner = escapeRegExp(innerText);
+
+    // Replace only the first occurrence to avoid over-replacing duplicates
+    result = result.replace(new RegExp(safeInner), htmlMatch);
+  }
+
+  return result;
 }
