@@ -8,7 +8,7 @@
   "main": "src/rewrite.js",
   "type": "module",
   "scripts": {
-    "test": "npm run lint",
+    "test": "npm run lint && npm run rewrite html",
     "lint": "eslint --max-warnings 0 src",
     "rewrite": "node src/rewrite.js",
     "submit": "node src/submit.js",
