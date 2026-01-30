@@ -19,7 +19,7 @@
   "dependencies": {
     "@eslint/js": "^9.39.2",
     "@octokit/rest": "^22.0.1",
-    "browser-specs": "^4.67.0",
+    "browser-specs": "^4.67.1",
     "diff": "^8.0.3",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
