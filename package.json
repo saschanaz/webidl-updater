@@ -23,11 +23,11 @@
     "diff": "^8.0.3",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.4",
-    "globals": "^16.5.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.3.0",
     "jsdom": "^27.4.0",
     "node-fetch": "^3.3.2",
-    "prettier": "^3.7.4",
+    "prettier": "^3.8.1",
     "webidl2": "^24.5.0"
   },
   "private": true
