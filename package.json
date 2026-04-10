@@ -20,14 +20,14 @@
     "@eslint/js": "^10.0.1",
     "@octokit/rest": "^22.0.1",
     "browser-specs": "^4.74.0",
-    "diff": "^8.0.3",
-    "eslint": "^10.0.2",
+    "diff": "^8.0.4",
+    "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "globals": "^17.4.0",
-    "jsdom": "^28.1.0",
+    "jsdom": "^29.0.2",
     "node-fetch": "^3.3.2",
-    "prettier": "^3.8.1",
+    "prettier": "^3.8.2",
     "webidl2": "^24.5.0"
   },
   "private": true
